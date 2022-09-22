@@ -1,0 +1,141 @@
+.cover-1 {
+  background-image: url("../../../assets/images/1.jpg");
+}
+
+.cover-2 {
+  background-image: url("../../../assets/images/2.jpg");
+}
+
+.banner {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 75vh;
+}
+
+.text {
+  position: absolute;
+  top: 43%;
+  left: 60%;
+  text-align: center;
+}
+
+.banner h4 {
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  color: #777777;
+  margin-bottom: 0;
+  margin-top: -3px;
+  text-transform: uppercase;
+}
+
+.title h4 {
+  color: #ff4c3b;
+}
+
+.section-text p {
+  color: #ff4c3b;
+  letter-spacing: 0.05em;
+  color: #777777;
+  line-height: 24px;
+}
+
+.text h4 {
+  color: #ff4c3b;
+}
+
+.text h2 {
+  color: #222222;
+}
+
+.banner h1 {
+  margin-bottom: 0;
+  margin-top: 10px;
+  color: #222222;
+}
+.banner h2 {
+  color: #222222;
+}
+
+a:hover img {
+  transform: scale(1.05);
+}
+a img {
+  transition: transform 0.5s ease;
+}
+.content {
+  overflow: hidden;
+}
+
+.btn-gradient {
+  background-image: linear-gradient(30deg, #ff4c3b 50%, transparent 50%);
+  background-image: linear-gradient(30deg, #ff4c3b 50%, transparent 50%);
+  background-size: 850px;
+  background-repeat: no-repeat;
+  background-position: 0;
+  transition: background 300ms ease-in-out;
+  padding: 13px 29px;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  border: 2px solid #ff4c3b;
+}
+
+.btn-gradient:hover {
+  background-position: 100%;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.title {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.title .title1::after {
+  content: "";
+  width: 125px;
+  background-color: #ff4c3b;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  height: 4px;
+  margin: 0 auto;
+}
+
+
+@media (max-width: 1199px) {
+  .banner {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 991px) {
+  .banner {
+    height: 65vh;
+  }
+}
+@media (max-width: 767px) {
+  .banner {
+    height: 60vh;
+  }
+}
+
+@media (max-width: 577px) {
+  .banner {
+    height: 58vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    height: 55vh;
+  }
+}
+@media (max-width: 360px) {
+  .banner {
+    height: 50vh;
+  }
+}

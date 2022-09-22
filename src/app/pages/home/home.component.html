@@ -1,0 +1,143 @@
+<app-navbar></app-navbar>
+<owl-carousel-o [options]="customOptions">
+  <ng-template carouselSlide>
+    <div
+      class="banner cover-1 d-flex align-items-center justify-content-center"
+    >
+      <div class="container">
+        <div class="col">
+          <div class="w-50 text-center">
+            <h4>Welcome To Fashion</h4>
+            <h1>MEN FASHION</h1>
+            <button class="btn btn-gradient mt-3">SHOP NOW</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template carouselSlide>
+    <div
+      class="banner cover-2 d-flex align-items-center justify-content-center"
+    >
+      <div class="container">
+        <div class="col">
+          <div class="w-50 text-center">
+            <h4>Welcome To Fashion</h4>
+            <h1>WOMEN FASHION</h1>
+            <button class="btn btn-gradient mt-3">SHOP NOW</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</owl-carousel-o>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <a href="">
+        <div class="content">
+          <div class="position-relative w-100">
+            <img class="w-100" src="assets/images/banner-men.jpg" alt="" />
+            <div class="text">
+              <h4>save 50%</h4>
+              <h2>MEN</h2>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-6">
+      <a href="">
+        <div class="content">
+          <div class="position-relative w-100">
+            <img class="w-100" src="assets/images/banner-women.jpg" alt="" />
+            <div class="text">
+              <h4>save 50%</h4>
+              <h2>WOMEN</h2>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="title">
+    <h4>Special Offer</h4>
+    <h2 class="title1">TOP COLLECTION</h2>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-3">
+        <div class="section-text">
+          <p class="text-center">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum vitae
+            facere voluptates fuga recusandae reiciendis excepturi,
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="product-card">
+        <div class="img-wrapper">
+          <img class="img-fluid" src="assets/images/2 (1).jpg" />
+        </div>
+        <div class="product-details">
+          <bar-rating
+            [(rate)]="rate"
+            style="--br-font-size: 1px; --br-gap: 0"
+            [readOnly]="true"
+            [max]="5"
+          ></bar-rating>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="img-wrapper">
+        <img class="img-fluid" src="assets/images/2 (1).jpg" />
+      </div>
+      <div class="product-details">
+        <bar-rating
+          [(rate)]="rate"
+          style="--br-font-size: 1px; --br-gap: 0"
+          [readOnly]="true"
+          [max]="5"
+        ></bar-rating>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="img-wrapper">
+        <img class="img-fluid" src="assets/images/2 (1).jpg" />
+      </div>
+      <div class="product-details">
+        <bar-rating
+          [(rate)]="rate"
+          style="--br-font-size: 1px; --br-gap: 0"
+          [readOnly]="true"
+          [max]="5"
+        ></bar-rating>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="img-wrapper">
+        <img class="img-fluid" src="assets/images/2 (1).jpg" />
+      </div>
+      <div class="product-details">
+        <bar-rating
+          [(rate)]="rate"
+          style="--br-font-size: 1px; --br-gap: 0"
+          [readOnly]="true"
+          [max]="5"
+        ></bar-rating>
+      </div>
+    </div>
+  </div>
+</div>

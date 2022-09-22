@@ -1,1 +1,90 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+@import "~ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+
+@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
+@import "node_modules/ngx-bar-rating/themes/br-default-theme";
+
+@font-face {
+  font-family: "lato";
+  src: url("./assets/fonts/Lato-Regular.ttf");
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "lato";
+  src: url("./assets/fonts/Lato-Italic.ttf");
+
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* lato Bold */
+@font-face {
+  font-family: "lato";
+  src: url("./assets/fonts/Lato-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "lato";
+  src: url("./assets/fonts/lato-BoldItalic.ttf");
+  font-weight: 700;
+  font-style: italic;
+}
+
+body {
+  font-family: "lato";
+  font-size: 14px;
+  --br-font-size: 5px;
+  --br-gap: 0px;
+}
+h2 {
+  font-size: 36px;
+  color: #222;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 400;
+  color: #777;
+  letter-spacing: 0.03em;
+}
+
+h4 {
+  font-size: 18px;
+  text-transform: capitalize;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
+
+h5 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #222;
+  line-height: 24px;
+  letter-spacing: 0.05em;
+}
+
+h6 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #777;
+  line-height: 24px;
+}
