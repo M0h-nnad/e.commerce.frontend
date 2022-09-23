@@ -23,12 +23,15 @@ import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
 import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
+import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { BarRatingModule } from 'ngx-bar-rating';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavbarComponent],
+  declarations: [AppComponent, HomeComponent, NavbarComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -51,6 +54,8 @@ import { BarRatingModule } from 'ngx-bar-rating';
     BrowserAnimationsModule,
     CarouselModule,
     BarRatingModule,
+    FontAwesomeModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

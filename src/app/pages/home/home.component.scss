@@ -105,7 +105,219 @@ a img {
   margin: 0 auto;
 }
 
+.money {
+  color: #777777;
+  font-size: 14px;
+}
+.product-details h4 {
+  font-size: 18px;
+  font-weight: 700;
+}
 
+.product-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.product-details .color-variant {
+  display: inline-block;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid #aaa;
+}
+
+.img-wrapper,
+.product-card {
+  overflow: hidden;
+  position: relative;
+}
+
+.product-card .label-block .label1 span {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  background-color: #f00;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 9px 4px;
+  border-radius: 100%;
+  z-index: 1;
+}
+
+.product-card .label-block .label2 span {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  z-index: 1;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #212529;
+}
+
+.full-banner {
+  background-image: url("../../../assets/images/parralex.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 190px 0px;
+  text-align: center;
+}
+
+.full-banner h2 {
+  color: #ff4c3b;
+  font-weight: 700;
+  font-size: 100px;
+  text-transform: uppercase;
+}
+
+.full-banner h3 {
+  color: #212529;
+  font-weight: 700;
+  font-size: 50px;
+  text-transform: uppercase;
+}
+
+.full-banner h4 {
+  color: #777777;
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+:host ::ng-deep .container .owl-carousel .owl-item {
+  padding: 0 12px;
+}
+
+:host ::ng-deep .mat-tab-label {
+  color: #212529;
+  font-size: 18px;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-weight: normal;
+  opacity: 1;
+}
+
+:host ::ng-deep .mat-tab-label:focus:not(.mat-tab-disabled) {
+  color: #ff4c3b;
+}
+
+:host ::ng-deep .mat-ink-bar {
+  height: 0;
+}
+
+:host ::ng-deep .mat-tab-body.mat-tab-body-active {
+  animation: fade 0.5s;
+}
+
+:host ::ng-deep .mat-tab-label-active {
+  color: #ff4c3b;
+}
+
+:host ::ng-deep .mat-tab-body-content {
+  overflow: hidden;
+}
+:host ::ng-deep .mat-tab-header-pagination-chevron {
+  border-color: #222222;
+}
+
+.border-section {
+  padding: 35px 0px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 30px 0px;
+}
+
+.media .media-body h4 {
+  letter-spacing: 0.03em;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.media .media-body p {
+  margin-bottom: 0;
+  color: #777777;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+}
+
+.service-block {
+  border-left: 1px solid #ddd;
+}
+
+@keyframes fade {
+  0% {
+    transform: scale(0.75);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.cart-info,
+.cart-wrap {
+  position: absolute;
+  bottom: 7px;
+  right: 7px;
+  display: grid;
+  gap: 10px;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.img-wrapper:hover .cart-info,
+.img-wrapper:hover .cart-wrap {
+  opacity: 1;
+}
+
+.img-wrapper:hover .cart-wrap a:nth-child(3),
+.img-wrapper:hover .cart-wrap a:nth-child(3) {
+  -webkit-animation: fadeInRight 700ms ease-in-out;
+  animation: fadeInRight 700ms ease-in-out;
+}
+
+.img-wrapper:hover .cart-wrap a:nth-child(2),
+.img-wrapper:hover .cart-wrap a:nth-child(2) {
+  -webkit-animation: fadeInRight 400ms ease-in-out;
+  animation: fadeInRight 400ms ease-in-out;
+}
+
+.img-wrapper:hover .cart-wrap a:nth-child(4),
+.img-wrapper:hover .cart-wrap a:nth-child(4) {
+  -webkit-animation: fadeInRight 900ms ease-in-out;
+  animation: fadeInRight 900ms ease-in-out;
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
 @media (max-width: 1199px) {
   .banner {
     height: 70vh;

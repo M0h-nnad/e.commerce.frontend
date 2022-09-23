@@ -1,0 +1,56 @@
+.light-layout {
+  background-color: #f9f9f9;
+}
+
+.border-section {
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+}
+
+.small-section {
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+.border-top-0 {
+  border-top: 0 !important;
+}
+section,
+.section-t-space {
+  padding-top: 70px;
+}
+.footer-light .subscribe {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  border-right: 1px solid #dddddd;
+  text-align: left;
+}
+
+.subscribe {
+  text-align: center;
+}
+
+.footer-light .subscribe h4,
+.footer-light .subscribe .h4 {
+  margin-bottom: 10px;
+}
+
+.subscribe h4,
+.subscribe .h4 {
+  color: #222222;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 15px;
+  margin-top: -5px;
+}
+
+.footer-light .subscribe p {
+  line-height: 1;
+}
+
+footer p {
+  line-height: 32px;
+  letter-spacing: 0.03em;
+  margin-bottom: 0;
+}

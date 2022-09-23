@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-/* Importing Bootstrap SCSS file. */
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "~@fortawesome/fontawesome-free/scss/solid.scss";
@@ -12,6 +11,11 @@
 
 @import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
 @import "node_modules/ngx-bar-rating/themes/br-default-theme";
+@import "../node_modules/@angular/material/prebuilt-themes/purple-green.css";
+:root .br-default {
+  --br-font-size: 18px ;
+  --br-gap: 0px;
+}
 
 @font-face {
   font-family: "lato";
@@ -47,8 +51,6 @@
 body {
   font-family: "lato";
   font-size: 14px;
-  --br-font-size: 5px;
-  --br-gap: 0px;
 }
 h2 {
   font-size: 36px;
@@ -87,4 +89,16 @@ h6 {
   font-weight: 400;
   color: #777;
   line-height: 24px;
+}
+del {
+  font-weight: 400;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "lato", "Helvetica Neue", sans-serif;
 }

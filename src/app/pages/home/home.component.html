@@ -34,7 +34,7 @@
 
 <div class="container mt-5">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 mb-4">
       <a href="">
         <div class="content">
           <div class="position-relative w-100">
@@ -47,7 +47,7 @@
         </div>
       </a>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 mb-4">
       <a href="">
         <div class="content">
           <div class="position-relative w-100">
@@ -71,7 +71,7 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 offset-3">
+      <div class="col-lg-6 offset-lg-3">
         <div class="section-text">
           <p class="text-center">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum vitae
@@ -84,60 +84,583 @@
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-3">
+  <owl-carousel-o [options]="productOptions">
+    <ng-template carouselSlide>
       <div class="product-card">
         <div class="img-wrapper">
           <img class="img-fluid" src="assets/images/2 (1).jpg" />
+          <div class="label-block">
+            <div class="label1">
+              <span>new</span>
+            </div>
+            <div class="label2">
+              <span>on sale</span>
+            </div>
+          </div>
+          <div class="cart-info cart-wrap">
+            <a href="">
+              <fa-icon
+                [icon]="faCartShopping"
+                [styles]="{ color: '#777' }"
+              ></fa-icon>
+            </a>
+            <a href="">
+              <fa-icon [icon]="faHeart" [styles]="{ color: '#777' }"></fa-icon>
+            </a>
+            <a href="">
+              <fa-icon [icon]="faSearch" [styles]="{ color: '#777' }"></fa-icon>
+            </a>
+            <a href="">
+              <fa-icon
+                [icon]="faRefresh"
+                [styles]="{ color: '#777' }"
+              ></fa-icon>
+            </a>
+          </div>
         </div>
         <div class="product-details">
-          <bar-rating
-            [(rate)]="rate"
-            style="--br-font-size: 1px; --br-gap: 0"
-            [readOnly]="true"
-            [max]="5"
-          ></bar-rating>
+          <bar-rating [(rate)]="rate" [readOnly]="true" [max]="5"></bar-rating>
+          <a href="">
+            <h6>Fitted Dress</h6>
+          </a>
+          <h4>
+            $110
+            <del>
+              <span class="money"> $188 </span>
+            </del>
+          </h4>
+          <ul>
+            <li class="color-variant" style="background-color: #f00"></li>
+            <li class="color-variant" style="background-color: #f00"></li>
+            <li class="color-variant" style="background-color: #f00"></li>
+          </ul>
         </div>
       </div>
-    </div>
-    <div class="col-md-3">
-      <div class="img-wrapper">
-        <img class="img-fluid" src="assets/images/2 (1).jpg" />
+    </ng-template>
+    <ng-template carouselSlide>
+      <div class="product-card">
+        <div class="img-wrapper">
+          <img class="img-fluid" src="assets/images/2 (1).jpg" />
+          <div class="label-block">
+            <div class="label1">
+              <span>new</span>
+            </div>
+            <div class="label2">
+              <span>on sale</span>
+            </div>
+          </div>
+          <div class="cart-info cart-wrap">
+            <a href="">
+              <fa-icon
+                [icon]="faCartShopping"
+                [styles]="{ color: '#777' }"
+              ></fa-icon>
+            </a>
+            <a href="">
+              <fa-icon [icon]="faHeart" [styles]="{ color: '#777' }"></fa-icon>
+            </a>
+            <a href="">
+              <fa-icon [icon]="faSearch" [styles]="{ color: '#777' }"></fa-icon>
+            </a>
+            <a href="">
+              <fa-icon
+                [icon]="faRefresh"
+                [styles]="{ color: '#777' }"
+              ></fa-icon>
+            </a>
+          </div>
+        </div>
+        <div class="product-details">
+          <bar-rating [(rate)]="rate" [readOnly]="true" [max]="5"></bar-rating>
+          <a href="">
+            <h6>Fitted Dress</h6>
+          </a>
+          <h4>
+            $110
+            <del>
+              <span class="money"> $188 </span>
+            </del>
+          </h4>
+          <ul>
+            <li class="color-variant" style="background-color: #f00"></li>
+            <li class="color-variant" style="background-color: #f00"></li>
+            <li class="color-variant" style="background-color: #f00"></li>
+          </ul>
+        </div>
       </div>
-      <div class="product-details">
-        <bar-rating
-          [(rate)]="rate"
-          style="--br-font-size: 1px; --br-gap: 0"
-          [readOnly]="true"
-          [max]="5"
-        ></bar-rating>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div class="product-card">
+        <div class="img-wrapper">
+          <img class="img-fluid" src="assets/images/2 (1).jpg" />
+          <div class="label-block">
+            <div class="label1">
+              <span>new</span>
+            </div>
+            <div class="label2">
+              <span>on sale</span>
+            </div>
+          </div>
+          <div class="cart-info cart-wrap">
+            <a href="">
+              <fa-icon
+                [icon]="faCartShopping"
+                [styles]="{ color: '#777' }"
+              ></fa-icon>
+            </a>
+            <a href="">
+              <fa-icon [icon]="faHeart" [styles]="{ color: '#777' }"></fa-icon>
+            </a>
+            <a href="">
+              <fa-icon [icon]="faSearch" [styles]="{ color: '#777' }"></fa-icon>
+            </a>
+            <a href="">
+              <fa-icon
+                [icon]="faRefresh"
+                [styles]="{ color: '#777' }"
+              ></fa-icon>
+            </a>
+          </div>
+        </div>
+        <div class="product-details">
+          <bar-rating [(rate)]="rate" [readOnly]="true" [max]="5"></bar-rating>
+          <a href="">
+            <h6>Fitted Dress</h6>
+          </a>
+          <h4>
+            $110
+            <del>
+              <span class="money"> $188 </span>
+            </del>
+          </h4>
+          <ul>
+            <li class="color-variant" style="background-color: #f00"></li>
+            <li class="color-variant" style="background-color: #f00"></li>
+            <li class="color-variant" style="background-color: #f00"></li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="col-md-3">
-      <div class="img-wrapper">
-        <img class="img-fluid" src="assets/images/2 (1).jpg" />
+    </ng-template>
+    <ng-template carouselSlide>
+      <div class="product-card">
+        <div class="img-wrapper">
+          <img class="img-fluid" src="assets/images/2 (1).jpg" />
+          <div class="label-block">
+            <div class="label1">
+              <span>new</span>
+            </div>
+            <div class="label2">
+              <span>on sale</span>
+            </div>
+          </div>
+          <div class="cart-info cart-wrap">
+            <a href="">
+              <fa-icon
+                [icon]="faCartShopping"
+                [styles]="{ color: '#777' }"
+              ></fa-icon>
+            </a>
+            <a href="">
+              <fa-icon [icon]="faHeart" [styles]="{ color: '#777' }"></fa-icon>
+            </a>
+            <a href="">
+              <fa-icon [icon]="faSearch" [styles]="{ color: '#777' }"></fa-icon>
+            </a>
+            <a href="">
+              <fa-icon
+                [icon]="faRefresh"
+                [styles]="{ color: '#777' }"
+              ></fa-icon>
+            </a>
+          </div>
+        </div>
+        <div class="product-details">
+          <bar-rating [(rate)]="rate" [readOnly]="true" [max]="5"></bar-rating>
+          <a href="">
+            <h6>Fitted Dress</h6>
+          </a>
+          <h4>
+            $110
+            <del>
+              <span class="money"> $188 </span>
+            </del>
+          </h4>
+          <ul>
+            <li class="color-variant" style="background-color: #f00"></li>
+            <li class="color-variant" style="background-color: #f00"></li>
+            <li class="color-variant" style="background-color: #f00"></li>
+          </ul>
+        </div>
       </div>
-      <div class="product-details">
-        <bar-rating
-          [(rate)]="rate"
-          style="--br-font-size: 1px; --br-gap: 0"
-          [readOnly]="true"
-          [max]="5"
-        ></bar-rating>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="img-wrapper">
-        <img class="img-fluid" src="assets/images/2 (1).jpg" />
-      </div>
-      <div class="product-details">
-        <bar-rating
-          [(rate)]="rate"
-          style="--br-font-size: 1px; --br-gap: 0"
-          [readOnly]="true"
-          [max]="5"
-        ></bar-rating>
+    </ng-template>
+  </owl-carousel-o>
+</div>
+
+<div class="container-fluid p-0">
+  <div class="full-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="float-start">
+            <h2>2022</h2>
+            <h3>fashion trends</h3>
+            <h4>special offer</h4>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<div class="container-fluid mt-5">
+  <div class="container">
+    <div class="title">
+      <h4>Exclusive Products</h4>
+      <h2 class="title1">SPECIAL PRODUCTS</h2>
+    </div>
+    <mat-tab-group
+      mat-align-tabs="center"
+      [disablePagination]="false"
+      [@.disabled]="true"
+      [contentTabIndex]="0"
+      [selectedIndex]="0"
+    >
+      <div class="container">
+        <mat-tab label="new products">
+          <div class="row">
+            <div class="col-md-3" *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8]">
+              <div class="product-card">
+                <div class="img-wrapper">
+                  <img class="img-fluid" src="assets/images/2 (1).jpg" />
+                  <div class="label-block">
+                    <div class="label1">
+                      <span>new</span>
+                    </div>
+                    <div class="label2">
+                      <span>on sale</span>
+                    </div>
+                  </div>
+                  <div class="cart-info cart-wrap">
+                    <a href="">
+                      <fa-icon
+                        [icon]="faCartShopping"
+                        [styles]="{ color: '#777' }"
+                      ></fa-icon>
+                    </a>
+                    <a href="">
+                      <fa-icon
+                        [icon]="faHeart"
+                        [styles]="{ color: '#777' }"
+                      ></fa-icon>
+                    </a>
+                    <a href="">
+                      <fa-icon
+                        [icon]="faSearch"
+                        [styles]="{ color: '#777' }"
+                      ></fa-icon>
+                    </a>
+                    <a href="">
+                      <fa-icon
+                        [icon]="faRefresh"
+                        [styles]="{ color: '#777' }"
+                      ></fa-icon>
+                    </a>
+                  </div>
+                </div>
+                <div class="product-details">
+                  <bar-rating
+                    [(rate)]="rate"
+                    [readOnly]="true"
+                    [max]="5"
+                  ></bar-rating>
+                  <a href="">
+                    <h6>Fitted Dress</h6>
+                  </a>
+                  <h4>
+                    $110
+                    <del>
+                      <span class="money"> $188 </span>
+                    </del>
+                  </h4>
+                  <ul>
+                    <li
+                      class="color-variant"
+                      style="background-color: #f00"
+                    ></li>
+                    <li
+                      class="color-variant"
+                      style="background-color: #f00"
+                    ></li>
+                    <li
+                      class="color-variant"
+                      style="background-color: #f00"
+                    ></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="best sellers">
+          <div class="row">
+            <div class="col-md-3" *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8]">
+              <div class="product-card">
+                <div class="img-wrapper">
+                  <img class="img-fluid" src="assets/images/2 (1).jpg" />
+                  <div class="label-block">
+                    <div class="label1">
+                      <span>new</span>
+                    </div>
+                    <div class="label2">
+                      <span>on sale</span>
+                    </div>
+                  </div>
+                  <div class="cart-info cart-wrap">
+                    <a href="">
+                      <fa-icon
+                        [icon]="faCartShopping"
+                        [styles]="{ color: '#777' }"
+                      ></fa-icon>
+                    </a>
+                    <a href="">
+                      <fa-icon
+                        [icon]="faHeart"
+                        [styles]="{ color: '#777' }"
+                      ></fa-icon>
+                    </a>
+                    <a href="">
+                      <fa-icon
+                        [icon]="faSearch"
+                        [styles]="{ color: '#777' }"
+                      ></fa-icon>
+                    </a>
+                    <a href="">
+                      <fa-icon
+                        [icon]="faRefresh"
+                        [styles]="{ color: '#777' }"
+                      ></fa-icon>
+                    </a>
+                  </div>
+                </div>
+                <div class="product-details">
+                  <bar-rating
+                    [(rate)]="rate"
+                    [readOnly]="true"
+                    [max]="5"
+                  ></bar-rating>
+                  <a href="">
+                    <h6>Fitted Dress</h6>
+                  </a>
+                  <h4>
+                    $110
+                    <del>
+                      <span class="money"> $188 </span>
+                    </del>
+                  </h4>
+                  <ul>
+                    <li
+                      class="color-variant"
+                      style="background-color: #f00"
+                    ></li>
+                    <li
+                      class="color-variant"
+                      style="background-color: #f00"
+                    ></li>
+                    <li
+                      class="color-variant"
+                      style="background-color: #f00"
+                    ></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="featured products"
+          ><div class="row">
+            <div class="col-md-3" *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8]">
+              <div class="product-card">
+                <div class="img-wrapper">
+                  <img class="img-fluid" src="assets/images/2 (1).jpg" />
+                  <div class="label-block">
+                    <div class="label1">
+                      <span>new</span>
+                    </div>
+                    <div class="label2">
+                      <span>on sale</span>
+                    </div>
+                  </div>
+                  <div class="cart-info cart-wrap">
+                    <a href="">
+                      <fa-icon
+                        [icon]="faCartShopping"
+                        [styles]="{ color: '#777' }"
+                      ></fa-icon>
+                    </a>
+                    <a href="">
+                      <fa-icon
+                        [icon]="faHeart"
+                        [styles]="{ color: '#777' }"
+                      ></fa-icon>
+                    </a>
+                    <a href="">
+                      <fa-icon
+                        [icon]="faSearch"
+                        [styles]="{ color: '#777' }"
+                      ></fa-icon>
+                    </a>
+                    <a href="">
+                      <fa-icon
+                        [icon]="faRefresh"
+                        [styles]="{ color: '#777' }"
+                      ></fa-icon>
+                    </a>
+                  </div>
+                </div>
+                <div class="product-details">
+                  <bar-rating
+                    [(rate)]="rate"
+                    [readOnly]="true"
+                    [max]="5"
+                  ></bar-rating>
+                  <a href="">
+                    <h6>Fitted Dress</h6>
+                  </a>
+                  <h4>
+                    $110
+                    <del>
+                      <span class="money"> $188 </span>
+                    </del>
+                  </h4>
+                  <ul>
+                    <li
+                      class="color-variant"
+                      style="background-color: #f00"
+                    ></li>
+                    <li
+                      class="color-variant"
+                      style="background-color: #f00"
+                    ></li>
+                    <li
+                      class="color-variant"
+                      style="background-color: #f00"
+                    ></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="on sale">
+          <div class="row">
+            <div class="col-md-3" *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8]">
+              <div class="product-card">
+                <div class="img-wrapper">
+                  <img class="img-fluid" src="assets/images/2 (1).jpg" />
+                  <div class="label-block">
+                    <div class="label1">
+                      <span>new</span>
+                    </div>
+                    <div class="label2">
+                      <span>on sale</span>
+                    </div>
+                  </div>
+                  <div class="cart-info cart-wrap">
+                    <a href="">
+                      <fa-icon
+                        [icon]="faCartShopping"
+                        [styles]="{ color: '#777' }"
+                      ></fa-icon>
+                    </a>
+                    <a href="">
+                      <fa-icon
+                        [icon]="faHeart"
+                        [styles]="{ color: '#777' }"
+                      ></fa-icon>
+                    </a>
+                    <a href="">
+                      <fa-icon
+                        [icon]="faSearch"
+                        [styles]="{ color: '#777' }"
+                      ></fa-icon>
+                    </a>
+                    <a href="">
+                      <fa-icon
+                        [icon]="faRefresh"
+                        [styles]="{ color: '#777' }"
+                      ></fa-icon>
+                    </a>
+                  </div>
+                </div>
+                <div class="product-details">
+                  <bar-rating
+                    [(rate)]="rate"
+                    [readOnly]="true"
+                    [max]="5"
+                  ></bar-rating>
+                  <a href="">
+                    <h6>Fitted Dress</h6>
+                  </a>
+                  <h4>
+                    $110
+                    <del>
+                      <span class="money"> $188 </span>
+                    </del>
+                  </h4>
+                  <ul>
+                    <li
+                      class="color-variant"
+                      style="background-color: #f00"
+                    ></li>
+                    <li
+                      class="color-variant"
+                      style="background-color: #f00"
+                    ></li>
+                    <li
+                      class="color-variant"
+                      style="background-color: #f00"
+                    ></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+      </div>
+    </mat-tab-group>
+  </div>
+</div>
+
+<div class="container border-section my-5">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="media">
+        <img width="60px" height="60px" src="assets/images/van.svg" alt="" />
+        <div class="media-body">
+          <h4>free shipping</h4>
+          <p>Free Shipping World Wides</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 service-block">
+      <div class="media">
+        <img width="60px" height="60px" src="assets/images/247.svg" alt="" />
+        <div class="media-body">
+          <h4>free shipping</h4>
+          <p>Free Shipping World Wides</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 service-block">
+      <div class="media">
+        <img width="60px" height="60px" src="assets/images/mic.svg" alt="" />
+        <div class="media-body">
+          <h4>free shipping</h4>
+          <p>Free Shipping World Wides</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
