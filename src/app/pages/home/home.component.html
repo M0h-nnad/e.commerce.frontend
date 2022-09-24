@@ -1,4 +1,3 @@
-<app-navbar></app-navbar>
 <owl-carousel-o [options]="customOptions">
   <ng-template carouselSlide>
     <div
@@ -9,7 +8,7 @@
           <div class="w-50 text-center">
             <h4>Welcome To Fashion</h4>
             <h1>MEN FASHION</h1>
-            <button class="btn btn-gradient mt-3">SHOP NOW</button>
+            <button class="btn rounded-0 btn-gradient mt-3">SHOP NOW</button>
           </div>
         </div>
       </div>
@@ -24,10 +23,10 @@
           <div class="w-50 text-center">
             <h4>Welcome To Fashion</h4>
             <h1>WOMEN FASHION</h1>
-            <button class="btn btn-gradient mt-3">SHOP NOW</button>
+            <button class="btn rounded-0 btn-gradient mt-3">SHOP NOW</button>
           </div>
         </div>
-      </div>
+      </div>[]
     </div>
   </ng-template>
 </owl-carousel-o>
@@ -86,212 +85,20 @@
 <div class="container">
   <owl-carousel-o [options]="productOptions">
     <ng-template carouselSlide>
-      <div class="product-card">
-        <div class="img-wrapper">
-          <img class="img-fluid" src="assets/images/2 (1).jpg" />
-          <div class="label-block">
-            <div class="label1">
-              <span>new</span>
-            </div>
-            <div class="label2">
-              <span>on sale</span>
-            </div>
-          </div>
-          <div class="cart-info cart-wrap">
-            <a href="">
-              <fa-icon
-                [icon]="faCartShopping"
-                [styles]="{ color: '#777' }"
-              ></fa-icon>
-            </a>
-            <a href="">
-              <fa-icon [icon]="faHeart" [styles]="{ color: '#777' }"></fa-icon>
-            </a>
-            <a href="">
-              <fa-icon [icon]="faSearch" [styles]="{ color: '#777' }"></fa-icon>
-            </a>
-            <a href="">
-              <fa-icon
-                [icon]="faRefresh"
-                [styles]="{ color: '#777' }"
-              ></fa-icon>
-            </a>
-          </div>
-        </div>
-        <div class="product-details">
-          <bar-rating [(rate)]="rate" [readOnly]="true" [max]="5"></bar-rating>
-          <a href="">
-            <h6>Fitted Dress</h6>
-          </a>
-          <h4>
-            $110
-            <del>
-              <span class="money"> $188 </span>
-            </del>
-          </h4>
-          <ul>
-            <li class="color-variant" style="background-color: #f00"></li>
-            <li class="color-variant" style="background-color: #f00"></li>
-            <li class="color-variant" style="background-color: #f00"></li>
-          </ul>
-        </div>
-      </div>
+      <app-product></app-product>
+
     </ng-template>
     <ng-template carouselSlide>
-      <div class="product-card">
-        <div class="img-wrapper">
-          <img class="img-fluid" src="assets/images/2 (1).jpg" />
-          <div class="label-block">
-            <div class="label1">
-              <span>new</span>
-            </div>
-            <div class="label2">
-              <span>on sale</span>
-            </div>
-          </div>
-          <div class="cart-info cart-wrap">
-            <a href="">
-              <fa-icon
-                [icon]="faCartShopping"
-                [styles]="{ color: '#777' }"
-              ></fa-icon>
-            </a>
-            <a href="">
-              <fa-icon [icon]="faHeart" [styles]="{ color: '#777' }"></fa-icon>
-            </a>
-            <a href="">
-              <fa-icon [icon]="faSearch" [styles]="{ color: '#777' }"></fa-icon>
-            </a>
-            <a href="">
-              <fa-icon
-                [icon]="faRefresh"
-                [styles]="{ color: '#777' }"
-              ></fa-icon>
-            </a>
-          </div>
-        </div>
-        <div class="product-details">
-          <bar-rating [(rate)]="rate" [readOnly]="true" [max]="5"></bar-rating>
-          <a href="">
-            <h6>Fitted Dress</h6>
-          </a>
-          <h4>
-            $110
-            <del>
-              <span class="money"> $188 </span>
-            </del>
-          </h4>
-          <ul>
-            <li class="color-variant" style="background-color: #f00"></li>
-            <li class="color-variant" style="background-color: #f00"></li>
-            <li class="color-variant" style="background-color: #f00"></li>
-          </ul>
-        </div>
-      </div>
+      <app-product></app-product>
+
     </ng-template>
     <ng-template carouselSlide>
-      <div class="product-card">
-        <div class="img-wrapper">
-          <img class="img-fluid" src="assets/images/2 (1).jpg" />
-          <div class="label-block">
-            <div class="label1">
-              <span>new</span>
-            </div>
-            <div class="label2">
-              <span>on sale</span>
-            </div>
-          </div>
-          <div class="cart-info cart-wrap">
-            <a href="">
-              <fa-icon
-                [icon]="faCartShopping"
-                [styles]="{ color: '#777' }"
-              ></fa-icon>
-            </a>
-            <a href="">
-              <fa-icon [icon]="faHeart" [styles]="{ color: '#777' }"></fa-icon>
-            </a>
-            <a href="">
-              <fa-icon [icon]="faSearch" [styles]="{ color: '#777' }"></fa-icon>
-            </a>
-            <a href="">
-              <fa-icon
-                [icon]="faRefresh"
-                [styles]="{ color: '#777' }"
-              ></fa-icon>
-            </a>
-          </div>
-        </div>
-        <div class="product-details">
-          <bar-rating [(rate)]="rate" [readOnly]="true" [max]="5"></bar-rating>
-          <a href="">
-            <h6>Fitted Dress</h6>
-          </a>
-          <h4>
-            $110
-            <del>
-              <span class="money"> $188 </span>
-            </del>
-          </h4>
-          <ul>
-            <li class="color-variant" style="background-color: #f00"></li>
-            <li class="color-variant" style="background-color: #f00"></li>
-            <li class="color-variant" style="background-color: #f00"></li>
-          </ul>
-        </div>
-      </div>
+      <app-product></app-product>
+
     </ng-template>
     <ng-template carouselSlide>
-      <div class="product-card">
-        <div class="img-wrapper">
-          <img class="img-fluid" src="assets/images/2 (1).jpg" />
-          <div class="label-block">
-            <div class="label1">
-              <span>new</span>
-            </div>
-            <div class="label2">
-              <span>on sale</span>
-            </div>
-          </div>
-          <div class="cart-info cart-wrap">
-            <a href="">
-              <fa-icon
-                [icon]="faCartShopping"
-                [styles]="{ color: '#777' }"
-              ></fa-icon>
-            </a>
-            <a href="">
-              <fa-icon [icon]="faHeart" [styles]="{ color: '#777' }"></fa-icon>
-            </a>
-            <a href="">
-              <fa-icon [icon]="faSearch" [styles]="{ color: '#777' }"></fa-icon>
-            </a>
-            <a href="">
-              <fa-icon
-                [icon]="faRefresh"
-                [styles]="{ color: '#777' }"
-              ></fa-icon>
-            </a>
-          </div>
-        </div>
-        <div class="product-details">
-          <bar-rating [(rate)]="rate" [readOnly]="true" [max]="5"></bar-rating>
-          <a href="">
-            <h6>Fitted Dress</h6>
-          </a>
-          <h4>
-            $110
-            <del>
-              <span class="money"> $188 </span>
-            </del>
-          </h4>
-          <ul>
-            <li class="color-variant" style="background-color: #f00"></li>
-            <li class="color-variant" style="background-color: #f00"></li>
-            <li class="color-variant" style="background-color: #f00"></li>
-          </ul>
-        </div>
-      </div>
+      <app-product></app-product>
+
     </ng-template>
   </owl-carousel-o>
 </div>
@@ -329,300 +136,28 @@
         <mat-tab label="new products">
           <div class="row">
             <div class="col-md-3" *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8]">
-              <div class="product-card">
-                <div class="img-wrapper">
-                  <img class="img-fluid" src="assets/images/2 (1).jpg" />
-                  <div class="label-block">
-                    <div class="label1">
-                      <span>new</span>
-                    </div>
-                    <div class="label2">
-                      <span>on sale</span>
-                    </div>
-                  </div>
-                  <div class="cart-info cart-wrap">
-                    <a href="">
-                      <fa-icon
-                        [icon]="faCartShopping"
-                        [styles]="{ color: '#777' }"
-                      ></fa-icon>
-                    </a>
-                    <a href="">
-                      <fa-icon
-                        [icon]="faHeart"
-                        [styles]="{ color: '#777' }"
-                      ></fa-icon>
-                    </a>
-                    <a href="">
-                      <fa-icon
-                        [icon]="faSearch"
-                        [styles]="{ color: '#777' }"
-                      ></fa-icon>
-                    </a>
-                    <a href="">
-                      <fa-icon
-                        [icon]="faRefresh"
-                        [styles]="{ color: '#777' }"
-                      ></fa-icon>
-                    </a>
-                  </div>
-                </div>
-                <div class="product-details">
-                  <bar-rating
-                    [(rate)]="rate"
-                    [readOnly]="true"
-                    [max]="5"
-                  ></bar-rating>
-                  <a href="">
-                    <h6>Fitted Dress</h6>
-                  </a>
-                  <h4>
-                    $110
-                    <del>
-                      <span class="money"> $188 </span>
-                    </del>
-                  </h4>
-                  <ul>
-                    <li
-                      class="color-variant"
-                      style="background-color: #f00"
-                    ></li>
-                    <li
-                      class="color-variant"
-                      style="background-color: #f00"
-                    ></li>
-                    <li
-                      class="color-variant"
-                      style="background-color: #f00"
-                    ></li>
-                  </ul>
-                </div>
-              </div>
+              <app-product></app-product>
             </div>
           </div>
         </mat-tab>
         <mat-tab label="best sellers">
           <div class="row">
             <div class="col-md-3" *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8]">
-              <div class="product-card">
-                <div class="img-wrapper">
-                  <img class="img-fluid" src="assets/images/2 (1).jpg" />
-                  <div class="label-block">
-                    <div class="label1">
-                      <span>new</span>
-                    </div>
-                    <div class="label2">
-                      <span>on sale</span>
-                    </div>
-                  </div>
-                  <div class="cart-info cart-wrap">
-                    <a href="">
-                      <fa-icon
-                        [icon]="faCartShopping"
-                        [styles]="{ color: '#777' }"
-                      ></fa-icon>
-                    </a>
-                    <a href="">
-                      <fa-icon
-                        [icon]="faHeart"
-                        [styles]="{ color: '#777' }"
-                      ></fa-icon>
-                    </a>
-                    <a href="">
-                      <fa-icon
-                        [icon]="faSearch"
-                        [styles]="{ color: '#777' }"
-                      ></fa-icon>
-                    </a>
-                    <a href="">
-                      <fa-icon
-                        [icon]="faRefresh"
-                        [styles]="{ color: '#777' }"
-                      ></fa-icon>
-                    </a>
-                  </div>
-                </div>
-                <div class="product-details">
-                  <bar-rating
-                    [(rate)]="rate"
-                    [readOnly]="true"
-                    [max]="5"
-                  ></bar-rating>
-                  <a href="">
-                    <h6>Fitted Dress</h6>
-                  </a>
-                  <h4>
-                    $110
-                    <del>
-                      <span class="money"> $188 </span>
-                    </del>
-                  </h4>
-                  <ul>
-                    <li
-                      class="color-variant"
-                      style="background-color: #f00"
-                    ></li>
-                    <li
-                      class="color-variant"
-                      style="background-color: #f00"
-                    ></li>
-                    <li
-                      class="color-variant"
-                      style="background-color: #f00"
-                    ></li>
-                  </ul>
-                </div>
-              </div>
+              <app-product></app-product>
             </div>
           </div>
         </mat-tab>
         <mat-tab label="featured products"
           ><div class="row">
             <div class="col-md-3" *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8]">
-              <div class="product-card">
-                <div class="img-wrapper">
-                  <img class="img-fluid" src="assets/images/2 (1).jpg" />
-                  <div class="label-block">
-                    <div class="label1">
-                      <span>new</span>
-                    </div>
-                    <div class="label2">
-                      <span>on sale</span>
-                    </div>
-                  </div>
-                  <div class="cart-info cart-wrap">
-                    <a href="">
-                      <fa-icon
-                        [icon]="faCartShopping"
-                        [styles]="{ color: '#777' }"
-                      ></fa-icon>
-                    </a>
-                    <a href="">
-                      <fa-icon
-                        [icon]="faHeart"
-                        [styles]="{ color: '#777' }"
-                      ></fa-icon>
-                    </a>
-                    <a href="">
-                      <fa-icon
-                        [icon]="faSearch"
-                        [styles]="{ color: '#777' }"
-                      ></fa-icon>
-                    </a>
-                    <a href="">
-                      <fa-icon
-                        [icon]="faRefresh"
-                        [styles]="{ color: '#777' }"
-                      ></fa-icon>
-                    </a>
-                  </div>
-                </div>
-                <div class="product-details">
-                  <bar-rating
-                    [(rate)]="rate"
-                    [readOnly]="true"
-                    [max]="5"
-                  ></bar-rating>
-                  <a href="">
-                    <h6>Fitted Dress</h6>
-                  </a>
-                  <h4>
-                    $110
-                    <del>
-                      <span class="money"> $188 </span>
-                    </del>
-                  </h4>
-                  <ul>
-                    <li
-                      class="color-variant"
-                      style="background-color: #f00"
-                    ></li>
-                    <li
-                      class="color-variant"
-                      style="background-color: #f00"
-                    ></li>
-                    <li
-                      class="color-variant"
-                      style="background-color: #f00"
-                    ></li>
-                  </ul>
-                </div>
-              </div>
+              <app-product></app-product>
             </div>
           </div>
         </mat-tab>
         <mat-tab label="on sale">
           <div class="row">
             <div class="col-md-3" *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8]">
-              <div class="product-card">
-                <div class="img-wrapper">
-                  <img class="img-fluid" src="assets/images/2 (1).jpg" />
-                  <div class="label-block">
-                    <div class="label1">
-                      <span>new</span>
-                    </div>
-                    <div class="label2">
-                      <span>on sale</span>
-                    </div>
-                  </div>
-                  <div class="cart-info cart-wrap">
-                    <a href="">
-                      <fa-icon
-                        [icon]="faCartShopping"
-                        [styles]="{ color: '#777' }"
-                      ></fa-icon>
-                    </a>
-                    <a href="">
-                      <fa-icon
-                        [icon]="faHeart"
-                        [styles]="{ color: '#777' }"
-                      ></fa-icon>
-                    </a>
-                    <a href="">
-                      <fa-icon
-                        [icon]="faSearch"
-                        [styles]="{ color: '#777' }"
-                      ></fa-icon>
-                    </a>
-                    <a href="">
-                      <fa-icon
-                        [icon]="faRefresh"
-                        [styles]="{ color: '#777' }"
-                      ></fa-icon>
-                    </a>
-                  </div>
-                </div>
-                <div class="product-details">
-                  <bar-rating
-                    [(rate)]="rate"
-                    [readOnly]="true"
-                    [max]="5"
-                  ></bar-rating>
-                  <a href="">
-                    <h6>Fitted Dress</h6>
-                  </a>
-                  <h4>
-                    $110
-                    <del>
-                      <span class="money"> $188 </span>
-                    </del>
-                  </h4>
-                  <ul>
-                    <li
-                      class="color-variant"
-                      style="background-color: #f00"
-                    ></li>
-                    <li
-                      class="color-variant"
-                      style="background-color: #f00"
-                    ></li>
-                    <li
-                      class="color-variant"
-                      style="background-color: #f00"
-                    ></li>
-                  </ul>
-                </div>
-              </div>
+              <app-product></app-product>
             </div>
           </div>
         </mat-tab>
@@ -663,4 +198,3 @@
   </div>
 </div>
 
-<app-footer></app-footer>

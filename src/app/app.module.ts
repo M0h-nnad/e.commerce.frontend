@@ -29,9 +29,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BarRatingModule } from 'ngx-bar-rating';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './components/footer/footer.component';
+import { CollectionComponent } from './pages/collection/collection.component';
+import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavbarComponent, FooterComponent],
+  declarations: [AppComponent, HomeComponent, NavbarComponent, FooterComponent, CollectionComponent, ProductComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

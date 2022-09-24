@@ -1,0 +1,69 @@
+<div class="product-card">
+  <div class="img-wrapper">
+    <img class="img-fluid" src="assets/images/2 (1).jpg" />
+    <div class="label-block">
+      <div class="label1">
+        <span>new</span>
+      </div>
+      <div class="label2">
+        <span>on sale</span>
+      </div>
+    </div>
+    <div class="cart-info cart-wrap">
+      <a href="">
+        <fa-icon
+          [icon]="faCartShopping"
+          [styles]="{ color: '#777' }"
+        ></fa-icon>
+      </a>
+      <a href="">
+        <fa-icon
+          [icon]="faHeart"
+          [styles]="{ color: '#777' }"
+        ></fa-icon>
+      </a>
+      <a href="">
+        <fa-icon
+          [icon]="faSearch"
+          [styles]="{ color: '#777' }"
+        ></fa-icon>
+      </a>
+      <a href="">
+        <fa-icon
+          [icon]="faRefresh"
+          [styles]="{ color: '#777' }"
+        ></fa-icon>
+      </a>
+    </div>
+  </div>
+  <div class="product-details">
+    <bar-rating
+      [(rate)]="rate"
+      [readOnly]="true"
+      [max]="5"
+    ></bar-rating>
+    <a href="">
+      <h6>Fitted Dress</h6>
+    </a>
+    <h4>
+      $110
+      <del>
+        <span class="money"> $188 </span>
+      </del>
+    </h4>
+    <ul>
+      <li
+        class="color-variant"
+        style="background-color: #f00"
+      ></li>
+      <li
+        class="color-variant"
+        style="background-color: #f00"
+      ></li>
+      <li
+        class="color-variant"
+        style="background-color: #f00"
+      ></li>
+    </ul>
+  </div>
+</div>
