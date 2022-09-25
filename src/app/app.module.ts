@@ -31,9 +31,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './components/footer/footer.component';
 import { CollectionComponent } from './pages/collection/collection.component';
 import { ProductComponent } from './components/product/product.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavbarComponent, FooterComponent, CollectionComponent, ProductComponent],
+  declarations: [AppComponent, HomeComponent, NavbarComponent, FooterComponent, CollectionComponent, ProductComponent, ProductPageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

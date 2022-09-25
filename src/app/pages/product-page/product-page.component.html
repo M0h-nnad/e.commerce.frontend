@@ -1,0 +1,177 @@
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="collection-filter-block">
+          <div class="product-service">
+            <div class="media">
+              <img
+                class="img-fluid"
+                width="40"
+                height="40"
+                src="assets/images/van.svg"
+                alt="van"
+              />
+              <div class="media-body">
+                <h4>free shipping</h4>
+                <p>free shipping world wide</p>
+              </div>
+            </div>
+
+            <div class="media">
+              <img
+                class="img-fluid"
+                width="40"
+                height="40"
+                src="assets/images/247.svg"
+                alt="van"
+              />
+              <div class="media-body">
+                <h4>24 x 7 service</h4>
+                <p>online service for new customer</p>
+              </div>
+            </div>
+
+            <div class="media">
+              <img
+                class="img-fluid"
+                width="40"
+                height="40"
+                src="assets/images/mic.svg"
+                alt="van"
+              />
+              <div class="media-body">
+                <h4>festival offer</h4>
+                <p>new online special festival offer</p>
+              </div>
+            </div>
+
+            <div class="media">
+              <img
+                class="img-fluid"
+                width="40"
+                height="40"
+                src="assets/images/card.svg"
+                alt="van"
+              />
+              <div class="media-body">
+                <h4>online payment</h4>
+                <p>contrary to popular belief.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-9 col-sm-12 col-xs-12">
+        <div class="container-fluid p-0">
+          <div class="row">
+            <div class="col-lg-6">
+              <owl-carousel-o
+                #mainOwl
+                (changed)="onChange($event)"
+                [options]="customOptions"
+              >
+                <ng-template carouselSlide [id]="'1'">
+                  <img src="assets/images/39.jpg" />
+                </ng-template>
+                <ng-template carouselSlide [id]="'2'">
+                  <img src="assets/images/7.jpg" />
+                </ng-template>
+                <ng-template carouselSlide [id]="'3'">
+                  <img src="assets/images/7.jpg" />
+                </ng-template>
+              </owl-carousel-o>
+              <div class="col-12 py-2">
+                <owl-carousel-o [options]="options">
+                  <ng-template carouselSlide>
+                    <div
+                      class="border m-1"
+                      [ngClass]="{ active: activatedId == '1' }"
+                    >
+                      <img
+                        src="assets/images/39.jpg"
+                        (click)="mainOwl.to('1')"
+                      />
+                    </div>
+                  </ng-template>
+                  <ng-template carouselSlide>
+                    <div
+                      class="border m-1"
+                      [ngClass]="{ active: activatedId == '2' }"
+                    >
+                      <img
+                        src="assets/images/7.jpg"
+                        (click)="mainOwl.to('2')"
+                      />
+                    </div>
+                  </ng-template>
+
+                  <ng-template carouselSlide>
+                    <div
+                      class="border m-1"
+                      [ngClass]="{ active: activatedId == '3' }"
+                    >
+                      <img
+                        src="assets/images/7.jpg"
+                        (click)="mainOwl.to('3')"
+                      />
+                    </div>
+                  </ng-template>
+                </owl-carousel-o>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="product-right">
+                <h2>fitted dress</h2>
+                <h4>
+                  <del>$170</del>
+                  &nbsp;
+                  <span>40% off</span>
+                </h4>
+                <h3>$104.40</h3>
+                <div class="product-inventory">
+                  <p>hurry! we have only {{ 0 }} products in stock.</p>
+                  <div class="inventory">
+                    <span style="width: 95%"></span>
+                  </div>
+                </div>
+                <div class="product-discription mt-2 border-dashed">
+                  <h6>select size</h6>
+                  <ul>
+                    <li><button class="size-button">M</button></li>
+                    <li><button class="size-button">L</button></li>
+                  </ul>
+                  <h5>out of stock</h5>
+                  <h6>quantity</h6>
+                  <div class="quantity-box">
+                    <div class="input-group">
+                      <span class="input-group-prepend"></span>
+                      <input type="text" class="form-control" />
+                      <span class="input-group-prepend"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-buttons">
+                  <button class="btn">add to cart</button>
+                  <button class="btn">buy now</button>
+                </div>
+                <div class="border-dashed">
+                  <h6 class="product-title">product details</h6>
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Cum voluptas consequuntur deleniti alias omnis quidem! Non
+                    ipsam dicta voluptates nostrum animi vitae nemo cumque, nisi
+                    ipsa reprehenderit expedita neque ab voluptatum quasi
+                    aliquam dolorem id exercitationem! Voluptatem, sit unde
+                    repellat dolores ducimus molestiae corrupti consequatur
+                    mollitia numquam perferendis non ab.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
