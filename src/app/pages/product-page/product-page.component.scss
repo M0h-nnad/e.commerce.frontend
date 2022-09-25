@@ -62,6 +62,13 @@ del {
   color: #222;
 }
 
+.product-right h5 {
+  color: #ff4c3b;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 15px;
+}
+
 .product-inventory p {
   text-transform: capitalize;
   font-size: 14px;
@@ -98,4 +105,104 @@ del {
   border-radius: 100%;
   border: 0;
   padding: 10px 16px;
+}
+
+.form-control {
+  width: 80px;
+  opacity: 1;
+  text-align: center;
+  border-radius: 0px;
+  padding: 6px 16px;
+}
+
+.product-right .quantity-box .input-group {
+  justify-content: initial;
+  width: initial;
+}
+
+.btn-arrow {
+  background: #ffffff !important;
+  border: 1px solid #ced4da;
+  border-radius: 0;
+  background-color: transparent;
+  color: #777777;
+  cursor: pointer;
+  padding-left: 12px;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+  z-index: 0;
+}
+
+.product-buttons .btn {
+  line-height: 20px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 0;
+  transition: 0.3s ease-in-out;
+}
+.product-buttons {
+  display: flex;
+  gap: 10px;
+}
+.product-buttons .btn-solid {
+  padding: 13px 29px;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  border: 2px solid #ff4c3b;
+  background-image: linear-gradient(30deg, #ff4c3b 50%, transparent 50%);
+
+  background-size: 850px;
+  background-repeat: no-repeat;
+  background-position: 0;
+  transition: background 300ms ease-in-out;
+}
+
+.product-buttons .btn-solid:hover {
+  background-position: 100%;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+:host ::ng-deep .mat-tab-label {
+  color: #212529;
+  font-size: 14px;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-weight: normal;
+  opacity: 1;
+}
+
+
+:host ::ng-deep .mat-tab-label:focus:not(.mat-tab-disabled) {
+  color: #ff4c3b;
+}
+
+:host ::ng-deep .mat-ink-bar {
+  background-color: #ff4c3b !important;
+
+}
+
+
+
+:host ::ng-deep .mat-tab-label-active {
+  color: #ff4c3b;
+}
+
+:host ::ng-deep .mat-tab-body-content {
+  overflow: hidden;
+}
+:host ::ng-deep .mat-tab-header-pagination-chevron {
+  border-color: #222222;
+}
+
+mat-tab-group p{
+  line-height: 2;
+  color: #777777;
+}
+
+mat-tab-group label{
+  text-transform: capitalize;
+  color: #212529;
 }

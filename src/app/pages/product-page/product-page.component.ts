@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-product-page',
   templateUrl: './product-page.component.html',
@@ -8,6 +8,8 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class ProductPageComponent implements OnInit {
   activatedId: any = 1;
+  faArrowLeft = faArrowLeft;
+  faArrowRight = faArrowRight;
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,

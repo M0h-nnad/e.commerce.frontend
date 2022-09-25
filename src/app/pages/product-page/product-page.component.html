@@ -144,16 +144,25 @@
                   <h5>out of stock</h5>
                   <h6>quantity</h6>
                   <div class="quantity-box">
-                    <div class="input-group">
-                      <span class="input-group-prepend"></span>
-                      <input type="text" class="form-control" />
-                      <span class="input-group-prepend"></span>
+                    <div class="d-flex align-items-stretch">
+                      <button class="btn-arrow">
+                        <fa-icon [icon]="faArrowLeft"></fa-icon>
+                      </button>
+                      <input
+                        type="number"
+                        value="1"
+                        [disabled]="true"
+                        class="form-control"
+                      />
+                      <button class="btn-arrow">
+                        <fa-icon [icon]="faArrowRight"></fa-icon>
+                      </button>
                     </div>
                   </div>
                 </div>
                 <div class="product-buttons">
-                  <button class="btn">add to cart</button>
-                  <button class="btn">buy now</button>
+                  <button class="btn btn-solid">add to cart</button>
+                  <button class="btn btn-solid">buy now</button>
                 </div>
                 <div class="border-dashed">
                   <h6 class="product-title">product details</h6>
@@ -171,6 +180,83 @@
             </div>
           </div>
         </div>
+        <mat-tab-group
+          [disablePagination]="false"
+          [contentTabIndex]="0"
+          [selectedIndex]="0"
+        >
+          <div class="container">
+            <mat-tab label="Description">
+              <p class="mt-3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+                reprehenderit, quasi nulla dicta vel optio necessitatibus est
+                beatae magni aut eius mollitia id soluta doloribus dolorum fuga
+                nam ipsa dolore facere neque, sint officia. Deleniti at quas
+                alias qui voluptatibus, esse velit ipsum similique nisi
+                architecto quaerat odio ab voluptates eum illum in magni quidem
+                illo iure doloribus laboriosam eaque sit molestiae maiores?
+                Corporis quam veniam in magni itaque totam.
+              </p>
+            </mat-tab>
+
+            <mat-tab label="Write Review">
+              <div class="d-flex gap-2 align-items-center">
+                <label for="ratin">rating</label>
+                <bar-rating [rate]="3"></bar-rating>
+              </div>
+              <form
+                class="theme-form ng-untouched ng-pristine ng-valid ng-star-inserted"
+              >
+                <div class="row">
+                  <div class="col-md-6">
+                    <label for="name">Name</label
+                    ><input
+                      type="text"
+                      id="name"
+                      placeholder="Enter Your name"
+                      required=""
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label for="email">Email</label
+                    ><input
+                      type="text"
+                      id="email"
+                      placeholder="Email"
+                      required=""
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="col-md-12">
+                    <label for="review">Review Title</label
+                    ><input
+                      type="text"
+                      id="review"
+                      placeholder="Enter your Review Subjects"
+                      required=""
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="col-md-12">
+                    <label for="review">Review Title</label
+                    ><textarea
+                      placeholder="Wrire Your Testimonial Here"
+                      id="exampleFormControlTextarea1"
+                      rows="6"
+                      class="form-control"
+                    ></textarea>
+                  </div>
+                  <div class="col-md-12">
+                    <button type="submit" class="btn btn-solid">
+                      Submit YOur Review
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </mat-tab>
+          </div>
+        </mat-tab-group>
       </div>
     </div>
   </div>
