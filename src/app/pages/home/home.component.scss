@@ -143,10 +143,10 @@ a img {
 
 :host ::ng-deep .mat-tab-label {
   color: #212529;
-  font-size: 14px;
+  font-size: 18px;
   font-family: inherit;
   text-transform: uppercase;
-  font-weight: light;
+  font-weight: normal;
   opacity: 1;
 }
 
@@ -156,7 +156,6 @@ a img {
 
 :host ::ng-deep .mat-ink-bar {
   height: 0;
-  background-color: #ff4c3b !important;
 }
 
 :host ::ng-deep .mat-tab-body.mat-tab-body-active {
