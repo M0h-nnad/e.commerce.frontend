@@ -13,7 +13,7 @@
 @import "node_modules/ngx-bar-rating/themes/br-default-theme";
 @import "../node_modules/@angular/material/prebuilt-themes/purple-green.css";
 :root .br-default {
-  --br-font-size: 18px ;
+  --br-font-size: 18px;
   --br-gap: 0px;
 }
 
@@ -101,4 +101,42 @@ body {
 body {
   margin: 0;
   font-family: "lato", "Helvetica Neue", sans-serif;
+}
+
+.btn {
+  line-height: 20px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-solid {
+  padding: 13px 29px;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  border: 2px solid #ff4c3b;
+  background-image: linear-gradient(30deg, #ff4c3b 50%, transparent 50%);
+  background-size: 850px;
+  background-repeat: no-repeat;
+  background-position: 0;
+  transition: background 300ms ease-in-out;
+}
+
+.btn-solid:hover {
+  background-position: 100%;
+  color: #000000 !important;
+  background-color: #ffffff !important;
+  border-color: #ff4c3b !important;
+  box-shadow: none;
+}
+
+.form-control {
+  border-color: #dddddd;
+  font-size: 12px;
+  padding: 17px 25px;
+  margin-bottom: 30px;
+  height: inherit;
+  border-radius: 0;
 }

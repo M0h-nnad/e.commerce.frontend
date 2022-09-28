@@ -137,38 +137,12 @@ del {
   z-index: 0;
 }
 
- .btn {
-  line-height: 20px;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 700;
-  border-radius: 0;
-  transition: 0.3s ease-in-out;
-}
 .product-buttons {
   display: flex;
   gap: 10px;
   margin: 12px 0px;
 }
- .btn-solid {
-  padding: 13px 29px;
-  color: #ffffff;
-  letter-spacing: 0.05em;
-  border: 2px solid #ff4c3b;
-  background-image: linear-gradient(30deg, #ff4c3b 50%, transparent 50%);
-  background-size: 850px;
-  background-repeat: no-repeat;
-  background-position: 0;
-  transition: background 300ms ease-in-out;
-}
 
- .btn-solid:hover {
-  background-position: 100%;
-  color: #000000;
-  background-color: #ffffff;
-  border-color: #ff4c3b;
-  box-shadow: none;
-}
 
 :host ::ng-deep .mat-tab-label {
   color: #212529;

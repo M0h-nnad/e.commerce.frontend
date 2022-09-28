@@ -56,7 +56,6 @@
   font-size: 14px;
 }
 
-
 .cart-info,
 .cart-wrap {
   position: absolute;
@@ -99,4 +98,8 @@
     opacity: 1;
     transform: translateZ(0);
   }
+}
+
+.product-details h4 {
+  color: #212529;
 }

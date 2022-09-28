@@ -24,6 +24,7 @@ import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { BarRatingModule } from 'ngx-bar-rating';
@@ -32,9 +33,30 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CollectionComponent } from './pages/collection/collection.component';
 import { ProductComponent } from './components/product/product.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { WindowService } from './services/window.service';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { WishlistComponent } from './pages/wishlist/wishlist.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavbarComponent, FooterComponent, CollectionComponent, ProductComponent, ProductPageComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    NavbarComponent,
+    FooterComponent,
+    CollectionComponent,
+    ProductComponent,
+    ProductPageComponent,
+    LoginComponent,
+    RegisterComponent,
+    ForgetPasswordComponent,
+    CartComponent,
+    WishlistComponent,
+    CheckoutComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -59,8 +81,9 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
     BarRatingModule,
     FontAwesomeModule,
     MatTabsModule,
+    MatSidenavModule,
   ],
-  providers: [],
+  providers: [{ provide: 'Window', useValue: window }, WindowService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

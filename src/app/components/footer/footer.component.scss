@@ -70,17 +70,6 @@ footer p {
   justify-content: flex-end;
 }
 
-.btn-solid {
-  padding: 13px 29px;
-  color: #ffffff;
-  letter-spacing: 0.05em;
-  border: 2px solid #ff4c3b;
-  background-image: linear-gradient(30deg, #ff4c3b 50%, transparent 50%);
-  background-size: 850px;
-  background-repeat: no-repeat;
-  background-position: 0;
-  transition: background 300ms ease-in-out;
-}
 
 @media (max-width: 1367px) {
   .subscribe-form .form-control {
@@ -93,6 +82,7 @@ footer p {
   width: 345px;
   border-radius: 0;
   border: 1px solid #eeeeee;
+  margin: 0;
 }
 
 .img-container {

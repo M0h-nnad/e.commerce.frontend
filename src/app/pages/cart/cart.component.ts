@@ -1,37 +1,31 @@
+import { AfterViewInit, Component, HostListener, Inject, OnInit } from '@angular/core';
 import {
-  Component,
-  OnInit,
-  Inject,
-  AfterViewInit,
-  HostListener,
-} from '@angular/core';
-import {
-  faArrowDown,
   faArrowLeft,
   faArrowRight,
+  faX,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-collection',
-  templateUrl: './collection.component.html',
-  styleUrls: ['./collection.component.scss'],
+  selector: 'app-cart',
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.scss'],
 })
-export class CollectionComponent implements OnInit, AfterViewInit {
-  faArrowDown = faArrowDown;
+export class CartComponent implements OnInit, AfterViewInit {
   faArrowLeft = faArrowLeft;
   faArrowRight = faArrowRight;
-  isBrandOpen = true;
-  isColorOpen = true;
-  isSizeOpen = true;
-  window: any;
+  faX = faX;
+  window;
   isMobile = false;
+
   @HostListener('window:resize') Resize() {
     this.updateLayout();
   }
   constructor(@Inject('Window') window: Window) {
     this.window = window;
   }
+
   ngOnInit(): void {}
+
   ngAfterViewInit(): void {
     setTimeout(() => {
       this.updateLayout();
@@ -39,8 +33,7 @@ export class CollectionComponent implements OnInit, AfterViewInit {
   }
   updateLayout() {
     const width = this.window.innerWidth;
-    console.log(width);
-    if (width < 992) {
+    if (width < 768) {
       this.isMobile = true;
     } else {
       this.isMobile = false;

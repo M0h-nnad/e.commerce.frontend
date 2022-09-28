@@ -1,0 +1,87 @@
+<section class="cart-section py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="table-responsive">
+          <table class="table cart-table">
+            <thead>
+              <th>image</th>
+              <th>product name</th>
+              <th>price</th>
+              <th>quantity</th>
+              <th>action</th>
+              <th>total</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <a href="">
+                    <img
+                      height="90px"
+                      src="assets/images/4.jpg"
+                      alt="product name"
+                    />
+                  </a>
+                </td>
+                <td>
+                  <a href=""> dress </a>
+                </td>
+                <td>
+                  <h2>$220</h2>
+                </td>
+                <td>
+                  <div class="qty-box">
+                    <div class="input-group">
+                      <span class="input-group-prepend" *ngIf="!isMobile">
+                        <button class="btn">
+                          <fa-icon [icon]="faArrowLeft"></fa-icon>
+                        </button>
+                      </span>
+                      <input
+                        type="text"
+                        [disabled]="true"
+                        value="1"
+                        class="form-control input-number"
+                      />
+                      <span class="input-group-prepend" *ngIf="!isMobile">
+                        <button class="btn">
+                          <fa-icon [icon]="faArrowRight"></fa-icon>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <button class="btn btn-light">
+                    <fa-icon [icon]="faX"></fa-icon>
+                  </button>
+                </td>
+                <td>
+                  <h2 class="td-color">$220</h2>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text-end">total price:</td>
+                <td>$220.00</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row cart-buttons">
+      <div class="col-6">
+        <button class="btn btn-solid">continue shopping</button>
+      </div>
+      <div class="col-6 pe-1">
+        <button class="btn btn-solid">check out</button>
+      </div>
+    </div>
+  </div>
+</section>

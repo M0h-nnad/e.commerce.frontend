@@ -1,194 +1,336 @@
-<div class="container py-5">
-  <div class="row">
-    <div class="col-lg-3">
-      <div class="collection-filter">
-        <div class="collection-filter-box">
-          <div
-            class="d-flex justify-content-between"
-            (click)="!(isBrandOpen = !isBrandOpen)"
-          >
-            <h3>brand</h3>
-            <fa-icon [icon]="faArrowDown"></fa-icon>
-          </div>
-          <div
-            class="collection-collapse-block"
-            [ngClass]="{ open: isBrandOpen }"
-          >
-            <div class="d-flex mb-3 gap-2">
-              <input type="checkbox" />
-              <label for="zara">zara</label>
-            </div>
-            <div class="d-flex mb-3 gap-2">
-              <input type="checkbox" />
-              <label for="nike">nike</label>
-            </div>
-            <div class="d-flex mb-3 gap-2">
-              <input type="checkbox" />
-              <label for="denim">denim</label>
-            </div>
-            <div class="d-flex mb-3 gap-2">
-              <input type="checkbox" />
-              <label for="madame">madame</label>
-            </div>
-            <div class="d-flex mb-3 gap-2">
-              <input type="checkbox" />
-              <label for="biba">biba</label>
-            </div>
-          </div>
-        </div>
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="over" #drawer>
+    <div class="row mx-2">
+      <div class="col-12">
+        <button class="btn" (click)="drawer.close()">
 
-        <div class="collection-filter-box">
-          <div
-            class="d-flex justify-content-between"
-            (click)="!(isColorOpen = !isColorOpen)"
-          >
-            <h3>Colors</h3>
-            <fa-icon [icon]="faArrowDown"></fa-icon>
-          </div>
-          <div
-            class="collection-collapse-block"
-            [ngClass]="{ open: isColorOpen }"
-          >
-            <div class="color-filter">
+          <h4 >
+            <fa-icon [icon]="faArrowLeft" [size]="'xs'"></fa-icon>&nbsp; back
+          </h4>
+        </button>
+        <hr />
+        <div class="collection-filter">
+          <div class="collection-filter-box">
+            <div
+              class="d-flex justify-content-between"
+              (click)="!(isBrandOpen = !isBrandOpen)"
+            >
+              <h3>brand</h3>
+              <fa-icon [icon]="faArrowDown"></fa-icon>
+            </div>
+            <div
+              class="collection-collapse-block"
+              [ngClass]="{ open: isBrandOpen }"
+            >
               <div class="d-flex mb-3 gap-2">
                 <input type="checkbox" />
-                <label for="yellow">yellow</label>
+                <label for="zara">zara</label>
               </div>
               <div class="d-flex mb-3 gap-2">
                 <input type="checkbox" />
-                <label for="sky blue">sky blue</label>
+                <label for="nike">nike</label>
               </div>
               <div class="d-flex mb-3 gap-2">
                 <input type="checkbox" />
-                <label for="green">green</label>
+                <label for="denim">denim</label>
               </div>
               <div class="d-flex mb-3 gap-2">
                 <input type="checkbox" />
-                <label for="gray">gray</label>
+                <label for="madame">madame</label>
               </div>
               <div class="d-flex mb-3 gap-2">
                 <input type="checkbox" />
-                <label for="maroon">maroon</label>
-              </div>
-
-              <div class="d-flex mb-3 gap-2">
-                <input type="checkbox" />
-                <label for="blue">blue</label>
-              </div>
-
-              <div class="d-flex mb-3 gap-2">
-                <input type="checkbox" />
-                <label for="yellow">yellow</label>
-              </div>
-
-              <div class="d-flex mb-3 gap-2">
-                <input type="checkbox" />
-                <label for="white">white</label>
+                <label for="biba">biba</label>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="collection-filter-box">
-          <div
-            class="d-flex justify-content-between"
-            (click)="!(isSizeOpen = !isSizeOpen)"
-          >
-            <h3>size</h3>
-            <fa-icon [icon]="faArrowDown"></fa-icon>
-          </div>
-          <div
-            class="collection-collapse-block"
-            [ngClass]="{ open: isSizeOpen }"
-          >
-            <div class="d-flex mb-3 gap-2">
-              <input type="checkbox" />
-              <label for="s">s</label>
+          <div class="collection-filter-box">
+            <div
+              class="d-flex justify-content-between"
+              (click)="!(isColorOpen = !isColorOpen)"
+            >
+              <h3>Colors</h3>
+              <fa-icon [icon]="faArrowDown"></fa-icon>
             </div>
-            <div class="d-flex mb-3 gap-2">
-              <input type="checkbox" />
-              <label for="m">m</label>
-            </div>
-            <div class="d-flex mb-3 gap-2">
-              <input type="checkbox" />
-              <label for="l">l</label>
-            </div>
-            <div class="d-flex mb-3 gap-2">
-              <input type="checkbox" />
-              <label for="xs">xs</label>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="top-banner">
-        <h4>fashion</h4>
-        <h5>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
-          similique.
-        </h5>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum
-          commodi quam, nisi vel nemo, tempora, officiis delectus accusamus odio
-          quasi eius asperiores blanditiis expedita? Labore vel dolorem, hic et
-          facere aspernatur odit sed ab repellendus, quasi libero beatae sint
-          perspiciatis doloribus! Provident iste reiciendis recusandae
-          laboriosam accusamus ipsam asperiores eveniet?
-        </p>
-      </div>
-      <div class="collection-product-wrapper">
-        <div class="product-top-filter text-center">
-          <h5>showing product {{ 1 }} - {{ 16 }} of {{ 198 }} results</h5>
-        </div>
-      </div>
-      <div class="product-wrapper-grid">
-        <div class="row">
-          <div
-            class="col-xl-3 col-md-6 mt-5"
-            *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7]"
-          >
-            <app-product></app-product>
-          </div>
-        </div>
-      </div>
+            <div
+              class="collection-collapse-block"
+              [ngClass]="{ open: isColorOpen }"
+            >
+              <div class="color-filter">
+                <div class="d-flex mb-3 gap-2">
+                  <input type="checkbox" />
+                  <label for="yellow">yellow</label>
+                </div>
+                <div class="d-flex mb-3 gap-2">
+                  <input type="checkbox" />
+                  <label for="sky blue">sky blue</label>
+                </div>
+                <div class="d-flex mb-3 gap-2">
+                  <input type="checkbox" />
+                  <label for="green">green</label>
+                </div>
+                <div class="d-flex mb-3 gap-2">
+                  <input type="checkbox" />
+                  <label for="gray">gray</label>
+                </div>
+                <div class="d-flex mb-3 gap-2">
+                  <input type="checkbox" />
+                  <label for="maroon">maroon</label>
+                </div>
 
-      <div class="product-pagination">
-        <div class="container-fluid p-0">
-          <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12">
-              <nav>
-                <ul >
-                  <li class="page-item">
-                    <a>
-                      <fa-icon [icon]="faArrowLeft"></fa-icon>
-                    </a>
-                  </li>
-                  <li class="page-item active">
-                    <a>1</a>
-                  </li>
-                  <li class="page-item">
-                    <a>2</a>
-                  </li>
-                  <li class="page-item">
-                    <a>3</a>
-                  </li>
-                  <li class="page-item">
-                    <a>
-                      <fa-icon [icon]="faArrowRight"></fa-icon>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
+                <div class="d-flex mb-3 gap-2">
+                  <input type="checkbox" />
+                  <label for="blue">blue</label>
+                </div>
+
+                <div class="d-flex mb-3 gap-2">
+                  <input type="checkbox" />
+                  <label for="yellow">yellow</label>
+                </div>
+
+                <div class="d-flex mb-3 gap-2">
+                  <input type="checkbox" />
+                  <label for="white">white</label>
+                </div>
+              </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-12">
-              <div class="product-search-count-bottom">
-                <h5>showing product {{ 1 }} - {{ 16 }} of {{ 198 }} results</h5>
+          </div>
+
+          <div class="collection-filter-box">
+            <div
+              class="d-flex justify-content-between"
+              (click)="!(isSizeOpen = !isSizeOpen)"
+            >
+              <h3>size</h3>
+              <fa-icon [icon]="faArrowDown"></fa-icon>
+            </div>
+            <div
+              class="collection-collapse-block"
+              [ngClass]="{ open: isSizeOpen }"
+            >
+              <div class="d-flex mb-3 gap-2">
+                <input type="checkbox" />
+                <label for="s">s</label>
+              </div>
+              <div class="d-flex mb-3 gap-2">
+                <input type="checkbox" />
+                <label for="m">m</label>
+              </div>
+              <div class="d-flex mb-3 gap-2">
+                <input type="checkbox" />
+                <label for="l">l</label>
+              </div>
+              <div class="d-flex mb-3 gap-2">
+                <input type="checkbox" />
+                <label for="xs">xs</label>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-lg-3" *ngIf="!isMobile">
+          <div class="collection-filter">
+            <div class="collection-filter-box">
+              <div
+                class="d-flex justify-content-between"
+                (click)="!(isBrandOpen = !isBrandOpen)"
+              >
+                <h3>brand</h3>
+                <fa-icon [icon]="faArrowDown"></fa-icon>
+              </div>
+              <div
+                class="collection-collapse-block"
+                [ngClass]="{ open: isBrandOpen }"
+              >
+                <div class="d-flex mb-3 gap-2">
+                  <input type="checkbox" />
+                  <label for="zara">zara</label>
+                </div>
+                <div class="d-flex mb-3 gap-2">
+                  <input type="checkbox" />
+                  <label for="nike">nike</label>
+                </div>
+                <div class="d-flex mb-3 gap-2">
+                  <input type="checkbox" />
+                  <label for="denim">denim</label>
+                </div>
+                <div class="d-flex mb-3 gap-2">
+                  <input type="checkbox" />
+                  <label for="madame">madame</label>
+                </div>
+                <div class="d-flex mb-3 gap-2">
+                  <input type="checkbox" />
+                  <label for="biba">biba</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="collection-filter-box">
+              <div
+                class="d-flex justify-content-between"
+                (click)="!(isColorOpen = !isColorOpen)"
+              >
+                <h3>Colors</h3>
+                <fa-icon [icon]="faArrowDown"></fa-icon>
+              </div>
+              <div
+                class="collection-collapse-block"
+                [ngClass]="{ open: isColorOpen }"
+              >
+                <div class="color-filter">
+                  <div class="d-flex mb-3 gap-2">
+                    <input type="checkbox" />
+                    <label for="yellow">yellow</label>
+                  </div>
+                  <div class="d-flex mb-3 gap-2">
+                    <input type="checkbox" />
+                    <label for="sky blue">sky blue</label>
+                  </div>
+                  <div class="d-flex mb-3 gap-2">
+                    <input type="checkbox" />
+                    <label for="green">green</label>
+                  </div>
+                  <div class="d-flex mb-3 gap-2">
+                    <input type="checkbox" />
+                    <label for="gray">gray</label>
+                  </div>
+                  <div class="d-flex mb-3 gap-2">
+                    <input type="checkbox" />
+                    <label for="maroon">maroon</label>
+                  </div>
+
+                  <div class="d-flex mb-3 gap-2">
+                    <input type="checkbox" />
+                    <label for="blue">blue</label>
+                  </div>
+
+                  <div class="d-flex mb-3 gap-2">
+                    <input type="checkbox" />
+                    <label for="yellow">yellow</label>
+                  </div>
+
+                  <div class="d-flex mb-3 gap-2">
+                    <input type="checkbox" />
+                    <label for="white">white</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="collection-filter-box">
+              <div
+                class="d-flex justify-content-between"
+                (click)="!(isSizeOpen = !isSizeOpen)"
+              >
+                <h3>size</h3>
+                <fa-icon [icon]="faArrowDown"></fa-icon>
+              </div>
+              <div
+                class="collection-collapse-block"
+                [ngClass]="{ open: isSizeOpen }"
+              >
+                <div class="d-flex mb-3 gap-2">
+                  <input type="checkbox" />
+                  <label for="s">s</label>
+                </div>
+                <div class="d-flex mb-3 gap-2">
+                  <input type="checkbox" />
+                  <label for="m">m</label>
+                </div>
+                <div class="d-flex mb-3 gap-2">
+                  <input type="checkbox" />
+                  <label for="l">l</label>
+                </div>
+                <div class="d-flex mb-3 gap-2">
+                  <input type="checkbox" />
+                  <label for="xs">xs</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="top-banner mb-3">
+            <h4>fashion</h4>
+            <h5>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Excepturi, similique.
+            </h5>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Voluptatum commodi quam, nisi vel nemo, tempora, officiis delectus
+              accusamus odio quasi eius asperiores blanditiis expedita? Labore
+              vel dolorem, hic et facere aspernatur odit sed ab repellendus,
+              quasi libero beatae sint perspiciatis doloribus! Provident iste
+              reiciendis recusandae laboriosam accusamus ipsam asperiores
+              eveniet?
+            </p>
+            <button class="btn btn-solid" *ngIf="isMobile" (click)="drawer.open()">Filter</button>
+          </div>
+          <div class="collection-product-wrapper">
+            <div class="product-top-filter text-center">
+              <h5>showing product {{ 1 }} - {{ 16 }} of {{ 198 }} results</h5>
+            </div>
+          </div>
+          <div class="product-wrapper-grid">
+            <div class="row">
+              <div
+                class="col-xl-3 col-md-6 mt-5"
+                *ngFor="
+                  let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7]
+                "
+              >
+                <app-product></app-product>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-pagination">
+            <div class="container-fluid p-0">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <nav>
+                    <ul>
+                      <li class="page-item">
+                        <a>
+                          <fa-icon [icon]="faArrowLeft"></fa-icon>
+                        </a>
+                      </li>
+                      <li class="page-item active">
+                        <a>1</a>
+                      </li>
+                      <li class="page-item">
+                        <a>2</a>
+                      </li>
+                      <li class="page-item">
+                        <a>3</a>
+                      </li>
+                      <li class="page-item">
+                        <a>
+                          <fa-icon [icon]="faArrowRight"></fa-icon>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="product-search-count-bottom">
+                    <h5>
+                      showing product {{ 1 }} - {{ 16 }} of {{ 198 }} results
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

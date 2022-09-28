@@ -1,0 +1,129 @@
+h3 {
+  color: #222;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+.checkout .form-group .form-label {
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #222;
+}
+
+.checkout .form-group .form-control {
+  margin-bottom: 0;
+}
+
+.checkout .form-group .error {
+  color: #ff4c3b;
+  text-transform: capitalize;
+}
+
+.checkout-details {
+  position: relative;
+  background-color: #fafafa;
+  padding: 40px;
+  border: 2px solid #eee;
+}
+
+.checkout-details .order-box .title-box {
+  border-bottom: 2px solid #eee;
+  padding-bottom: 1.1rem;
+}
+
+.checkout-details .order-box .title-box span {
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.checkout-details .order-box .sub-items {
+  border-bottom: 2px solid #eee;
+  padding: 1.1rem 0;
+}
+
+.checkout-details .order-box .sub-items span {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0.5rem 0;
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+.checkout-details .order-box .sub-items span.price {
+  font-size: 18px;
+}
+
+.checkout-details .order-box .sub-total {
+  border-bottom: 2px solid #eee;
+  padding: 1.1rem 0;
+}
+
+.checkout-details .order-box .sub-total span {
+  font-size: 15px;
+  font-weight: bold;
+  color: #222;
+  text-transform: capitalize;
+  margin: 0.5rem 0;
+  display: block;
+}
+
+.checkout-details .order-box .sub-total span.price {
+  color: #ff4c3b;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.checkout-details .order-box .sub-total .shipping-option:not(:last-child) {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.checkout-details .order-box .sub-total .shipping-option label {
+  color: #777;
+  font-size: 15px;
+  text-transform: capitalize;
+  margin-left: 10px;
+  vertical-align: text-bottom;
+  font-weight: bold;
+}
+
+.checkout-details .order-box .total {
+  padding: 1.1rem 0;
+}
+
+.checkout-details .order-box .total span {
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+.checkout-details .order-box .total span.price {
+  color: #ff4c3b;
+}
+
+.checkout-details .payment-box {
+  margin-top: 1rem;
+}
+
+.checkout-details .payment-box .upper-box ul {
+  padding: 0;
+  list-style: none;
+}
+
+.checkout-details .payment-box .upper-box ul li:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.checkout-details .payment-box .upper-box ul li .radio-option {
+  display: flex;
+  gap: 5px;
+}
+
+.checkout-details .payment-box .upper-box ul li .radio-option label {
+  font-size: 15px;
+  color: #777;
+  text-transform: capitalize;
+  font-weight: bold;
+}

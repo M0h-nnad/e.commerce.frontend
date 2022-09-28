@@ -1,0 +1,59 @@
+<section class="cart-section py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="table-responsive">
+          <table class="table cart-table">
+            <thead>
+              <th>image</th>
+              <th>product name</th>
+              <th>price</th>
+              <th>availability</th>
+              <th>action</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <a href="">
+                    <img
+                      height="90px"
+                      src="assets/images/4.jpg"
+                      alt="product name"
+                    />
+                  </a>
+                </td>
+                <td>
+                  <a href=""> dress </a>
+                </td>
+                <td>
+                  <h2>$220</h2>
+                </td>
+
+                <td>
+                  <p>in stock</p>
+                </td>
+
+                <td>
+                  <div class="d-flex gap-2 justify-content-center">
+                    <button class="btn btn-light">
+                      <fa-icon [icon]="faX"></fa-icon>
+                    </button>
+                    <button class="btn btn-light">
+                      <fa-icon [icon]="faCartShopping"></fa-icon>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row cart-buttons">
+      <div class="col-12 d-inline-flex gap-2 justify-content-end">
+        <button class="btn btn-solid">continue shopping</button>
+        <button class="btn btn-solid">check out</button>
+      </div>
+    </div>
+  </div>
+</section>
