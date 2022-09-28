@@ -40,6 +40,7 @@ import { ForgetPasswordComponent } from './pages/forget-password/forget-password
 import { CartComponent } from './pages/cart/cart.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { OrderSuccessComponent } from './pages/order-success/order-success.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
     CartComponent,
     WishlistComponent,
     CheckoutComponent,
+    OrderSuccessComponent,
   ],
   imports: [
     BrowserModule,

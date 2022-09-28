@@ -9,6 +9,7 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
 import { RegisterComponent } from './pages/register/register.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { OrderSuccessComponent } from './pages/order-success/order-success.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },
+  { path: 'order-success', component: OrderSuccessComponent },
   { path: 'wishlist', component: WishlistComponent },
   { path: 'forget-password', component: ForgetPasswordComponent },
   { path: '**', redirectTo: 'collection' },

@@ -1,0 +1,115 @@
+.light-layout {
+  background-color: #f9f9f9;
+}
+
+.light-layout .text-center p {
+  color: #777;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+.product-order {
+  margin-bottom: 1rem;
+}
+
+.product-order h3 {
+  color: #222;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.product-order .product-details img {
+  height: 130px;
+}
+
+.product-order .product-details .order-detail {
+  display: flex;
+  align-items: center;
+}
+
+.product-order .product-details .order-detail h4 {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.product-order .product-details .order-detail h5 {
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+.total-sec {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 2px solid #eee;
+  border-bottom: 2px solid #eee;
+}
+
+.total-sec ul {
+  list-style: none;
+  padding: 0;
+}
+
+.total-sec ul li {
+  font-size: 18px;
+  text-transform: capitalize;
+  color: #222;
+  margin: 10px 0;
+}
+
+.total-sec ul li span {
+  float: right;
+}
+
+.final-total {
+  margin-top: 10px;
+}
+
+.final-total h3 {
+  font-weight: bold;
+  color: #222;
+  text-transform: capitalize;
+}
+
+.final-total h3 span {
+  float: right;
+}
+
+.order-success-sec h4 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.order-success-sec .order-detail ul {
+  padding: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.order-success-sec .order-detail ul li {
+  text-transform: capitalize;
+  font-size: 16px;
+  color: #222;
+}
+
+.order-success-sec .payment-mode p{
+  color: #777;
+  line-height: 1.5;
+  font-size: 16px;
+  letter-spacing: 0.05rem;
+}
+
+.order-success-sec .delivery-sec{
+  text-align: center;
+  background-color: #fafafa;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+.order-success-sec .delivery-sec h3,.order-success-sec .delivery-sec h2{
+  color: #222;
+  text-transform: capitalize;
+}
+
+.order-success-sec .delivery-sec h2{
+  font-size: 32px;
+}
