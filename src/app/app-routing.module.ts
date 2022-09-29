@@ -12,21 +12,23 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { OrderSuccessComponent } from './pages/order-success/order-success.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { AddressBookComponent } from './pages/address-book/address-book.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'collection', component: CollectionComponent },
-  { path: 'product', component: ProductPageComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'checkout', component: CheckoutComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'order-success', component: OrderSuccessComponent },
   { path: 'wishlist', component: WishlistComponent },
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'product', component: ProductPageComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'collection', component: CollectionComponent },
+  { path: 'address-book', component: AddressBookComponent },
+  { path: 'order-success', component: OrderSuccessComponent },
   { path: 'forget-password', component: ForgetPasswordComponent },
-  { path: '**', redirectTo: 'collection' },
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({
