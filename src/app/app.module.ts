@@ -45,6 +45,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AddressBookComponent } from './pages/address-book/address-book.component';
 import { ChangePasswordComponent } from './pages/change-password/change-password.component';
+import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { ChangePasswordComponent } from './pages/change-password/change-password
     DashboardComponent,
     AddressBookComponent,
     ChangePasswordComponent,
+    MyOrdersComponent,
   ],
   imports: [
     BrowserModule,

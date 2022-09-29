@@ -14,6 +14,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AddressBookComponent } from './pages/address-book/address-book.component';
 import { ChangePasswordComponent } from './pages/change-password/change-password.component';
+import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
 
 const routes: Routes = [
   { path: 'cart', component: CartComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'collection', component: CollectionComponent },
   { path: 'address-book', component: AddressBookComponent },
   { path: 'order-success', component: OrderSuccessComponent },
+  { path: 'my-order', component: MyOrdersComponent },
   { path: 'change-password', component: ChangePasswordComponent },
   { path: 'forget-password', component: ForgetPasswordComponent },
   { path: '**', redirectTo: 'home' },
