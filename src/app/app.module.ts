@@ -41,6 +41,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { OrderSuccessComponent } from './pages/order-success/order-success.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { OrderSuccessComponent } from './pages/order-success/order-success.compo
     WishlistComponent,
     CheckoutComponent,
     OrderSuccessComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
