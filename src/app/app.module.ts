@@ -44,6 +44,7 @@ import { OrderSuccessComponent } from './pages/order-success/order-success.compo
 import { ProfileComponent } from './pages/profile/profile.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AddressBookComponent } from './pages/address-book/address-book.component';
+import { ChangePasswordComponent } from './pages/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { AddressBookComponent } from './pages/address-book/address-book.componen
     ProfileComponent,
     DashboardComponent,
     AddressBookComponent,
+    ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,
