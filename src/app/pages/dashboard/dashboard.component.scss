@@ -1,0 +1,71 @@
+.block-content {
+  background-color: #fafafa;
+  padding: 12px 0px;
+}
+.block-content ul {
+  padding: 0;
+  list-style: none;
+}
+
+.block-content ul li {
+  padding: 8px 20px;
+  text-transform: capitalize;
+  font-size: 15px;
+}
+
+.block-content ul li.active {
+  color: #ff4c3b;
+  border-right: 2px solid #ff4c3b;
+}
+
+.dashboard .page-title h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.welcome-msg p {
+  color: #777;
+}
+
+.box-account .box-title h2 {
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+.box-account .box .box-title {
+  padding: 10px;
+  background-color: #fafafa;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.box-account .box .box-title h3 {
+  text-transform: capitalize;
+  font-size: 15px;
+}
+
+.box-account .box .box-title a {
+  color: #ff4c3b;
+  text-transform: capitalize;
+}
+
+.box-account .box .box-content h6 {
+  margin-bottom: 0;
+}
+
+.box-account .box .box-content h6 a {
+  text-transform: capitalize;
+  color: #ff4c3b;
+}
+
+.box h6 {
+  text-transform: capitalize;
+}
+.box address {
+  color: #222;
+}
+.box address a {
+  text-transform: capitalize;
+  color: #ff4c3b;
+}

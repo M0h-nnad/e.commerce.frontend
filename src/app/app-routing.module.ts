@@ -11,6 +11,7 @@ import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { OrderSuccessComponent } from './pages/order-success/order-success.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'order-success', component: OrderSuccessComponent },
