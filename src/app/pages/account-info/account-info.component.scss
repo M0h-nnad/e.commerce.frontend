@@ -1,31 +1,3 @@
-.block-content {
-  background-color: #fafafa;
-  padding: 12px 0px;
-}
-.block-content ul {
-  padding: 0;
-  list-style: none;
-}
-
-.block-content ul li {
-  padding: 8px 20px;
-  text-transform: capitalize;
-  font-size: 15px;
-}
-
-.block-content ul li a{
-  color: #222;
-}
-
-.block-content ul li a.active{
-  color: #ff4c3b;
-}
-
-.block-content ul li:has(a.active){
-  color: #ff4c3b;
-  border-right: 2px solid #ff4c3b;
-}
-
 .dashboard .page-title h2 {
   font-size: 22px;
   margin-bottom: 15px;

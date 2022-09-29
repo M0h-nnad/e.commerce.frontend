@@ -4,92 +4,30 @@
       <div class="col-lg-3">
         <div class="block-content">
           <ul>
-            <li class="active">
-              <a>account info</a>
+            <li>
+              <a routerLinkActive="active" [routerLink]="'account-info'">account info</a>
             </li>
             <li>
-              <a>address book</a>
+              <a routerLinkActive="active" [routerLink]="'address-book'">address book</a>
             </li>
             <li>
-              <a>my orders</a>
+              <a routerLinkActive="active" [routerLink]="'my-orders'">my orders</a>
             </li>
             <li>
-              <a>my whislist</a>
+              <a routerLinkActive="active" [routerLink]="'/wishlist'">my whislist</a>
             </li>
             <li>
-              <a>my account</a>
+              <a routerLinkActive="active" [routerLink]="'profile'">my account</a>
             </li>
 
             <li>
-              <a>change password</a>
+              <a routerLinkActive="active" [routerLink]="'change-password'">change password</a>
             </li>
           </ul>
         </div>
       </div>
       <div class="col-lg-9">
-        <div class="dashboard">
-          <div class="page-title">
-            <h2>my dashboard</h2>
-          </div>
-          <div class="welcome-msg">
-            <p>Hello, MARK JECNO !</p>
-            <p>
-              From your My Account Dashboard you have the ability to view a
-              snapshot of your recent account activity and update your account
-              information. Select a link below to view or edit information.
-            </p>
-          </div>
-          <div class="box-account box-info">
-            <div class="box-title">
-              <h2>account information</h2>
-            </div>
-
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="box">
-                  <div class="box-title">
-                    <h3>contact information</h3>
-                    <a>edit</a>
-                  </div>
-                  <div class="box-content">
-                    <h6>MARK JECNO</h6>
-                    <h6>MARk-JECNO@gmail.com</h6>
-                    <h6><a> change password </a></h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="box">
-                <div class="box-title">
-                  <h3>
-                    address book
-                  </h3>
-                  <a>manage address</a>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <h6>default billing address</h6>
-                    <address>
-                      You have not set a default billing address.
-                      <br>
-                      <a>edit address</a>
-                    </address>
-                  </div>
-                  <div class="col-sm-6">
-                    <h6>default shipping address</h6>
-                    <address>
-                      You have not set a default shipping address.
-                      <br>
-                      <a>edit address</a>
-                    </address>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <router-outlet></router-outlet>
       </div>
     </div>
   </div>

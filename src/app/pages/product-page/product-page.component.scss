@@ -107,7 +107,7 @@ del {
   padding: 10px 16px;
 }
 
-.form-control {
+.product-right .form-control {
   border-radius: 0px;
   padding: 6px 16px;
 }
@@ -115,7 +115,8 @@ del {
 .product-right .form-control{
   width: 80px;
   text-align: center;
-
+  margin: 0;
+  height: 45px;
 }
 
 .product-right .quantity-box .input-group {
@@ -135,6 +136,10 @@ del {
   font-weight: 900;
   line-height: 1;
   z-index: 0;
+}
+
+.btn{
+  font-weight: normal;
 }
 
 .product-buttons {

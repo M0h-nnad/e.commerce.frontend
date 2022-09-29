@@ -15,22 +15,29 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AddressBookComponent } from './pages/address-book/address-book.component';
 import { ChangePasswordComponent } from './pages/change-password/change-password.component';
 import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
+import { AccountInfoComponent } from './pages/account-info/account-info.component';
 
 const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'wishlist', component: WishlistComponent },
-  { path: 'checkout', component: CheckoutComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'wishlist', component: WishlistComponent },
   { path: 'product', component: ProductPageComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    children: [
+      { path: 'profile', component: ProfileComponent },
+      { path: 'my-orders', component: MyOrdersComponent },
+      { path: 'address-book', component: AddressBookComponent },
+      { path: 'account-info', component: AccountInfoComponent },
+      { path: 'change-password', component: ChangePasswordComponent },
+    ],
+  },
   { path: 'collection', component: CollectionComponent },
-  { path: 'address-book', component: AddressBookComponent },
   { path: 'order-success', component: OrderSuccessComponent },
-  { path: 'my-order', component: MyOrdersComponent },
-  { path: 'change-password', component: ChangePasswordComponent },
   { path: 'forget-password', component: ForgetPasswordComponent },
   { path: '**', redirectTo: 'home' },
 ];

@@ -1,5 +1,11 @@
-import { Component, ElementRef, HostListener, ViewChild,OnInit } from '@angular/core';
-
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  ViewChild,
+  OnInit,
+} from '@angular/core';
+import { faCartShopping,faUser } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -8,7 +14,8 @@ import { Component, ElementRef, HostListener, ViewChild,OnInit } from '@angular/
 export class NavbarComponent implements OnInit {
   @ViewChild('dropdownMenu') dropdownMenu!: ElementRef;
   menuExpanded = false;
-
+  faCartShopping = faCartShopping;
+  faUser =faUser ;
   constructor() {}
 
   ngOnInit(): void {}
