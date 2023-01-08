@@ -16,6 +16,7 @@ import { AddressBookComponent } from './pages/address-book/address-book.componen
 import { ChangePasswordComponent } from './pages/change-password/change-password.component';
 import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
 import { AccountInfoComponent } from './pages/account-info/account-info.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: 'cart', component: CartComponent },
@@ -39,7 +40,8 @@ const routes: Routes = [
   { path: 'collection', component: CollectionComponent },
   { path: 'order-success', component: OrderSuccessComponent },
   { path: 'forget-password', component: ForgetPasswordComponent },
-  { path: '**', redirectTo: 'home' },
+  { path: '404', component: NotFoundComponent },
+  { path: '**', redirectTo: '404' },
 ];
 
 @NgModule({

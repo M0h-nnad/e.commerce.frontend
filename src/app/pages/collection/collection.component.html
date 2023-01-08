@@ -3,9 +3,13 @@
     <div class="row mx-2">
       <div class="col-12">
         <button class="btn" (click)="drawer.close()">
+          <h4>
+            <fa-icon class="text-dark"
 
-          <h4 >
-            <fa-icon [icon]="faArrowLeft" [size]="'xs'"></fa-icon>&nbsp; back
+              [icon]="faArrowLeft"
+              [size]="'xs'"
+            ></fa-icon
+            >&nbsp; back
           </h4>
         </button>
         <hr />
@@ -16,7 +20,7 @@
               (click)="!(isBrandOpen = !isBrandOpen)"
             >
               <h3>brand</h3>
-              <fa-icon [icon]="faArrowDown"></fa-icon>
+              <fa-icon class="text-dark" [icon]="faArrowDown"></fa-icon>
             </div>
             <div
               class="collection-collapse-block"
@@ -51,7 +55,7 @@
               (click)="!(isColorOpen = !isColorOpen)"
             >
               <h3>Colors</h3>
-              <fa-icon [icon]="faArrowDown"></fa-icon>
+              <fa-icon class="text-dark" [icon]="faArrowDown"></fa-icon>
             </div>
             <div
               class="collection-collapse-block"
@@ -103,7 +107,7 @@
               (click)="!(isSizeOpen = !isSizeOpen)"
             >
               <h3>size</h3>
-              <fa-icon [icon]="faArrowDown"></fa-icon>
+              <fa-icon class="text-dark" [icon]="faArrowDown"></fa-icon>
             </div>
             <div
               class="collection-collapse-block"
@@ -142,7 +146,7 @@
                 (click)="!(isBrandOpen = !isBrandOpen)"
               >
                 <h3>brand</h3>
-                <fa-icon [icon]="faArrowDown"></fa-icon>
+                <fa-icon class="text-dark" [icon]="faArrowDown"></fa-icon>
               </div>
               <div
                 class="collection-collapse-block"
@@ -177,7 +181,7 @@
                 (click)="!(isColorOpen = !isColorOpen)"
               >
                 <h3>Colors</h3>
-                <fa-icon [icon]="faArrowDown"></fa-icon>
+                <fa-icon class="text-dark" [icon]="faArrowDown"></fa-icon>
               </div>
               <div
                 class="collection-collapse-block"
@@ -229,7 +233,7 @@
                 (click)="!(isSizeOpen = !isSizeOpen)"
               >
                 <h3>size</h3>
-                <fa-icon [icon]="faArrowDown"></fa-icon>
+                <fa-icon class="text-dark" [icon]="faArrowDown"></fa-icon>
               </div>
               <div
                 class="collection-collapse-block"
@@ -271,7 +275,13 @@
               reiciendis recusandae laboriosam accusamus ipsam asperiores
               eveniet?
             </p>
-            <button class="btn btn-solid" *ngIf="isMobile" (click)="drawer.open()">Filter</button>
+            <button
+              class="btn btn-solid"
+              *ngIf="isMobile"
+              (click)="drawer.open()"
+            >
+              Filter
+            </button>
           </div>
           <div class="collection-product-wrapper">
             <div class="product-top-filter text-center">
@@ -299,7 +309,7 @@
                     <ul>
                       <li class="page-item">
                         <a>
-                          <fa-icon [icon]="faArrowLeft"></fa-icon>
+                          <fa-icon class="text-dark" [icon]="faArrowLeft"></fa-icon>
                         </a>
                       </li>
                       <li class="page-item active">
@@ -313,7 +323,7 @@
                       </li>
                       <li class="page-item">
                         <a>
-                          <fa-icon [icon]="faArrowRight"></fa-icon>
+                          <fa-icon class="text-dark" [icon]="faArrowRight"></fa-icon>
                         </a>
                       </li>
                     </ul>

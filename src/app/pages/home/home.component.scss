@@ -6,6 +6,11 @@
   background-image: url("../../../assets/images/2.jpg");
 }
 
+.btn:hover{
+  box-shadow: none;
+  border-color: #ff4c3b !important;
+}
+
 .banner {
   background-position: center;
   background-repeat: no-repeat;

@@ -20,6 +20,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {}
 
+
   handleMouseover() {
     setTimeout(() => {
       this.menuExpanded = true;
@@ -37,11 +38,7 @@ export class NavbarComponent implements OnInit {
 
     const isToggler = target.getAttribute('id') === 'navbarDropdown';
 
-    if (
-      !this.menuExpanded ||
-      isToggler ||
-      dropdownMenu.nativeElement.contains(target)
-    ) {
+    if (!this.menuExpanded || isToggler || dropdownMenu.nativeElement.contains(target)) {
       return;
     }
 

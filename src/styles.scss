@@ -43,7 +43,7 @@
 
 @font-face {
   font-family: "lato";
-  src: url("./assets/fonts/lato-BoldItalic.ttf") format("truetype");
+  src: url("./assets/fonts/Lato-BoldItalic.ttf") format("truetype");
   font-weight: 700;
   font-style: italic;
 }
@@ -139,4 +139,8 @@ body {
   margin-bottom: 30px;
   height: inherit;
   border-radius: 0;
+}
+
+a{
+  color: #222;
 }
