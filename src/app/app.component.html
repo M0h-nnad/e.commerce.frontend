@@ -1,3 +1,9 @@
 <app-navbar></app-navbar>
+<div
+  *ngIf="isLoading"
+  class="position-fixed z-index-2 bg-white w-100 top-0 left-0 vh-100 d-flex align-items-center justify-content-center"
+>
+  <img src="assets/images/Infinity.svg" alt="loading" />
+</div>
 <router-outlet></router-outlet>
 <app-footer></app-footer>

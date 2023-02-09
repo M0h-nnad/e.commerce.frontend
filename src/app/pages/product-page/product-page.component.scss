@@ -30,10 +30,6 @@
   border: 0;
 }
 
-.active {
-  border-color: #aaa !important;
-}
-
 .border-dashed {
   border-top: 1px dashed #dddddd;
   padding-top: 15px;
@@ -107,12 +103,65 @@ del {
   padding: 10px 16px;
 }
 
+.product-right .color-variant li.active {
+  border: 1px solid black;
+  position: relative;
+}
+
+.product-right .color-variant li.active:after {
+  content: "";
+  top: 10px;
+  right: 4px;
+  height: 15px;
+  width: 15px;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='%23000' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/></svg>");
+}
+
+.product-right .size-box ul li {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 1px solid #f7f7f7;
+  text-align: center;
+}
+
+.product-right .size-box ul li.active button {
+  box-shadow: 1px 1px 3px #77777769;
+  background-color: #f7f7f7;
+}
+.product-right .size-box ul li button {
+  background-color: #fff;
+}
+
+.product-right .color-variant li {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.product-right .color-variant {
+  padding-inline-start: 0px;
+}
+
+.color-variant li {
+  display: inline-block;
+  border-radius: 100%;
+  margin-right: 5px;
+  transition: all 0.1s ease;
+  vertical-align: middle;
+}
+
 .product-right .form-control {
   border-radius: 0px;
   padding: 6px 16px;
 }
 
-.product-right .form-control{
+.product-right .form-control {
   width: 80px;
   text-align: center;
   margin: 0;
@@ -138,8 +187,15 @@ del {
   z-index: 0;
 }
 
-.btn{
+.btn {
   font-weight: normal;
+}
+
+.btn-solid {
+  &:disabled {
+    color: #fff;
+  }
+  font-weight: 500 ;
 }
 
 .product-buttons {
@@ -147,7 +203,6 @@ del {
   gap: 10px;
   margin: 12px 0px;
 }
-
 
 :host ::ng-deep .mat-tab-label {
   color: #212529;
@@ -185,4 +240,39 @@ mat-tab-group p {
 mat-tab-group label {
   text-transform: capitalize;
   color: #212529;
+}
+
+.product-title {
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #222;
+}
+
+.qty-box {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  .input-group {
+    justify-content: unset;
+    width: unset;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    span button {
+      &:hover {
+        box-shadow: none;
+      }
+      background: #ffffff !important;
+      border: 1px solid #ced4da;
+      height: 100%;
+      color: #777;
+      cursor: pointer;
+      padding-left: 12px;
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1;
+      z-index: 0;
+    }
+  }
 }

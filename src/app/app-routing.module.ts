@@ -17,15 +17,30 @@ import { ChangePasswordComponent } from './pages/change-password/change-password
 import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
 import { AccountInfoComponent } from './pages/account-info/account-info.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { SubitemResolver } from './resolvers/subitem/subitem.resolver';
+import { SubitemsResolver } from './resolvers/subitems/subitems.resolver';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'cart', component: CartComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'wishlist', component: WishlistComponent },
-  { path: 'product', component: ProductPageComponent },
+  {
+    path: 'product/:id',
+    component: ProductPageComponent,
+    resolve: { subitem: SubitemResolver },
+  },
+  {
+    path: 'collection',
+    component: CollectionComponent,
+    runGuardsAndResolvers: 'paramsOrQueryParamsChange',
+    resolve: { subItems: SubitemsResolver },
+  },
+  { path: 'order-success', component: OrderSuccessComponent },
+  { path: 'forget-password', component: ForgetPasswordComponent },
   {
     path: 'dashboard',
     component: DashboardComponent,
@@ -37,9 +52,6 @@ const routes: Routes = [
       { path: 'change-password', component: ChangePasswordComponent },
     ],
   },
-  { path: 'collection', component: CollectionComponent },
-  { path: 'order-success', component: OrderSuccessComponent },
-  { path: 'forget-password', component: ForgetPasswordComponent },
   { path: '404', component: NotFoundComponent },
   { path: '**', redirectTo: '404' },
 ];

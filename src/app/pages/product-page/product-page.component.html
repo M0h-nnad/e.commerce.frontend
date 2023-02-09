@@ -71,49 +71,25 @@
                 (changed)="onChange($event)"
                 [options]="customOptions"
               >
-                <ng-template carouselSlide [id]="'1'">
-                  <img src="assets/images/39.jpg" />
-                </ng-template>
-                <ng-template carouselSlide [id]="'2'">
-                  <img src="assets/images/7.jpg" />
-                </ng-template>
-                <ng-template carouselSlide [id]="'3'">
-                  <img src="assets/images/7.jpg" />
-                </ng-template>
+                <ng-container *ngFor="let variant of product.variants">
+                  <ng-template carouselSlide [id]="variant.id">
+                    <img [src]="variant.src" />
+                  </ng-template>
+                </ng-container>
               </owl-carousel-o>
               <div class="col-12 py-2">
                 <owl-carousel-o [options]="options">
-                  <ng-template carouselSlide>
+                  <ng-template
+                    carouselSlide
+                    *ngFor="let variant of product.variants"
+                  >
                     <div
                       class="border m-1"
-                      [ngClass]="{ active: activatedId == '1' }"
+                      [ngClass]="{ active: variantId == variant.id }"
                     >
                       <img
-                        src="assets/images/39.jpg"
-                        (click)="mainOwl.to('1')"
-                      />
-                    </div>
-                  </ng-template>
-                  <ng-template carouselSlide>
-                    <div
-                      class="border m-1"
-                      [ngClass]="{ active: activatedId == '2' }"
-                    >
-                      <img
-                        src="assets/images/7.jpg"
-                        (click)="mainOwl.to('2')"
-                      />
-                    </div>
-                  </ng-template>
-
-                  <ng-template carouselSlide>
-                    <div
-                      class="border m-1"
-                      [ngClass]="{ active: activatedId == '3' }"
-                    >
-                      <img
-                        src="assets/images/7.jpg"
-                        (click)="mainOwl.to('3')"
+                        [src]="variant.src"
+                        (click)="changeVariant(mainOwl, variant.id)"
                       />
                     </div>
                   </ng-template>
@@ -122,47 +98,98 @@
             </div>
             <div class="col-lg-6">
               <div class="product-right">
-                <h2>fitted dress</h2>
-                <h4>
-                  <del>$170</del>
+                <h2>{{ product.name }}</h2>
+                <h4 *ngIf="product.price > 0">
+                  <del>${{ product.price.toFixed(2) }}</del>
                   &nbsp;
-                  <span>40% off</span>
+                  <span>{{ discountPercentage }}% off</span>
                 </h4>
-                <h3>$104.40</h3>
+                <h3>${{ (product.price - product.offer).toFixed(2) }}</h3>
+
+                <ul class="color-variant">
+                  <li
+                    *ngFor="let variant of product.variants"
+                    [style]="'background-color:' + variant.color"
+                    [ngClass]="{ active: variantId === variant.id }"
+                    (click)="changeVariant(mainOwl, variant.id)"
+                  ></li>
+                </ul>
+
                 <div class="product-inventory">
-                  <p>hurry! we have only {{ 0 }} products in stock.</p>
+                  <p>hurry! we have only {{ sizeAmount }} products in stock.</p>
                   <div class="inventory">
                     <span style="width: 95%"></span>
                   </div>
                 </div>
                 <div class="product-discription mt-2 border-dashed">
-                  <h6>select size</h6>
-                  <ul>
-                    <li><button class="size-button">M</button></li>
-                    <li><button class="size-button">L</button></li>
-                  </ul>
-                  <h5>out of stock</h5>
+                  <div class="size-box">
+                    <h6>select size</h6>
+                    <ng-container
+                      *ngFor="let variant of product.variants; let i = index"
+                    >
+                      <ul *ngIf="variant.id === variantId">
+                        <li
+                          *ngFor="let size of variant.sizes; let j = index"
+                          [ngClass]="{ active: activeSize === size.size }"
+                        >
+                          <button
+                            class="size-button"
+                            (click)="changeInStock(size.size, i, j)"
+                          >
+                            {{ size.size.toUpperCase() }}
+                          </button>
+                        </li>
+                      </ul>
+                    </ng-container>
+                  </div>
+
+                  <h5 *ngIf="sizeAmount < 0">out of stock</h5>
+                  <h5 *ngIf="sizeAmount > 0">In stock</h5>
                   <h6>quantity</h6>
-                  <div class="quantity-box">
-                    <div class="d-flex align-items-stretch">
-                      <button class="btn-arrow">
-                        <fa-icon [icon]="faArrowLeft"></fa-icon>
-                      </button>
+
+                  <div class="qty-box">
+                    <div class="input-group">
+                      <span class="input-group-prepend">
+                        <button
+                          type="button"
+                          data-type="minus"
+                          class="btn quantity-left-minus"
+                          (click)="
+                            +input.value > 1
+                              ? (input.value = (+input.value - 1).toString())
+                              : ''
+                          "
+                        >
+                          <fa-icon [icon]="faArrowLeft"></fa-icon>
+                        </button>
+                      </span>
                       <input
-                        type="number"
-                        value="1"
+                        #input
+                        type="text"
+                        [value]="1"
                         [disabled]="true"
-                        class="form-control"
+                        class="form-control input-number"
                       />
-                      <button class="btn-arrow">
-                        <fa-icon [icon]="faArrowRight"></fa-icon>
-                      </button>
+                      <span class="input-group-prepend">
+                        <button
+                          type="button"
+                          data-type="plus"
+                          class="btn quantity-right-plus"
+                          (click)="
+                            +input.value < sizeAmount
+                              ? (input.value = (+input.value + 1).toString())
+                              : ''
+                          "
+                        >
+                          <fa-icon [icon]="faArrowRight"></fa-icon>
+                        </button>
+                      </span>
                     </div>
                   </div>
                 </div>
                 <div class="product-buttons">
-                  <button class="btn btn-solid">add to cart</button>
-                  <button class="btn btn-solid">buy now</button>
+                  <button class="btn btn-solid fw-bold">add to cart</button>
+                  <button class="btn btn-solid fw-bold">buy now</button>
                 </div>
                 <div class="border-dashed">
                   <h6 class="product-title">product details</h6>
@@ -202,11 +229,9 @@
             <mat-tab label="Write Review">
               <div class="d-flex gap-2 align-items-center">
                 <label for="ratin">rating</label>
-                <bar-rating [rate]="3"></bar-rating>
+                <bar-rating [rate]="3" [(ngModel)]="rate"></bar-rating>
               </div>
-              <form
-                class="theme-form ng-untouched ng-pristine ng-valid ng-star-inserted"
-              >
+              <form class="theme-form" [formGroup]="ratingForm">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group my-2">
@@ -215,6 +240,7 @@
                         type="text"
                         id="name"
                         placeholder="Enter Your name"
+                        formControlName="name"
                         class="form-control"
                       />
                     </div>
@@ -226,6 +252,7 @@
                         type="text"
                         id="email"
                         placeholder="Email"
+                        formControlName="email"
                         class="form-control"
                       />
                     </div>
@@ -237,23 +264,28 @@
                         type="text"
                         id="review"
                         placeholder="Enter your Review Subjects"
+                        formControlName="reviewTitle"
                         class="form-control"
                       />
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group my-2">
-                      <label for="review">Review Title</label
+                      <label for="review">Review Body</label
                       ><textarea
                         placeholder="Wrire Your Testimonial Here"
-                        id="exampleFormControlTextarea1"
                         rows="6"
                         class="form-control"
+                        formControlName="reviewBody"
                       ></textarea>
                     </div>
                   </div>
                   <div class="col-md-12">
-                    <button  class="btn btn-solid my-3">
+                    <button
+                      class="btn btn-solid my-3"
+                      [disabled]="ratingForm.invalid"
+                      (click)="sendRate()"
+                    >
                       Submit Your Review
                     </button>
                   </div>

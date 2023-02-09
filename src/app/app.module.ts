@@ -8,10 +8,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgbModule, NgbNav, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 
 import { BarRatingModule } from 'ngx-bar-rating';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -34,7 +37,10 @@ import { ChangePasswordComponent } from './pages/change-password/change-password
 import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
 import { AccountInfoComponent } from './pages/account-info/account-info.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './interceptors/auth/auth.interceptor';
+import { SubitemResolver } from './resolvers/subitem/subitem.resolver';
+import { SubitemsResolver } from './resolvers/subitems/subitems.resolver';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +69,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-
+    HttpClientModule,
     BrowserAnimationsModule,
     CarouselModule,
     BarRatingModule,
@@ -71,8 +77,18 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     MatTabsModule,
     MatSidenavModule,
     NgbNavModule,
+    NgxPaginationModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
+    FormsModule,
   ],
-  providers: [{ provide: 'Window', useValue: window }, WindowService],
+  providers: [
+    { provide: 'Window', useValue: window },
+    WindowService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    SubitemResolver,
+    SubitemsResolver,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

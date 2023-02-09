@@ -5,6 +5,8 @@ import {
   AfterViewInit,
   HostListener,
 } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import {
   faArrowDown,
   faArrowLeft,
@@ -25,13 +27,34 @@ export class CollectionComponent implements OnInit, AfterViewInit {
   isSizeOpen = true;
   window: any;
   isMobile = false;
+  products: any[] = [];
+  pagesCount!: number;
+  ArrayForIteration!: any[];
+  brands: string[] = [];
+  colors: string[] = [];
+  size: string[] = [];
+  count!: number;
+
   @HostListener('window:resize') Resize() {
     this.updateLayout();
   }
-  constructor(@Inject('Window') window: Window) {
+  constructor(
+    @Inject('Window') window: Window,
+    private route: ActivatedRoute,
+    private router: Router,
+    private fb: FormBuilder
+  ) {
     this.window = window;
+    this.route.data.subscribe((res: any) => {
+      this.products = res.subItems.SubItems;
+      this.pagesCount = res.subItems.pages;
+      this.count = res.subItems.count;
+      this.ArrayForIteration = new Array(this.pagesCount);
+    });
   }
+
   ngOnInit(): void {}
+
   ngAfterViewInit(): void {
     setTimeout(() => {
       this.updateLayout();
@@ -45,5 +68,57 @@ export class CollectionComponent implements OnInit, AfterViewInit {
     } else {
       this.isMobile = false;
     }
+  }
+
+  filterByBrand(e: any) {
+    const val = e.target.value;
+    const checked = e.target.checked;
+    if (checked) {
+      this.brands.push(val);
+    } else {
+      const i = this.brands.indexOf(val);
+      i > -1 ? this.brands.splice(i, 1) : '';
+    }
+    this.changeQueryParams();
+  }
+
+  filterByColor(e: any) {
+    const val = e.target.value;
+    const checked = e.target.checked;
+    if (checked) {
+      this.colors.push(val);
+    } else {
+      const i = this.colors.indexOf(val);
+      i > -1 ? this.colors.splice(i, 1) : '';
+    }
+    this.changeQueryParams();
+  }
+
+  filterBySize(e: any) {
+    const val = e.target.value;
+    const checked = e.target.checked;
+    if (checked) {
+      this.size.push(val);
+    } else {
+      const i = this.size.indexOf(val);
+      i > -1 ? this.size.splice(i, 1) : '';
+    }
+    this.changeQueryParams();
+  }
+
+  changeQueryParams() {
+    const queryParams: Params = {
+      brands: this.brands.join(','),
+      colors: this.colors.join(','),
+      sizes: this.size.join(','),
+    };
+
+    console.log(queryParams);
+
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: queryParams,
+      queryParamsHandling: 'merge',
+    });
   }
 }
