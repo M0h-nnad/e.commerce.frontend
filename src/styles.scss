@@ -5,8 +5,8 @@
 @import "~@fortawesome/fontawesome-free/scss/solid.scss";
 @import "~@fortawesome/fontawesome-free/scss/regular.scss";
 @import "~@fortawesome/fontawesome-free/scss/brands.scss";
+@import "../node_modules/ngx-toastr/toastr.css";
 
-@import '../node_modules/ngx-toastr/toastr';
 @import "~ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
 @import "~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
 @import "../node_modules/animate.css/animate.min.css";
@@ -152,3 +152,5 @@ a {
 .owl-responsive {
   width: 100%;
 }
+
+

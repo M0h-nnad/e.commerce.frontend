@@ -19,12 +19,14 @@ import { AccountInfoComponent } from './pages/account-info/account-info.componen
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SubitemResolver } from './resolvers/subitem/subitem.resolver';
 import { SubitemsResolver } from './resolvers/subitems/subitems.resolver';
+import { SignupComponent } from './pages/signup/signup.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'cart', component: CartComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'wishlist', component: WishlistComponent },

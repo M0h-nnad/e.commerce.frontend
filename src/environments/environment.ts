@@ -12,6 +12,7 @@ export const environment = {
   getSubitem: '/subitems',
   addToFavourite: '/favorite',
   addToCart: '/cart',
+  rateProduct: '/rating',
 };
 
 /*

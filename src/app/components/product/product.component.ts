@@ -44,7 +44,7 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(id: string) {
-    this.subItemsService.addToCart(id).subscribe({
+    this.subItemsService.addToCart(id, 1, '').subscribe({
       error: (err: any) => this.toastr.error(err.error.messages),
     });
   }

@@ -41,6 +41,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth/auth.interceptor';
 import { SubitemResolver } from './resolvers/subitem/subitem.resolver';
 import { SubitemsResolver } from './resolvers/subitems/subitems.resolver';
+import { SignupComponent } from './pages/signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,6 +65,7 @@ import { SubitemsResolver } from './resolvers/subitems/subitems.resolver';
     MyOrdersComponent,
     AccountInfoComponent,
     NotFoundComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

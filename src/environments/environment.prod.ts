@@ -7,5 +7,6 @@ export const environment = {
   deleteUser: '/user',
   getSubitem: '/subitems',
   addToFavourite: '/favorite',
+  rateProduct: '/rating',
   addToCart: '/cart',
 };

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SubitemsService } from 'src/app/services/subitem/subitems.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product-page',
@@ -18,7 +20,7 @@ export class ProductPageComponent implements OnInit {
   inStock: number = 0;
   activeSize!: string;
   variantId!: string;
-  sizeAmount!: number;
+  sizeAmount: number = 0;
   ratingForm!: FormGroup;
   rate!: number;
   customOptions: OwlOptions = {
@@ -73,8 +75,11 @@ export class ProductPageComponent implements OnInit {
   };
 
   constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private toastr: ToastrService,
     private activatedRoute: ActivatedRoute,
-    private fb: FormBuilder
+    private subItemsService: SubitemsService
   ) {}
 
   ngOnInit(): void {
@@ -114,13 +119,34 @@ export class ProductPageComponent implements OnInit {
         '',
         [Validators.required, Validators.email, Validators.maxLength(50)],
       ],
-      reviewTitle: ['', [Validators.required, Validators.maxLength(50)]],
-      reviewBody: ['', [Validators.required, Validators.maxLength(1000)]],
+      title: ['', [Validators.required, Validators.maxLength(50)]],
+      body: ['', [Validators.required, Validators.maxLength(1000)]],
     });
   }
 
   sendRate() {
     const body = { ...this.ratingForm.value, rate: this.rate };
-    console.log(body);
+    this.subItemsService.rateProduct(this.product.id, body).subscribe({
+      next: (res: any) => {
+        console.log(res);
+        this.toastr.success(res.messages);
+      },
+      error: (err) => this.toastr.error(err.messages),
+    });
+  }
+
+  addToCart(quantity: number) {
+    if (!quantity) quantity = 1;
+    this.subItemsService
+      .addToCart(this.product.id, quantity, this.variantId)
+      .subscribe({
+        next: (res: any) => {},
+        error: (err) => this.toastr.error(err.error.messages),
+      });
+  }
+
+  checkOut(quantity: number) {
+    this.addToCart(quantity);
+    this.router.navigate(['/checkout']);
   }
 }

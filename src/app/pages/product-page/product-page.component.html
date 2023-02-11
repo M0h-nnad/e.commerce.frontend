@@ -188,8 +188,20 @@
                   </div>
                 </div>
                 <div class="product-buttons">
-                  <button class="btn btn-solid fw-bold">add to cart</button>
-                  <button class="btn btn-solid fw-bold">buy now</button>
+                  <button
+                    class="btn btn-solid fw-bold"
+                    [disabled]="sizeAmount == 0"
+                    (click)="addToCart(input.valueAsNumber)"
+                  >
+                    add to cart
+                  </button>
+                  <button
+                    class="btn btn-solid fw-bold"
+                    [disabled]="sizeAmount == 0"
+                    (click)="checkOut(input.valueAsNumber)"
+                  >
+                    buy now
+                  </button>
                 </div>
                 <div class="border-dashed">
                   <h6 class="product-title">product details</h6>
@@ -264,7 +276,7 @@
                         type="text"
                         id="review"
                         placeholder="Enter your Review Subjects"
-                        formControlName="reviewTitle"
+                        formControlName="title"
                         class="form-control"
                       />
                     </div>
@@ -276,7 +288,7 @@
                         placeholder="Wrire Your Testimonial Here"
                         rows="6"
                         class="form-control"
-                        formControlName="reviewBody"
+                        formControlName="body"
                       ></textarea>
                     </div>
                   </div>

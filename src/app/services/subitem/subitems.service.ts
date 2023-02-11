@@ -46,11 +46,24 @@ export class SubitemsService {
       );
   }
 
-  addToCart(id: string, quantity: number = 1) {
+  addToCart(id: string, quantity: number = 1, varaintId: string) {
     return this.http
       .post(`${environment.mainUrl}${environment.addToCart}/${id}`, {
         quantity,
+        varaintId,
       })
-      .pipe(first());
+      .pipe(
+        first(),
+        catchError((e) => throwError(() => e))
+      );
+  }
+
+  rateProduct(id: string, body: {}) {
+    return this.http
+      .post(`${environment.mainUrl}${environment.rateProduct}/${id}`, body)
+      .pipe(
+        first(),
+        catchError((e) => throwError(() => e))
+      );
   }
 }

@@ -4,10 +4,15 @@
       <div class="col-lg-6">
         <h3>login</h3>
         <div class="theme-card">
-          <form>
+          <form [formGroup]="loginFormGroup">
             <div class="form-group">
               <label for="email" class="form-label">email</label>
-              <input type="text" placeholder="Email" class="form-control" />
+              <input
+                type="text"
+                placeholder="Email"
+                class="form-control"
+                formControlName="email"
+              />
             </div>
 
             <div class="form-group">
@@ -16,10 +21,17 @@
                 type="password"
                 placeholder="Enter Your Password"
                 class="form-control"
+                formControlName="password"
               />
             </div>
 
-            <button class="btn btn-solid">login</button>
+            <button
+              class="btn btn-solid"
+              (click)="login()"
+              [disabled]="loginFormGroup.invalid"
+            >
+              login
+            </button>
           </form>
         </div>
       </div>
@@ -34,10 +46,9 @@
             shopping click register.
           </p>
 
-          <button class="btn btn-solid">
-            create an account
-          </button>
-
+          <a [routerLink]="'/signup'" class="btn btn-solid"
+            >create an account</a
+          >
         </div>
       </div>
     </div>
