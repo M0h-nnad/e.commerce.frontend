@@ -20,17 +20,43 @@
 
 @font-face {
   font-family: "lato";
-  src: url("./assets/fonts/Lato-Regular.ttf") format("truetype");
+  src: url("./assets/fonts/Lato-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
 
-  font-weight: normal;
+@font-face {
+  font-family: "lato";
+  src: url("./assets/fonts/Lato-ThinItalic.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "lato";
+  src: url("./assets/fonts/Lato-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "lato";
+  src: url("./assets/fonts/Lato-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "lato";
+  src: url("./assets/fonts/Lato-Regular.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "lato";
   src: url("./assets/fonts/Lato-Italic.ttf") format("truetype");
-
-  font-weight: normal;
+  font-weight: 400;
   font-style: italic;
 }
 
@@ -38,7 +64,7 @@
 @font-face {
   font-family: "lato";
   src: url("./assets/fonts/Lato-Bold.ttf") format("truetype");
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -137,9 +163,12 @@ body {
   border-color: #dddddd;
   font-size: 12px;
   padding: 17px 25px;
-  margin-bottom: 30px;
   height: inherit;
   border-radius: 0;
+}
+
+.form-group {
+  margin-bottom: 30px;
 }
 
 a {
@@ -152,5 +181,3 @@ a {
 .owl-responsive {
   width: 100%;
 }
-
-

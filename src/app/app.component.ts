@@ -6,6 +6,7 @@ import {
   NavigationStart,
   Router,
 } from '@angular/router';
+import { AuthService } from './services/auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ export class AppComponent {
   isLoading: boolean = false;
   title = 'frontend';
 
-  constructor(public router: Router) {
+  constructor(public router: Router, private authService: AuthService) {
     this.router.events.subscribe((ev) => {
       if (ev instanceof NavigationStart) {
         this.isLoading = true;
@@ -29,5 +30,6 @@ export class AppComponent {
         this.isLoading = false;
       }
     });
+    this.authService.autoAuthUser();
   }
 }

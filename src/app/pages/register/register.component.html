@@ -4,29 +4,79 @@
       <div class="col-lg-12">
         <h3>create account</h3>
         <div class="theme-card">
-          <form>
+          <form [formGroup]="signupForm">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="First Name">first name</label>
                   <input
+                    formControlName="firstName"
                     class="form-control"
                     placeholder="First Name"
                     type="text"
                   />
+                  <span
+                    *ngIf="errors.firstName && errors.firstName.length > 0"
+                    class="ps-3 text-danger"
+                    >first name is required</span
+                  >
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="last name">last name</label>
                   <input
+                    formControlName="lastName"
                     class="form-control"
                     placeholder="Last Name"
                     type="text"
                   />
+                  <span
+                    *ngIf="errors.lastName && errors.lastName.length > 0"
+                    class="ps-3 text-danger"
+                    >last name is required</span
+                  >
                 </div>
               </div>
             </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="gender">gender</label>
+                  <select formControlName="gender" class="form-control">
+                    <option [selected]="true" [disabled]="true">
+                      select your gender
+                    </option>
+                    <option>Male</option>
+                    <option>female</option>
+                  </select>
+                  <span
+                    *ngIf="errors.gender && errors.gender.length > 0"
+                    class="ps-3 text-danger"
+                    >gender is required</span
+                  >
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="phone">phone</label>
+                  <input
+                    class="form-control"
+                    formControlName="phone"
+                    placeholder="Enter Your phone number"
+                    type="text"
+                  />
+                  <!-- <span *ngIf="errors" class="ps-3 text-danger">phone number is required</span> -->
+                  <span
+                    *ngIf="errors.phone && errors.phone.length"
+                    class="ps-3 text-danger"
+                    >allowed form +61 2 9999 9999</span
+                  >
+                </div>
+              </div>
+            </div>
+
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
@@ -34,8 +84,15 @@
                   <input
                     class="form-control"
                     placeholder="Email"
+                    formControlName="email"
                     type="email"
                   />
+                  <!-- <span *ngIf="errors" class="ps-3 text-danger">email is required</span> -->
+                  <span
+                    *ngIf="errors.email && errors.email.length"
+                    class="ps-3 text-danger"
+                    >must be an email</span
+                  >
                 </div>
               </div>
               <div class="col-md-6">
@@ -43,14 +100,26 @@
                   <label for="password">password</label>
                   <input
                     class="form-control"
+                    formControlName="password"
                     placeholder="Enter Your Password"
                     type="password"
                   />
+                  <span
+                    *ngIf="errors.password && errors.password.length"
+                    class="ps-3 text-danger"
+                    >password is required</span
+                  >
                 </div>
               </div>
             </div>
 
-            <div class="btn btn-solid">create account</div>
+            <button
+              class="btn btn-solid"
+              (click)="signup()"
+              [disabled]="signupForm.invalid"
+            >
+              create account
+            </button>
           </form>
         </div>
       </div>

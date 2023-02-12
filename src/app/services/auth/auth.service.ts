@@ -14,9 +14,9 @@ export class AuthService {
   private tokenTimer!: ReturnType<typeof setTimeout>;
 
   constructor(
-    private cookieService: CookieService,
-    private http: HttpClient,
-    private router: Router
+    private readonly cookieService: CookieService,
+    private readonly http: HttpClient,
+    private readonly router: Router
   ) {}
 
   isAuthStatus() {

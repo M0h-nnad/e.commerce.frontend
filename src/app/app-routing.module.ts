@@ -19,14 +19,13 @@ import { AccountInfoComponent } from './pages/account-info/account-info.componen
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SubitemResolver } from './resolvers/subitem/subitem.resolver';
 import { SubitemsResolver } from './resolvers/subitems/subitems.resolver';
-import { SignupComponent } from './pages/signup/signup.component';
+import { AuthGuard } from './guards/guard/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'cart', component: CartComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'wishlist', component: WishlistComponent },
@@ -46,6 +45,7 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivateChild: [AuthGuard],
     children: [
       { path: 'profile', component: ProfileComponent },
       { path: 'my-orders', component: MyOrdersComponent },
