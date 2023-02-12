@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <h3>presonal detail</h3>
-      <form class="theme-form">
+      <form class="theme-form" [formGroup]="profileFormGroup">
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
@@ -11,7 +11,9 @@
                 type="text"
                 placeholder="Enter Your First Name"
                 class="form-control"
+                formControlName="firstName"
               />
+              <span class="text-danger">{{ errors.firstName }}</span>
             </div>
           </div>
 
@@ -22,7 +24,9 @@
                 type="text"
                 placeholder="Enter Your Last Name"
                 class="form-control"
+                formControlName="lastName"
               />
+              <span class="text-danger">{{ errors.lastName }}</span>
             </div>
           </div>
 
@@ -33,30 +37,47 @@
                 type="text"
                 placeholder="Enter Your Phone Number"
                 class="form-control"
+                formControlName="phone"
               />
+              <span class="text-danger">{{ errors.phone }}</span>
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="form-group">
               <label for="email" class="form-label">email</label>
-              <input type="text" placeholder="Email" class="form-control" />
+              <input
+                type="text"
+                placeholder="Email"
+                formControlName="email"
+                class="form-control"
+              />
+              <span class="text-danger">{{ errors.email }}</span>
             </div>
           </div>
 
           <div class="col-md-12">
-            <label for="gender" class="form-label">gender</label>
-            <select class="form-control">
-              <option [selected]="true" [disabled]="true">
-                select your gender
-              </option>
-              <option>Male</option>
-              <option>female</option>
-            </select>
+            <div class="form-group">
+              <label for="gender" class="form-label">gender</label>
+              <select class="form-control" formControlName="gender">
+                <option [selected]="true" [disabled]="true">
+                  select your gender
+                </option>
+                <option>Male</option>
+                <option>female</option>
+              </select>
+              <span class="text-danger">{{ errors.gender }}</span>
+            </div>
           </div>
         </div>
 
-        <button class="btn btn-solid">save</button>
+        <button
+          class="btn btn-solid"
+          (click)="save()"
+          [disabled]="profileFormGroup.invalid"
+        >
+          save
+        </button>
       </form>
     </div>
   </div>

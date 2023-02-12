@@ -15,11 +15,7 @@
                     placeholder="First Name"
                     type="text"
                   />
-                  <span
-                    *ngIf="errors.firstName && errors.firstName.length > 0"
-                    class="ps-3 text-danger"
-                    >first name is required</span
-                  >
+                  <span class="ps-3 text-danger">{{ errors.firstName }}}</span>
                 </div>
               </div>
               <div class="col-md-6">
@@ -31,11 +27,7 @@
                     placeholder="Last Name"
                     type="text"
                   />
-                  <span
-                    *ngIf="errors.lastName && errors.lastName.length > 0"
-                    class="ps-3 text-danger"
-                    >last name is required</span
-                  >
+                  <span class="ps-3 text-danger">{{ errors.lastName }}</span>
                 </div>
               </div>
             </div>
@@ -51,11 +43,7 @@
                     <option>Male</option>
                     <option>female</option>
                   </select>
-                  <span
-                    *ngIf="errors.gender && errors.gender.length > 0"
-                    class="ps-3 text-danger"
-                    >gender is required</span
-                  >
+                  <span class="ps-3 text-danger">{{ errors.gender }}</span>
                 </div>
               </div>
               <div class="col-md-6">
@@ -68,11 +56,7 @@
                     type="text"
                   />
                   <!-- <span *ngIf="errors" class="ps-3 text-danger">phone number is required</span> -->
-                  <span
-                    *ngIf="errors.phone && errors.phone.length"
-                    class="ps-3 text-danger"
-                    >allowed form +61 2 9999 9999</span
-                  >
+                  <span class="ps-3 text-danger">{{ errors.phone }}</span>
                 </div>
               </div>
             </div>
@@ -88,11 +72,7 @@
                     type="email"
                   />
                   <!-- <span *ngIf="errors" class="ps-3 text-danger">email is required</span> -->
-                  <span
-                    *ngIf="errors.email && errors.email.length"
-                    class="ps-3 text-danger"
-                    >must be an email</span
-                  >
+                  <span class="ps-3 text-danger">{{ errors.email }}</span>
                 </div>
               </div>
               <div class="col-md-6">
@@ -104,11 +84,7 @@
                     placeholder="Enter Your Password"
                     type="password"
                   />
-                  <span
-                    *ngIf="errors.password && errors.password.length"
-                    class="ps-3 text-danger"
-                    >password is required</span
-                  >
+                  <span class="ps-3 text-danger">{{ errors.password }}</span>
                 </div>
               </div>
             </div>
