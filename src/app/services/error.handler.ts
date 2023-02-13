@@ -53,7 +53,8 @@ export class ErrorHandler {
     form.valueChanges
       .pipe(debounceTime(500), distinctUntilChanged())
       .subscribe(() => {
-        console.log('value changes');
+        this.clearErrors();
+
         if (form.invalid) {
           this._handleErrors();
         }
@@ -62,7 +63,6 @@ export class ErrorHandler {
 
   private _handleErrors() {
     // If errors were corrected, this will remove them.
-    this.clearErrors();
     // Re-add errors that weren't corrected
     if (this.form.invalid) {
       this.findErrors(this.form.controls);

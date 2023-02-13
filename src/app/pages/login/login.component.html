@@ -13,6 +13,7 @@
                 class="form-control"
                 formControlName="email"
               />
+              <span class="text-danger">{{ error?.email }}</span>
             </div>
 
             <div class="form-group">
@@ -23,6 +24,7 @@
                 class="form-control"
                 formControlName="password"
               />
+              <span class="text-danger">{{ error?.password }}</span>
             </div>
 
             <button
@@ -46,7 +48,7 @@
             shopping click register.
           </p>
 
-          <a [routerLink]="'/signup'" class="btn btn-solid"
+          <a [routerLink]="'/register'" class="btn btn-solid"
             >create an account</a
           >
         </div>

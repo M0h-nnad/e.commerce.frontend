@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { ErrorHandler } from 'src/app/services/error.handler';
 
 @Component({
   selector: 'app-login',
@@ -11,22 +12,25 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class LoginComponent implements OnInit {
   loginFormGroup!: FormGroup;
+  error: any = {};
 
   constructor(
     private readonly router: Router,
     private readonly fb: FormBuilder,
     private readonly toastr: ToastrService,
-    private readonly authService: AuthService
+    private readonly authService: AuthService,
+    private readonly errorHandler: ErrorHandler
   ) {}
 
   ngOnInit(): void {
     this.initForm();
+    this.errorHandler.handleErrors(this.loginFormGroup, this.error);
   }
 
   initForm() {
     this.loginFormGroup = this.fb.group({
-      email: [''],
-      password: [''],
+      email: ['', [Validators.email, Validators.required]],
+      password: ['', Validators.required],
     });
   }
 
