@@ -68,9 +68,21 @@ export class AuthService {
   }
 
   saveAuthData(token: string, expirationDate: Date, userDoc: any) {
-    this.cookieService.set('token', token);
-    this.cookieService.set('expirationDate', expirationDate.toISOString());
-    this.cookieService.set('userDoc', JSON.stringify(userDoc));
+    delete userDoc.addresses;
+    this.cookieService.set('token', token, {
+      secure: true,
+      expires: expirationDate,
+    });
+    const t = this.cookieService.set(
+      'expirationDate',
+      expirationDate.toISOString()
+    );
+    const u = this.cookieService.set('userDoc', JSON.stringify(userDoc), {
+      secure: true,
+      expires: expirationDate,
+    });
+
+    console.log(t, u);
   }
 
   clearAuthData() {
@@ -83,7 +95,7 @@ export class AuthService {
     const userCheck = this.cookieService.check('userDoc');
     const userDoc = this.cookieService.get('userDoc');
 
-    if (!token && !expirationDate && !userCheck) {
+    if (!token || !expirationDate || !userCheck) {
       return;
     }
 

@@ -71,7 +71,6 @@ footer p {
   justify-content: flex-end;
 }
 
-
 @media (max-width: 1367px) {
   .subscribe-form .form-control {
     width: 215px;
@@ -134,4 +133,8 @@ footer p {
 
 fa-icon {
   margin-right: 10px;
+}
+
+.form-group {
+  margin-bottom: 0;
 }

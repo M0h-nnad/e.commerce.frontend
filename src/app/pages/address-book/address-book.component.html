@@ -2,44 +2,78 @@
   <div class="container">
     <div class="row">
       <h3>shipping address</h3>
-      <form class="theme-form">
+      <form class="theme-form" [formGroup]="shippingAddressForm">
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="flat/plot" class="form-label">flat/plot</label>
+              <label for="flat/plot" class="form-label">name*</label>
               <input
                 type="text"
                 placeholder="company name"
+                formControlName="name"
                 class="form-control"
               />
+              <label for="error" class="text-danger">{{
+                shippingFormErrors.name
+              }}</label>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <label for="address" class="form-label">address*</label>
-              <input type="text" placeholder="Address" class="form-control" />
+              <input
+                type="text"
+                placeholder="Address"
+                formControlName="addressLine1"
+                class="form-control"
+              />
+              <label for="error" class="text-danger">{{
+                shippingFormErrors.addressLine1
+              }}</label>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <label for="zip code" class="form-label">zip code*</label>
-              <input type="text" placeholder="zip-code" class="form-control" />
+              <input
+                type="text"
+                placeholder="zip-code"
+                formControlName="postalCode"
+                class="form-control"
+              />
+              <label for="error" class="text-danger">{{
+                shippingFormErrors.postalcode
+              }}</label>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <label for="country" class="form-label">country*</label>
-              <select class="form-control">
+              <select class="form-control" formControlName="country">
+                <option value="select country" disabled selected>
+                  select country
+                </option>
                 <option value="india">india</option>
                 <option value="egypt">egypt</option>
                 <option value="uae">uae</option>
               </select>
+              <label for="error" class="text-danger">{{
+                shippingFormErrors.country
+              }}</label>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <label for="city" class="form-label">city*</label>
-              <input type="text" placeholder="City" class="form-control" />
+              <input
+                type="text"
+                placeholder="City"
+                formControlName="city"
+                class="form-control"
+              />
+              <label for="error" class="text-danger">{{
+                shippingFormErrors.city
+              }}</label>
             </div>
           </div>
           <div class="col-md-6">
@@ -48,13 +82,23 @@
               <input
                 type="text"
                 placeholder="region/state"
+                formControlName="state"
                 class="form-control"
               />
+              <label for="error" class="text-danger">{{
+                shippingFormErrors.state
+              }}</label>
             </div>
           </div>
 
           <div class="col-md-12">
-            <button class="btn btn-solid">save settings</button>
+            <button
+              class="btn btn-solid"
+              [disabled]="hasRequest"
+              (click)="saveShippingAddress()"
+            >
+              save settings
+            </button>
           </div>
         </div>
       </form>
@@ -67,66 +111,103 @@
     <form>
       <div class="row">
         <h3>billing details</h3>
-        <form>
+        <form [formGroup]="billingAddressForm">
           <div class="row checkout">
             <div class="form-group col-md-6 col-sm-6 col-xs-12">
-              <label for="first name" class="form-label">first name</label>
-              <input type="text" class="form-control" />
-              <label for="error" class="error">first name is required</label>
-            </div>
-
-            <div class="form-group col-md-6 col-sm-6 col-xs-12">
-              <label for="last name" class="form-label">last name</label>
-              <input type="text" class="form-control" />
-              <label for="error" class="error">last name is required</label>
+              <label for="phone" class="form-label">name</label>
+              <input type="text" class="form-control" formControlName="name" />
+              <label for="error" class="error">{{
+                billingFormErrors.name
+              }}</label>
             </div>
 
             <div class="form-group col-md-6 col-sm-6 col-xs-12">
               <label for="phone" class="form-label">phone</label>
-              <input type="tel" class="form-control" />
-              <label for="error" class="error">phone no is required</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="phone2"
+              />
+              <label for="error" class="error">{{
+                billingFormErrors.phone2
+              }}</label>
             </div>
 
             <div class="form-group col-md-6 col-sm-6 col-xs-12">
               <label for="email" class="form-label">email</label>
-              <input type="email" class="form-control" />
-              <label for="error" class="error">email is required</label>
+              <input
+                type="email"
+                class="form-control"
+                formControlName="email"
+              />
+              <label for="error" class="error">{{
+                billingFormErrors.email
+              }}</label>
             </div>
 
-            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+            <div class="form-group col-md-6 col-sm-6 col-xs-12">
               <label for="country" class="form-label">country</label>
-              <select class="form-control">
+              <select class="form-control" formControlName="country">
+                <option value="select country" disabled selected>
+                  select country
+                </option>
                 <option value="egypt">egypt</option>
                 <option value="uk">uk</option>
                 <option value="uae">uae</option>
               </select>
+              <label for="error" class="text-danger">{{
+                billingFormErrors.country
+              }}</label>
             </div>
 
             <div class="form-group col-md-12 col-sm-12 col-xs-12">
               <label for="address" class="form-label">address</label>
-              <input type="text" class="form-control" />
-              <label for="error" class="error">address is required</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="addressLine1"
+              />
+              <label for="error" class="error">{{
+                billingFormErrors.addressLine1
+              }}</label>
             </div>
 
             <div class="form-group col-md-12 col-sm-12 col-xs-12">
               <label for="town/city" class="form-label">town/city</label>
-              <input type="text" class="form-control" />
-              <label for="error" class="error">town/city is required</label>
+              <input type="text" class="form-control" formControlName="city" />
+              <label for="error" class="error">{{
+                billingFormErrors.city
+              }}</label>
             </div>
 
             <div class="form-group col-md-12 col-sm-6 col-xs-12">
               <label for="state" class="form-label">state</label>
-              <input type="text" class="form-control" />
+              <input type="text" class="form-control" formControlName="state" />
+              <label for="error" class="text-danger">{{
+                billingFormErrors.state
+              }}</label>
             </div>
 
             <div class="form-group col-md-12 col-sm-6 col-xs-12">
               <label for="postal code" class="form-label">postal code</label>
-              <input type="text" class="form-control" />
-              <label for="error" class="error">postacode is required</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="postalCode"
+              />
+              <label for="error" class="text-danger">{{
+                billingFormErrors.postalCode
+              }}</label>
             </div>
 
             <div class="col-md-12 pt-5">
-              <button class="btn btn-solid">save settings</button>
+              <button
+                class="btn btn-solid"
+                [disabled]="hasRequest"
+                (click)="saveBillingAddress()"
+              >
+                save settings
+              </button>
             </div>
           </div>
         </form>

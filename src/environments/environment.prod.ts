@@ -9,4 +9,8 @@ export const environment = {
   addToFavourite: '/favorite',
   rateProduct: '/rating',
   addToCart: '/cart',
+  getAddress: '/address',
+  addAddress: '/address',
+  updateAddress: '/address',
+  deleteAddress: '/address',
 };

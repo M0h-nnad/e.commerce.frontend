@@ -13,6 +13,10 @@ export const environment = {
   addToFavourite: '/favorite',
   addToCart: '/cart',
   rateProduct: '/rating',
+  getAddress: '/address',
+  addAddress: '/address',
+  updateAddress: '/address',
+  deleteAddress: '/address',
 };
 
 /*
