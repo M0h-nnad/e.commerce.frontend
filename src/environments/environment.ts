@@ -17,6 +17,7 @@ export const environment = {
   addAddress: '/address',
   updateAddress: '/address',
   deleteAddress: '/address',
+  updatePassword:'/updatePassword',
 };
 
 /*

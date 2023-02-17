@@ -17,4 +17,13 @@ export class UserService {
         catchError((e) => throwError(() => e))
       );
   }
+
+  updatePassword(body: any) {
+    return this.http
+      .put(`${environment.mainUrl}${environment.updatePassword}`, body)
+      .pipe(
+        first(),
+        catchError((e) => throwError(() => e))
+      );
+  }
 }
