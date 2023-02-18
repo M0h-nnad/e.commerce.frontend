@@ -63,6 +63,22 @@ export class AddressBookComponent implements OnInit {
     });
   }
 
+
+  initBillingForm() {
+    this.billingAddressForm = this.fb.group({
+      name: ['', Validators.required],
+      phone2: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      country: ['select country', Validators.required],
+      addressLine1: ['', Validators.required],
+      city: ['', Validators.required],
+      state: [''],
+      postalCode: ['', Validators.required],
+      type: ['Billing Address'],
+      isDefault: [true],
+    });
+  }
+
   checkAddressessAndUpdateForms() {
     this.route.data.subscribe({
       next: (data: any) => {
@@ -96,20 +112,6 @@ export class AddressBookComponent implements OnInit {
     });
   }
 
-  initBillingForm() {
-    this.billingAddressForm = this.fb.group({
-      name: ['', Validators.required],
-      phone2: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
-      country: ['select country', Validators.required],
-      addressLine1: ['', Validators.required],
-      city: ['', Validators.required],
-      state: [''],
-      postalCode: ['', Validators.required],
-      type: ['Billing Address'],
-      isDefault: [true],
-    });
-  }
 
   saveShippingAddress() {
     this.hasRequest = true;

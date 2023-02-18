@@ -45,7 +45,10 @@
           <div class="col-sm-6">
             <h6>default billing address</h6>
             <address>
-              You have not set a default billing address.
+              <span>{{ this.user.addresses[billingAddressIdx].name }}</span>
+              <span *ngIf="shippingAddressIdx < -1">
+                You have not set a default billing address.
+              </span>
               <br />
               <a [routerLink]="'/dashboard/address-book'">edit address</a>
             </address>
@@ -53,7 +56,10 @@
           <div class="col-sm-6">
             <h6>default shipping address</h6>
             <address>
-              You have not set a default shipping address.
+              <span>{{ this.user.addresses[shippingAddressIdx].name }}</span>
+              <span *ngIf="billingAddressIdx < -1">
+                You have not set a default shipping address.
+              </span>
               <br />
               <a [routerLink]="'/dashboard/address-book'">edit address</a>
             </address>
