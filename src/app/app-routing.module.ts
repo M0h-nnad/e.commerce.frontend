@@ -20,6 +20,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SubitemResolver } from './resolvers/subitem/subitem.resolver';
 import { SubitemsResolver } from './resolvers/subitems/subitems.resolver';
 import { AuthGuard } from './guards/guard/auth.guard';
+import { AddressesResolver } from './resolvers/addresses/addresses.resolver';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -49,7 +50,11 @@ const routes: Routes = [
     children: [
       { path: 'profile', component: ProfileComponent },
       { path: 'my-orders', component: MyOrdersComponent },
-      { path: 'address-book', component: AddressBookComponent },
+      {
+        path: 'address-book',
+        component: AddressBookComponent,
+        resolve: { data: AddressesResolver },
+      },
       { path: 'account-info', component: AccountInfoComponent },
       { path: 'change-password', component: ChangePasswordComponent },
     ],

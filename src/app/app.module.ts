@@ -41,6 +41,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth/auth.interceptor';
 import { SubitemResolver } from './resolvers/subitem/subitem.resolver';
 import { SubitemsResolver } from './resolvers/subitems/subitems.resolver';
+import { AddressesResolver } from './resolvers/addresses/addresses.resolver';
 @NgModule({
   declarations: [
     AppComponent,
@@ -88,6 +89,7 @@ import { SubitemsResolver } from './resolvers/subitems/subitems.resolver';
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     SubitemResolver,
     SubitemsResolver,
+    AddressesResolver,
   ],
   bootstrap: [AppComponent],
 })
