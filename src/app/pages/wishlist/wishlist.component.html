@@ -15,7 +15,7 @@
             <tbody>
               <tr *ngFor="let item of wishlist; let i = index">
                 <td>
-                  <a href="">
+                  <a [routerLink]="'/product/' + item.id">
                     <img
                       height="90px"
                       [src]="item.variants[0].src"
@@ -24,7 +24,7 @@
                   </a>
                 </td>
                 <td>
-                  <a href=""> {{ item.name }} </a>
+                  <a [routerLink]="'/product/' + item.id"> {{ item.name }} </a>
                 </td>
                 <td>
                   <h2>${{ item.price - item.offer }}</h2>

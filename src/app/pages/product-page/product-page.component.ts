@@ -87,7 +87,9 @@ export class ProductPageComponent implements OnInit {
     this.activatedRoute.data.subscribe((res: any) => {
       this.product = res.subitem.subItem;
       this.discountPercentage =
-        ((this.product.price - this.product.offer) * 100) / this.product.price;
+        ((this.product.price - (this.product.price - this.product.offer)) *
+          100) /
+        this.product.price;
       this.discountPercentage = Math.ceil(this.discountPercentage);
       this.variantId = this.product.variants[0].id;
     });

@@ -99,7 +99,7 @@
             <div class="col-lg-6">
               <div class="product-right">
                 <h2>{{ product.name }}</h2>
-                <h4 *ngIf="product.price > 0">
+                <h4 *ngIf="product.offer > 0">
                   <del>${{ product.price.toFixed(2) }}</del>
                   &nbsp;
                   <span>{{ discountPercentage }}% off</span>
