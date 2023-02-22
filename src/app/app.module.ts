@@ -42,6 +42,7 @@ import { AuthInterceptor } from './interceptors/auth/auth.interceptor';
 import { SubitemResolver } from './resolvers/subitem/subitem.resolver';
 import { SubitemsResolver } from './resolvers/subitems/subitems.resolver';
 import { AddressesResolver } from './resolvers/addresses/addresses.resolver';
+import { WishlistResolver } from './resolvers/wishlist/wishlist.resolver';
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,6 +91,7 @@ import { AddressesResolver } from './resolvers/addresses/addresses.resolver';
     SubitemResolver,
     SubitemsResolver,
     AddressesResolver,
+    WishlistResolver,
   ],
   bootstrap: [AppComponent],
 })

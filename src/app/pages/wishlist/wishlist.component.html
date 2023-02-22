@@ -2,7 +2,8 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <div class="table-responsive">
+        <h1 class="text-center">wishlist is empty</h1>
+        <div class="table-responsive" *ngIf="wishlist && wishlist.length > 0">
           <table class="table cart-table">
             <thead>
               <th>image</th>
@@ -12,21 +13,21 @@
               <th>action</th>
             </thead>
             <tbody>
-              <tr>
+              <tr *ngFor="let item of wishlist; let i = index">
                 <td>
                   <a href="">
                     <img
                       height="90px"
-                      src="assets/images/4.jpg"
+                      [src]="item.variants[0].src"
                       alt="product name"
                     />
                   </a>
                 </td>
                 <td>
-                  <a href=""> dress </a>
+                  <a href=""> {{ item.name }} </a>
                 </td>
                 <td>
-                  <h2>$220</h2>
+                  <h2>${{ item.price - item.offer }}</h2>
                 </td>
 
                 <td>
@@ -35,11 +36,11 @@
 
                 <td>
                   <div class="d-flex gap-2 justify-content-center">
-                    <button class="btn btn-light">
+                    <button
+                      class="btn btn-light"
+                      (click)="deleteFromFavorite(item.id, i)"
+                    >
                       <fa-icon [icon]="faX"></fa-icon>
-                    </button>
-                    <button class="btn btn-light">
-                      <fa-icon [icon]="faCartShopping"></fa-icon>
                     </button>
                   </div>
                 </td>
@@ -50,7 +51,10 @@
       </div>
     </div>
     <div class="row cart-buttons">
-      <div class="col-12 d-inline-flex gap-2 justify-content-end">
+      <div
+        class="col-12 d-inline-flex gap-2 justify-content-end"
+        *ngIf="wishlist && wishlist.length > 0"
+      >
         <button class="btn btn-solid">continue shopping</button>
         <button class="btn btn-solid">check out</button>
       </div>

@@ -6,39 +6,39 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {
+export class AddressService {
   constructor(private http: HttpClient) {}
 
-  updateUser(body: any) {
+  createAddress(body: any) {
     return this.http
-      .put(`${environment.mainUrl}${environment.updateUser}`, body)
+      .post(`${environment.mainUrl}${environment.addAddress}`, body)
       .pipe(
         first(),
         catchError((e) => throwError(() => e))
       );
   }
 
-  updatePassword(body: any) {
+  getAddress() {
     return this.http
-      .put(`${environment.mainUrl}${environment.updatePassword}`, body)
+      .get(`${environment.mainUrl}${environment.getAddress}`)
       .pipe(
         first(),
         catchError((e) => throwError(() => e))
       );
   }
 
-  getWishlist() {
+  updateAddress(id: string, body: any) {
     return this.http
-      .get(`${environment.mainUrl}${environment.getfavourite}`)
+      .put(`${environment.mainUrl}${environment.getAddress}/${id}`, body)
       .pipe(
         first(),
         catchError((e) => throwError(() => e))
       );
   }
 
-  deleteFromWishlist(id: string) {
+  deleteAddress(id: string) {
     return this.http
-      .delete(`${environment.mainUrl}${environment.deleteFromFavourite}/${id}`)
+      .delete(`${environment.mainUrl}${environment.getAddress}/${id}`)
       .pipe(
         first(),
         catchError((e) => throwError(() => e))

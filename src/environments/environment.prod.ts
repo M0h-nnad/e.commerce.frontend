@@ -6,13 +6,14 @@ export const environment = {
   updateUser: '/user',
   deleteUser: '/user',
   getSubitem: '/subitems',
+  getfavourite: '/favourite',
   addToFavourite: '/favorite',
+  deleteFromFavourite: '/favourite',
   rateProduct: '/rating',
   addToCart: '/cart',
   getAddress: '/address',
   addAddress: '/address',
   updateAddress: '/address',
   deleteAddress: '/address',
-  updatePassword:'/updatePassword',
-
+  updatePassword: '/updatePassword',
 };

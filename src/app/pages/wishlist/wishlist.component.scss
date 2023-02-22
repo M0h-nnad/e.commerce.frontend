@@ -3,6 +3,10 @@
   width: initial;
 }
 
+h1 {
+  text-transform: capitalize;
+}
+
 .btn-arrow {
   background: #ffffff !important;
   border: 1px solid #ced4da;
@@ -100,15 +104,15 @@ td a {
   border-top: 2px solid #eeee;
 }
 
-.table tfoot tr td{
+.table tfoot tr td {
   border: 0;
   font-size: 15px;
   text-transform: capitalize;
   font-weight: 700;
-  padding-top:35px ;
+  padding-top: 35px;
 }
 
-.table tfoot tr td:last-child{
+.table tfoot tr td:last-child {
   font-size: 24px;
 }
 

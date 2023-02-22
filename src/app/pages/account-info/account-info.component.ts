@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { addressType } from 'src/app/enum';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
@@ -17,11 +18,11 @@ export class AccountInfoComponent implements OnInit {
     this.user = this.authService.getAuthData()?.userDoc;
     if (this.user.addresses && this.user.addresses.length > 0) {
       this.shippingAddressIdx = this.user.addresses.findIndex(
-        (a: any) => a.type === 'Shipping Address'
+        (a: any) => a.type === addressType.shippingAddress
       );
 
       this.billingAddressIdx = this.user.addresses.findIndex(
-        (a: any) => a.type === 'Billing Address'
+        (a: any) => a.type === addressType.billingAddress
       );
     }
   }

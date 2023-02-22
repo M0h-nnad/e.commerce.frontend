@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { AddressService } from 'src/app/services/address/address.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { ErrorHandler } from 'src/app/services/error.handler';
+import { addressType } from 'src/app/enum';
 
 @Component({
   selector: 'app-address-book',
@@ -58,11 +59,10 @@ export class AddressBookComponent implements OnInit {
       country: ['select country', Validators.required],
       state: ['', Validators.required],
       city: ['', Validators.required],
-      type: ['Shipping Address'],
+      type: [addressType.shippingAddress],
       isDefault: [true],
     });
   }
-
 
   initBillingForm() {
     this.billingAddressForm = this.fb.group({
@@ -74,7 +74,7 @@ export class AddressBookComponent implements OnInit {
       city: ['', Validators.required],
       state: [''],
       postalCode: ['', Validators.required],
-      type: ['Billing Address'],
+      type: [addressType.billingAddress],
       isDefault: [true],
     });
   }
@@ -84,7 +84,7 @@ export class AddressBookComponent implements OnInit {
       next: (data: any) => {
         const addresses = data.data.sentObject;
         if (addresses.length === 0) return;
-        if (addresses[0].type === 'Billing Address') {
+        if (addresses[0].type === addressType.billingAddress) {
           this.billingAddressForm.patchValue(addresses[0]);
           this.billingAddressId = addresses[0].id;
           this.billingAddressIdx = 0;
@@ -112,9 +112,9 @@ export class AddressBookComponent implements OnInit {
     });
   }
 
-
   saveShippingAddress() {
     this.hasRequest = true;
+    this.shippingAddressForm.get('type')?.reset(addressType.shippingAddress);
     if (!this.hasShippingAddress)
       return this.addressService
         .createAddress(this.shippingAddressForm.value)
@@ -142,6 +142,7 @@ export class AddressBookComponent implements OnInit {
 
   saveBillingAddress() {
     this.hasRequest = true;
+    this.billingAddressForm.get('type')?.reset(addressType.billingAddress);
     if (!this.hasBillingAddress)
       return this.addressService
         .createAddress(this.billingAddressForm.value)

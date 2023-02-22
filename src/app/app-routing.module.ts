@@ -21,6 +21,7 @@ import { SubitemResolver } from './resolvers/subitem/subitem.resolver';
 import { SubitemsResolver } from './resolvers/subitems/subitems.resolver';
 import { AuthGuard } from './guards/guard/auth.guard';
 import { AddressesResolver } from './resolvers/addresses/addresses.resolver';
+import { WishlistResolver } from './resolvers/wishlist/wishlist.resolver';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -29,7 +30,11 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'checkout', component: CheckoutComponent },
-  { path: 'wishlist', component: WishlistComponent },
+  {
+    path: 'wishlist',
+    component: WishlistComponent,
+    resolve: { data: WishlistResolver },
+  },
   {
     path: 'product/:id',
     component: ProductPageComponent,

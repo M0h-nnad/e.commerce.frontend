@@ -10,14 +10,16 @@ export const environment = {
   updateUser: '/user',
   deleteUser: '/user',
   getSubitem: '/subitems',
-  addToFavourite: '/favorite',
+  getfavourite: '/favourite',
+  addToFavourite: '/favourite',
+  deleteFromFavourite: '/favourite',
   addToCart: '/cart',
   rateProduct: '/rating',
   getAddress: '/address',
   addAddress: '/address',
   updateAddress: '/address',
   deleteAddress: '/address',
-  updatePassword:'/updatePassword',
+  updatePassword: '/updatePassword',
 };
 
 /*
