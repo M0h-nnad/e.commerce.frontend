@@ -21,7 +21,11 @@
     </div>
   </div>
   <div class="product-details">
-    <bar-rating [(rate)]="rate" [readOnly]="true" [max]="5"></bar-rating>
+    <bar-rating
+      [rate]="product.rate ? product.rate : 0"
+      [readOnly]="true"
+      [max]="5"
+    ></bar-rating>
     <a [routerLink]="'/product/' + product.id">
       <h6>{{ product.name }}</h6>
     </a>
