@@ -55,8 +55,10 @@
         class="col-12 d-inline-flex gap-2 justify-content-end"
         *ngIf="wishlist && wishlist.length > 0"
       >
-        <button class="btn btn-solid">continue shopping</button>
-        <button class="btn btn-solid">check out</button>
+        <a [routerLink]="'/collection'" class="btn btn-solid"
+          >continue shopping</a
+        >
+        <a [routerLink]="'/checkout'" class="btn btn-solid">check out</a>
       </div>
     </div>
   </div>
