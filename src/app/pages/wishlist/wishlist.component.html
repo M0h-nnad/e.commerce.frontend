@@ -2,7 +2,9 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <h1 class="text-center">wishlist is empty</h1>
+        <h1 class="text-center" *ngIf="wishlist && wishlist.length == 0">
+          wishlist is empty
+        </h1>
         <div class="table-responsive" *ngIf="wishlist && wishlist.length > 0">
           <table class="table cart-table">
             <thead>
