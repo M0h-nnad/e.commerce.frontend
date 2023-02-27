@@ -22,11 +22,12 @@ import { SubitemsResolver } from './resolvers/subitems/subitems.resolver';
 import { AuthGuard } from './guards/guard/auth.guard';
 import { AddressesResolver } from './resolvers/addresses/addresses.resolver';
 import { WishlistResolver } from './resolvers/wishlist/wishlist.resolver';
+import { CartResolver } from './resolvers/cart/cart.resolver';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'cart', component: CartComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'cart', component: CartComponent, resolve: { data: CartResolver } },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'checkout', component: CheckoutComponent },

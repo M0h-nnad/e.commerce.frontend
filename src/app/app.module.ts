@@ -43,6 +43,7 @@ import { SubitemResolver } from './resolvers/subitem/subitem.resolver';
 import { SubitemsResolver } from './resolvers/subitems/subitems.resolver';
 import { AddressesResolver } from './resolvers/addresses/addresses.resolver';
 import { WishlistResolver } from './resolvers/wishlist/wishlist.resolver';
+import { CartResolver } from './resolvers/cart/cart.resolver';
 @NgModule({
   declarations: [
     AppComponent,
@@ -92,6 +93,7 @@ import { WishlistResolver } from './resolvers/wishlist/wishlist.resolver';
     SubitemsResolver,
     AddressesResolver,
     WishlistResolver,
+    CartResolver,
   ],
   bootstrap: [AppComponent],
 })

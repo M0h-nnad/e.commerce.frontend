@@ -44,4 +44,13 @@ export class UserService {
         catchError((e) => throwError(() => e))
       );
   }
+
+  getCart() {
+    return this.http
+      .get(`${environment.mainUrl}${environment.getFromCart}`)
+      .pipe(
+        first(),
+        catchError((e) => throwError(() => e))
+      );
+  }
 }

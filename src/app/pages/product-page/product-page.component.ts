@@ -20,6 +20,7 @@ export class ProductPageComponent implements OnInit {
   inStock: number = 0;
   activeSize!: string;
   variantId!: string;
+  sizeId!: string;
   sizeAmount: number = 0;
   ratingForm!: FormGroup;
   rate!: number;
@@ -112,6 +113,7 @@ export class ProductPageComponent implements OnInit {
     this.sizeAmount = 0;
     this.activeSize = size;
     this.sizeAmount = this.product.variants[variantIdx].sizes[sizeIdx].number;
+    this.sizeId = this.product.variants[variantIdx].sizes[sizeIdx].id;
   }
 
   initForm() {
@@ -140,7 +142,7 @@ export class ProductPageComponent implements OnInit {
   addToCart(quantity: number) {
     if (!quantity) quantity = 1;
     this.subItemsService
-      .addToCart(this.product.id, quantity, this.variantId)
+      .addToCart(this.product.id, quantity, this.variantId, this.sizeId)
       .subscribe({
         next: (res: any) => {},
         error: (err) => this.toastr.error(err.error.messages),

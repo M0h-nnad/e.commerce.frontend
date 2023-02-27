@@ -46,11 +46,17 @@ export class SubitemsService {
       );
   }
 
-  addToCart(id: string, quantity: number = 1, varaintId: string) {
+  addToCart(
+    id: string,
+    quantity: number = 1,
+    varaintId: string,
+    sizeId: string
+  ) {
     return this.http
       .post(`${environment.mainUrl}${environment.addToCart}/${id}`, {
         quantity,
         varaintId,
+        sizeId,
       })
       .pipe(
         first(),
