@@ -12,6 +12,7 @@ import {
   faX,
 } from '@fortawesome/free-solid-svg-icons';
 import { ToastrService } from 'ngx-toastr';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-cart',
@@ -32,7 +33,8 @@ export class CartComponent implements OnInit, AfterViewInit {
   constructor(
     @Inject('Window') window: Window,
     private readonly route: ActivatedRoute,
-    private readonly toastr: ToastrService
+    private readonly toastr: ToastrService,
+    private readonly userService: UserService
   ) {
     this.window = window;
   }
@@ -42,7 +44,7 @@ export class CartComponent implements OnInit, AfterViewInit {
       next: (data: any) => {
         this.cart = data.data.sentObject;
         this.cart.forEach((obj: any) => {
-          this.totalPrice += obj.item.price - obj.item.offer;
+          this.totalPrice += (obj.item.price - obj.item.offer) * obj.quantity;
         });
       },
       error: (err) => this.toastr.error(err.error.messages),
@@ -63,11 +65,33 @@ export class CartComponent implements OnInit, AfterViewInit {
     }
   }
 
-  updateQuantity(operation: any) {}
+  updateQuantity(operation: string, index: number, quantity: number) {
+    const maxQuantity = this.cart[index].size.number;
+    let updated = false;
+    if (operation === '-' && quantity > 1) {
+      --this.cart[index].quantity;
+      updated = true;
+    } else if (operation === '+' && quantity < maxQuantity) {
+      ++this.cart[index].quantity;
+      updated = true;
+    }
 
-  deleteItem(index: number) {
-    this.totalPrice -=
-      this.cart[index].item.price - this.cart[index].item.offer;
-    this.cart.splice(index, 1);
+    const id = this.cart[index].orderId;
+    const newQuantity = this.cart[index].quantity;
+    if (updated)
+      this.userService
+        .updateQuantity(id, newQuantity)
+        .subscribe({
+          next: () => {},
+          error: (err) => this.toastr.error(err.error.messages),
+        });
+  }
+
+  deleteItem(index: number, orderId: string) {
+    this.userService.deleteCart(orderId).subscribe(() => {
+      this.totalPrice -=
+        this.cart[index].item.price - this.cart[index].item.offer;
+      this.cart.splice(index, 1);
+    });
   }
 }

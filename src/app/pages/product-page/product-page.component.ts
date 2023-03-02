@@ -141,6 +141,7 @@ export class ProductPageComponent implements OnInit {
 
   addToCart(quantity: number) {
     if (!quantity) quantity = 1;
+
     this.subItemsService
       .addToCart(this.product.id, quantity, this.variantId, this.sizeId)
       .subscribe({

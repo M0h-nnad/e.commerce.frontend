@@ -7,6 +7,7 @@ import {
   Router,
 } from '@angular/router';
 import { AuthService } from './services/auth/auth.service';
+import { LoadingService } from './services/loading/loading.service';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,15 @@ export class AppComponent {
   isLoading: boolean = false;
   title = 'frontend';
 
-  constructor(public router: Router, private authService: AuthService) {
+  constructor(
+    public router: Router,
+    private authService: AuthService,
+    private loader: LoadingService
+  ) {
+    this.loader.loader$.subscribe({
+      next: (val) => (this.isLoading = val),
+    });
+
     this.router.events.subscribe((ev) => {
       if (ev instanceof NavigationStart) {
         this.isLoading = true;

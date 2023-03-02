@@ -53,4 +53,24 @@ export class UserService {
         catchError((e) => throwError(() => e))
       );
   }
+
+  deleteCart(id: string) {
+    return this.http
+      .delete(`${environment.mainUrl}${environment.deleteFromCart}/${id}`)
+      .pipe(
+        first(),
+        catchError((e) => throwError(() => e))
+      );
+  }
+
+  updateQuantity(id: string, quantity: number) {
+    return this.http
+      .put(`${environment.mainUrl}${environment.updateQuantity}/${id}`, {
+        quantity,
+      })
+      .pipe(
+        first(),
+        catchError((e) => throwError(() => e))
+      );
+  }
 }

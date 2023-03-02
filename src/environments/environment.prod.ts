@@ -12,6 +12,8 @@ export const environment = {
   rateProduct: '/rating',
   getFromCart: '/cart',
   addToCart: '/cart',
+  updateQuantity: '/cart',
+  deleteFromCart: '/cart',
   getAddress: '/address',
   addAddress: '/address',
   updateAddress: '/address',

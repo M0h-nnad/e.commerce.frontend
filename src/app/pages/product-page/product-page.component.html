@@ -191,7 +191,7 @@
                   <button
                     class="btn btn-solid fw-bold"
                     [disabled]="sizeAmount == 0"
-                    (click)="addToCart(input.valueAsNumber)"
+                    (click)="addToCart(+input.value)"
                   >
                     add to cart
                   </button>
@@ -241,10 +241,7 @@
             <mat-tab label="Write Review">
               <div class="d-flex gap-2 align-items-center">
                 <label for="ratin">rating</label>
-                <bar-rating
-                  [rate]="5"
-                  [(ngModel)]="rate"
-                ></bar-rating>
+                <bar-rating [rate]="5" [(ngModel)]="rate"></bar-rating>
               </div>
               <form class="theme-form" [formGroup]="ratingForm">
                 <div class="row">
