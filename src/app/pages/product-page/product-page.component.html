@@ -110,7 +110,10 @@
                   <li
                     *ngFor="let variant of product.variants"
                     [style]="'background-color:' + variant.color"
-                    [ngClass]="{ active: variantId === variant.id }"
+                    [ngClass]="{
+                      active: variantId === variant.id,
+                      border: variant.color === 'white'
+                    }"
                     (click)="changeVariant(mainOwl, variant.id)"
                   ></li>
                 </ul>

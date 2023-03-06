@@ -25,8 +25,8 @@ export class ProductComponent implements OnInit {
   mainCover!: string;
 
   constructor(
-    private subItemsService: SubitemsService,
-    private toastr: ToastrService
+    private readonly subItemsService: SubitemsService,
+    private readonly toastr: ToastrService
   ) {}
 
   ngOnInit(): void {

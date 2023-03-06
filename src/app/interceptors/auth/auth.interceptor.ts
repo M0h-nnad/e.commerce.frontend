@@ -12,8 +12,8 @@ import { LoadingService } from 'src/app/services/loading/loading.service';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
   constructor(
-    private authService: AuthService,
-    private loader: LoadingService
+    private readonly authService: AuthService,
+    private readonly loader: LoadingService
   ) {}
 
   intercept(

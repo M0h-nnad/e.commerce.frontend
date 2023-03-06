@@ -13,7 +13,7 @@
                 class="form-control"
                 formControlName="firstName"
               />
-              <span class="text-danger">{{ errors.firstName }}</span>
+              <span class="text-danger">{{ errors?.firstName }}</span>
             </div>
           </div>
 
@@ -26,7 +26,7 @@
                 class="form-control"
                 formControlName="lastName"
               />
-              <span class="text-danger">{{ errors.lastName }}</span>
+              <span class="text-danger">{{ errors?.lastName }}</span>
             </div>
           </div>
 
@@ -39,7 +39,7 @@
                 class="form-control"
                 formControlName="phone"
               />
-              <span class="text-danger">{{ errors.phone }}</span>
+              <span class="text-danger">{{ errors?.phone }}</span>
             </div>
           </div>
 
@@ -52,7 +52,7 @@
                 formControlName="email"
                 class="form-control"
               />
-              <span class="text-danger">{{ errors.email }}</span>
+              <span class="text-danger">{{ errors?.email }}</span>
             </div>
           </div>
 
@@ -66,7 +66,7 @@
                 <option>Male</option>
                 <option>female</option>
               </select>
-              <span class="text-danger">{{ errors.gender }}</span>
+              <span class="text-danger">{{ errors?.gender }}</span>
             </div>
           </div>
         </div>

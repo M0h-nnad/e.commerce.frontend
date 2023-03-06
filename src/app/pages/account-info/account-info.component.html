@@ -3,7 +3,7 @@
     <h2>my dashboard</h2>
   </div>
   <div class="welcome-msg">
-    <p>Hello, {{ user.firstName + " " + user.lastName }} !</p>
+    <p>Hello, {{ user?.firstName + " " + user?.lastName }} !</p>
     <p>
       From your My Account Dashboard you have the ability to view a snapshot of
       your recent account activity and update your account information. Select a
@@ -23,8 +23,8 @@
             <a [routerLink]="'/dashboard/profile'">edit</a>
           </div>
           <div class="box-content">
-            <h6>{{ user.firstName + " " + user.lastName }}</h6>
-            <h6>{{ user.email }}</h6>
+            <h6>{{ user?.firstName + " " + user?.lastName }}</h6>
+            <h6>{{ user?.email }}</h6>
             <h6>
               <a [routerLink]="'/dashboard/change-password'">
                 change password
@@ -45,8 +45,8 @@
           <div class="col-sm-6">
             <h6>default billing address</h6>
             <address>
-              <span>{{ this.user.addresses[billingAddressIdx].name }}</span>
-              <span *ngIf="shippingAddressIdx < -1">
+              <span *ngIf="billingAddressIdx !== -1">{{ this.user?.addresses[billingAddressIdx].name }}</span>
+              <span *ngIf="shippingAddressIdx == -1">
                 You have not set a default billing address.
               </span>
               <br />
@@ -56,8 +56,8 @@
           <div class="col-sm-6">
             <h6>default shipping address</h6>
             <address>
-              <span>{{ this.user.addresses[shippingAddressIdx].name }}</span>
-              <span *ngIf="billingAddressIdx < -1">
+              <span *ngIf="billingAddressIdx !== -1">{{ this.user?.addresses[shippingAddressIdx].name }}</span>
+              <span *ngIf="billingAddressIdx == -1">
                 You have not set a default shipping address.
               </span>
               <br />

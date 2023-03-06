@@ -15,7 +15,7 @@
                     placeholder="First Name"
                     type="text"
                   />
-                  <span class="ps-3 text-danger">{{ errors.firstName }}</span>
+                  <span class="ps-3 text-danger">{{ errors?.firstName }}</span>
                 </div>
               </div>
               <div class="col-md-6">
@@ -27,7 +27,7 @@
                     placeholder="Last Name"
                     type="text"
                   />
-                  <span class="ps-3 text-danger">{{ errors.lastName }}</span>
+                  <span class="ps-3 text-danger">{{ errors?.lastName }}</span>
                 </div>
               </div>
             </div>
@@ -43,7 +43,7 @@
                     <option>Male</option>
                     <option>female</option>
                   </select>
-                  <span class="ps-3 text-danger">{{ errors.gender }}</span>
+                  <span class="ps-3 text-danger">{{ errors?.gender }}</span>
                 </div>
               </div>
               <div class="col-md-6">
@@ -55,8 +55,8 @@
                     placeholder="Enter Your phone number"
                     type="text"
                   />
-                  <!-- <span *ngIf="errors" class="ps-3 text-danger">phone number is required</span> -->
-                  <span class="ps-3 text-danger">{{ errors.phone }}</span>
+                  <!-- <span *ngIf="errors?" class="ps-3 text-danger">phone number is required</span> -->
+                  <span class="ps-3 text-danger">{{ errors?.phone }}</span>
                 </div>
               </div>
             </div>
@@ -71,8 +71,8 @@
                     formControlName="email"
                     type="email"
                   />
-                  <!-- <span *ngIf="errors" class="ps-3 text-danger">email is required</span> -->
-                  <span class="ps-3 text-danger">{{ errors.email }}</span>
+                  <!-- <span *ngIf="errors?" class="ps-3 text-danger">email is required</span> -->
+                  <span class="ps-3 text-danger">{{ errors?.email }}</span>
                 </div>
               </div>
               <div class="col-md-6">
@@ -84,7 +84,7 @@
                     placeholder="Enter Your Password"
                     type="password"
                   />
-                  <span class="ps-3 text-danger">{{ errors.password }}</span>
+                  <span class="ps-3 text-danger">{{ errors?.password }}</span>
                 </div>
               </div>
             </div>

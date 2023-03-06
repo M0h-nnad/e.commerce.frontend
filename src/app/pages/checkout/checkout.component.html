@@ -4,65 +4,13 @@
       <div class="row">
         <div class="col-lg-6 col-md-12 col-sm-12">
           <h3>billing details</h3>
-          <form>
-            <div class="row checkout">
-              <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                <label for="first name" class="form-label">first name</label>
-                <input type="text" class="form-control" />
-                <label for="error" class="error">first name is required</label>
-              </div>
 
-              <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                <label for="last name" class="form-label">last name</label>
-                <input type="text" class="form-control" />
-                <label for="error" class="error">last name is required</label>
-              </div>
-
-              <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                <label for="phone" class="form-label">phone</label>
-                <input type="tel" class="form-control" />
-                <label for="error" class="error">phone no is required</label>
-              </div>
-
-              <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                <label for="email" class="form-label">email</label>
-                <input type="email" class="form-control" />
-                <label for="error" class="error">email is required</label>
-              </div>
-
-              <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                <label for="country" class="form-label">country</label>
-                <select class="form-control">
-                  <option value="egypt">egypt</option>
-                  <option value="uk">uk</option>
-                  <option value="uae">uae</option>
-                </select>
-              </div>
-
-              <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                <label for="address" class="form-label">address</label>
-                <input type="text" class="form-control" />
-                <label for="error" class="error">address is required</label>
-              </div>
-
-              <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                <label for="town/city" class="form-label">town/city</label>
-                <input type="text" class="form-control" />
-                <label for="error" class="error">town/city is required</label>
-              </div>
-
-              <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                <label for="state" class="form-label">state</label>
-                <input type="text" class="form-control" />
-              </div>
-
-              <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                <label for="postal code" class="form-label">postal code</label>
-                <input type="text" class="form-control" />
-                <label for="error" class="error">postacode is required</label>
-              </div>
-            </div>
-          </form>
+          <div class="form-group col-md-12 col-sm-6 col-xs-12">
+            <ngx-stripe-card
+              [options]="cardOptions"
+              [elementsOptions]="elementsOptions"
+            ></ngx-stripe-card>
+          </div>
         </div>
         <div class="col-lg-6 col-md-12 col-sm-12">
           <div class="checkout-details">
@@ -76,17 +24,8 @@
                 </div>
               </div>
               <div class="sub-items row">
-                <div class="col-6">
-                  <span> Pink Slim Shirt × 1 </span>
-                </div>
-                <div class="col-6">
-                  <span class="price">$25.10</span>
-                </div>
-                <div class="col-6">
-                  <span>SLim Fit Jeans × 1</span>
-                </div>
-                <div class="col-6">
-                  <span class="price">$555.00</span>
+                <div class="col-6" *ngFor="let order of cart">
+                  <span> {{ order?.item?.name }} × {{ order?.quantity }} </span>
                 </div>
               </div>
               <div class="sub-total row">
@@ -94,18 +33,14 @@
                   <span> subtotal </span>
                 </div>
                 <div class="col-6">
-                  <span class="price"> $380.10 </span>
+                  <span class="price"> ${{ subtotal }} </span>
                 </div>
                 <div class="col-6">
                   <span> shipping </span>
                 </div>
                 <div class="col-6">
                   <div class="shipping-option">
-                    <input type="checkbox" />
-                    <label for="free shipping">free shipping</label>
-                  </div>
-                  <div class="shipping-option">
-                    <input type="checkbox" />
+                    <input type="checkbox" (change)="updateTotal($event)" />
                     <label for="local pickup">local pickup</label>
                   </div>
                 </div>
@@ -115,7 +50,7 @@
                   <span>total</span>
                 </div>
                 <div class="col-6">
-                  <span class="price">$620.00</span>
+                  <span class="price"> ${{ totalPrice }}</span>
                 </div>
               </div>
             </div>
@@ -125,14 +60,7 @@
                   <li>
                     <div class="radio-option">
                       <input type="radio" name="payment" />
-                      <label for="cash on delivery">cash on delivery</label>
-                    </div>
-                  </li>
-
-                  <li>
-                    <div class="radio-option">
-                      <input type="radio" name="payment" />
-                      <label for="check payments">check payments</label>
+                      <label for="check payments">stripe</label>
                     </div>
                   </li>
 
@@ -145,7 +73,9 @@
                 </ul>
               </div>
               <div class="text-end">
-                <a [routerLink]="'/order-success'" class="btn btn-solid">place order</a>
+                <button (click)="checkout()" class="btn btn-solid">
+                  place order
+                </button>
               </div>
             </div>
           </div>

@@ -17,19 +17,21 @@
             <tbody>
               <tr *ngFor="let item of wishlist; let i = index">
                 <td>
-                  <a [routerLink]="'/product/' + item.id">
+                  <a [routerLink]="'/product/' + item?.id">
                     <img
                       height="90px"
-                      [src]="item.variants[0].src"
+                      [src]="item?.variants[0].src"
                       alt="product name"
                     />
                   </a>
                 </td>
                 <td>
-                  <a [routerLink]="'/product/' + item.id"> {{ item.name }} </a>
+                  <a [routerLink]="'/product/' + item?.id">
+                    {{ item?.name }}
+                  </a>
                 </td>
                 <td>
-                  <h2>${{ item.price - item.offer }}</h2>
+                  <h2>${{ item?.price - item?.offer }}</h2>
                 </td>
 
                 <td>
@@ -40,7 +42,7 @@
                   <div class="d-flex gap-2 justify-content-center">
                     <button
                       class="btn btn-light"
-                      (click)="deleteFromFavorite(item.id, i)"
+                      (click)="deleteFromFavorite(item?.id, i)"
                     >
                       <fa-icon [icon]="faX"></fa-icon>
                     </button>

@@ -14,6 +14,8 @@ export const environment = {
   addToCart: '/cart',
   updateQuantity: '/cart',
   deleteFromCart: '/cart',
+  createOrder: '/order',
+
   getAddress: '/address',
   addAddress: '/address',
   updateAddress: '/address',

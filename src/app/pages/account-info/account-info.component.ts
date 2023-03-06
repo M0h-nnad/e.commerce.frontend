@@ -9,8 +9,8 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class AccountInfoComponent implements OnInit {
   user!: any;
-  billingAddressIdx!: number;
-  shippingAddressIdx!: number;
+  billingAddressIdx: number = -1;
+  shippingAddressIdx: number = -1;
 
   constructor(private authService: AuthService) {}
 
@@ -24,6 +24,7 @@ export class AccountInfoComponent implements OnInit {
       this.billingAddressIdx = this.user.addresses.findIndex(
         (a: any) => a.type === addressType.billingAddress
       );
+
     }
   }
 }

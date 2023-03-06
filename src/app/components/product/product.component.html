@@ -5,39 +5,39 @@
 
     <div class="label-block">
       <div class="label1">
-        <span *ngIf="product.new === 'true'">new</span>
+        <span *ngIf="product?.new === 'true'">new</span>
       </div>
       <div class="label2">
-        <span *ngIf="product.onsale">on sale</span>
+        <span *ngIf="product?.onsale">on sale</span>
       </div>
     </div>
     <div class="cart-info cart-wrap">
-      <!-- <button class="btn btn-link p-0" (click)="addToCart(product.id)">
+      <!-- <button class="btn btn-link p-0" (click)="addToCart(product?.id)">
         <fa-icon [icon]="faCartShopping" [styles]="{ color: '#777' }"></fa-icon>
       </button> -->
-      <button class="btn btn-link p-0" (click)="addToFavourite(product.id)">
+      <button class="btn btn-link p-0" (click)="addToFavourite(product?.id)">
         <fa-icon [icon]="faHeart" [styles]="{ color: '#777' }"></fa-icon>
       </button>
     </div>
   </div>
   <div class="product-details">
     <bar-rating
-      [rate]="product.rate ? product.rate : 0"
+      [rate]="product?.rate ? product?.rate : 0"
       [readOnly]="true"
       [max]="5"
     ></bar-rating>
-    <a [routerLink]="'/product/' + product.id">
-      <h6>{{ product.name }}</h6>
+    <a [routerLink]="'/product/' + product?.id">
+      <h6>{{ product?.name }}</h6>
     </a>
     <h4>
-      ${{ product.price - +product.offer }}
+      ${{ product?.price - +product?.offer }}
       <del>
-        <span class="money"> ${{ product.price }} </span>
+        <span class="money"> ${{ product?.price }} </span>
       </del>
     </h4>
     <ul>
       <li
-        *ngFor="let variant of product.variants; let i = index"
+        *ngFor="let variant of product?.variants; let i = index"
         class="color-variant"
         [style]="'background-color:' + variant.color"
         (click)="changePhoto(i)"

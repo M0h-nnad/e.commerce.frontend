@@ -44,6 +44,7 @@ import { SubitemsResolver } from './resolvers/subitems/subitems.resolver';
 import { AddressesResolver } from './resolvers/addresses/addresses.resolver';
 import { WishlistResolver } from './resolvers/wishlist/wishlist.resolver';
 import { CartResolver } from './resolvers/cart/cart.resolver';
+import { NgxStripeModule } from 'ngx-stripe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,6 +85,7 @@ import { CartResolver } from './resolvers/cart/cart.resolver';
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     FormsModule,
+    NgxStripeModule.forRoot('pk_test_51Jc6wqFEM4UHLNs0mSUohXy3lhIZ35Yc5rPTxq22WPAvGh9QWbT4k9AmhR22gluFeXHTljVt9MWhlO2eCSDEbcgX00jgOqrRPj'),
   ],
   providers: [
     { provide: 'Window', useValue: window },

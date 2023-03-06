@@ -12,7 +12,7 @@ import { SubitemsService } from 'src/app/services/subitem/subitems.service';
   providedIn: 'root',
 })
 export class SubitemResolver implements Resolve<boolean> {
-  constructor(private subItemService: SubitemsService) {}
+  constructor(private readonly subItemService: SubitemsService) {}
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot

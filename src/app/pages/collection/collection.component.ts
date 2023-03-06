@@ -12,6 +12,7 @@ import {
   faArrowLeft,
   faArrowRight,
 } from '@fortawesome/free-solid-svg-icons';
+import { Product } from 'src/app/types/product.interface';
 
 @Component({
   selector: 'app-collection',
@@ -27,7 +28,7 @@ export class CollectionComponent implements OnInit, AfterViewInit {
   isSizeOpen = true;
   window: any;
   isMobile = false;
-  products: any[] = [];
+  products: Product[] = [];
   pagesCount!: number;
   ArrayForIteration!: any[];
   brands: string[] = [];
@@ -40,9 +41,9 @@ export class CollectionComponent implements OnInit, AfterViewInit {
   }
   constructor(
     @Inject('Window') window: Window,
-    private route: ActivatedRoute,
-    private router: Router,
-    private fb: FormBuilder
+    private readonly route: ActivatedRoute,
+    private readonly router: Router,
+    private readonly fb: FormBuilder
   ) {
     this.window = window;
     this.route.data.subscribe((res: any) => {

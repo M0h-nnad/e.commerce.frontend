@@ -16,19 +16,23 @@
             <tbody>
               <tr *ngFor="let order of cart; let i = index">
                 <td>
-                  <a href="">
+                  <a [routerLink]="'/product/' + order?.item?._id">
                     <img
                       height="90px"
-                      [src]="order.variant.src"
-                      [alt]="order.item.name"
+                      [src]="order?.variant?.src"
+                      [alt]="order?.item?.name"
                     />
                   </a>
                 </td>
                 <td>
-                  <a [href]="order.item._id"> {{ order.item.name }} </a>
+                  <a [routerLink]="'/product/' + order?.item?._id">
+                    {{ order?.item?.name }}
+                  </a>
                 </td>
                 <td>
-                  <h2>${{ order.item.price - order.item.offer }}</h2>
+                  <h2 *ngIf="order.item.price">
+                    ${{ order.item.price - order.item.offer  }}
+                  </h2>
                 </td>
                 <td>
                   <div class="qty-box">
@@ -36,7 +40,7 @@
                       <span class="input-group-prepend" *ngIf="!isMobile">
                         <button
                           class="btn"
-                          (click)="updateQuantity('-', i, order.quantity)"
+                          (click)="updateQuantity('-', i, order?.quantity ?? 0)"
                         >
                           <fa-icon [icon]="faArrowLeft"></fa-icon>
                         </button>
@@ -44,13 +48,13 @@
                       <input
                         type="text"
                         [disabled]="true"
-                        [value]="order.quantity"
+                        [value]="order?.quantity"
                         class="form-control input-number"
                       />
                       <span class="input-group-prepend" *ngIf="!isMobile">
                         <button
                           class="btn"
-                          (click)="updateQuantity('+', i, order.quantity)"
+                          (click)="updateQuantity('+', i, order?.quantity ?? 0)"
                         >
                           <fa-icon [icon]="faArrowRight"></fa-icon>
                         </button>
@@ -61,7 +65,7 @@
                 <td>
                   <button
                     class="btn btn-light"
-                    (click)="deleteItem(i, order.orderId)"
+                    (click)="deleteItem(i, order?.orderId ?? '')"
                   >
                     <fa-icon [icon]="faX"></fa-icon>
                   </button>

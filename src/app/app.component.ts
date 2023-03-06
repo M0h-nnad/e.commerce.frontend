@@ -20,8 +20,8 @@ export class AppComponent {
 
   constructor(
     public router: Router,
-    private authService: AuthService,
-    private loader: LoadingService
+    private readonly authService: AuthService,
+    private readonly loader: LoadingService
   ) {
     this.loader.loader$.subscribe({
       next: (val) => (this.isLoading = val),

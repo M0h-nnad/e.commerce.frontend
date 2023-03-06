@@ -45,7 +45,13 @@ export class RegisterComponent implements OnInit {
 
   signup() {
     this.authService.signup(this.signupForm.value).subscribe({
-      next: (res) => this.router.navigate(['/home']),
+      next: (res: any) => {
+        const date = new Date();
+        date.setDate(date.getDate() + 1);
+        this.authService.saveAuthData(res.token, date, res.UserDoc);
+        this.authService.autoAuthUser();
+        this.router.navigate(['/home']);
+      },
       error: (err) => this.toastr.error(err.error.messages),
     });
   }

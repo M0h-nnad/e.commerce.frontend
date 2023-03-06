@@ -12,7 +12,10 @@ import {
   faX,
 } from '@fortawesome/free-solid-svg-icons';
 import { ToastrService } from 'ngx-toastr';
+import { DataService } from 'src/app/services/data/data.service';
 import { UserService } from 'src/app/services/user/user.service';
+import { CartItem } from 'src/app/types/cartItem.interface';
+import { debounce, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -25,8 +28,11 @@ export class CartComponent implements OnInit, AfterViewInit {
   faX = faX;
   window;
   isMobile = false;
-  cart!: any;
+  cart!: CartItem[];
   totalPrice: number = 0;
+
+  updateQuantitySubject = new Subject();
+
   @HostListener('window:resize') Resize() {
     this.updateLayout();
   }
@@ -34,7 +40,8 @@ export class CartComponent implements OnInit, AfterViewInit {
     @Inject('Window') window: Window,
     private readonly route: ActivatedRoute,
     private readonly toastr: ToastrService,
-    private readonly userService: UserService
+    private readonly userService: UserService,
+    private readonly dataService: DataService
   ) {
     this.window = window;
   }
@@ -43,9 +50,11 @@ export class CartComponent implements OnInit, AfterViewInit {
     this.route.data.subscribe({
       next: (data: any) => {
         this.cart = data.data.sentObject;
-        this.cart.forEach((obj: any) => {
-          this.totalPrice += (obj.item.price - obj.item.offer) * obj.quantity;
-        });
+        this.dataService.setArray(this.cart);
+        this.totalPrice = this.cart.reduce((total: number, obj: CartItem) => {
+          const itemPrice = obj.item.price - obj.item.offer;
+          return total + itemPrice * obj.quantity;
+        }, 0);
       },
       error: (err) => this.toastr.error(err.error.messages),
     });
@@ -65,6 +74,8 @@ export class CartComponent implements OnInit, AfterViewInit {
     }
   }
 
+  onUpdateQuantityInput(operation: string, index: number, quantity: number) {}
+
   updateQuantity(operation: string, index: number, quantity: number) {
     const maxQuantity = this.cart[index].size.number;
     let updated = false;
@@ -79,12 +90,12 @@ export class CartComponent implements OnInit, AfterViewInit {
     const id = this.cart[index].orderId;
     const newQuantity = this.cart[index].quantity;
     if (updated)
-      this.userService
-        .updateQuantity(id, newQuantity)
-        .subscribe({
-          next: () => {},
-          error: (err) => this.toastr.error(err.error.messages),
-        });
+      this.userService.updateQuantity(id, newQuantity).subscribe({
+        next: () => {
+          this.dataService.setArray(this.cart);
+        },
+        error: (err) => this.toastr.error(err.error.messages),
+      });
   }
 
   deleteItem(index: number, orderId: string) {
@@ -92,6 +103,7 @@ export class CartComponent implements OnInit, AfterViewInit {
       this.totalPrice -=
         this.cart[index].item.price - this.cart[index].item.offer;
       this.cart.splice(index, 1);
+      this.dataService.setArray(this.cart);
     });
   }
 }

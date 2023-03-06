@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SubitemsService } from 'src/app/services/subitem/subitems.service';
 import { ToastrService } from 'ngx-toastr';
+import { Product } from 'src/app/types/product.interface';
 
 @Component({
   selector: 'app-product-page',
@@ -15,7 +16,7 @@ export class ProductPageComponent implements OnInit {
   activatedId: any = 1;
   faArrowLeft = faArrowLeft;
   faArrowRight = faArrowRight;
-  product!: any;
+  product!: Product;
   discountPercentage!: number;
   inStock: number = 0;
   activeSize!: string;
@@ -76,11 +77,11 @@ export class ProductPageComponent implements OnInit {
   };
 
   constructor(
-    private fb: FormBuilder,
-    private router: Router,
-    private toastr: ToastrService,
-    private activatedRoute: ActivatedRoute,
-    private subItemsService: SubitemsService
+    private readonly fb: FormBuilder,
+    private readonly router: Router,
+    private readonly toastr: ToastrService,
+    private readonly activatedRoute: ActivatedRoute,
+    private readonly subItemsService: SubitemsService
   ) {}
 
   ngOnInit(): void {

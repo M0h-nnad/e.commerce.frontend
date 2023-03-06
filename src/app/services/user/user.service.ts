@@ -1,13 +1,28 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, first, throwError } from 'rxjs';
+import {
+  catchError,
+  first,
+  throwError,
+  debounceTime,
+  debounce,
+  timer,
+  delay,
+  Subject,
+  switchMap,
+} from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private http: HttpClient) {}
+  private updateQuantitySubject = new Subject<{
+    id: string;
+    quantity: number;
+  }>();
+
+  constructor(private readonly http: HttpClient) {}
 
   updateUser(body: any) {
     return this.http
@@ -64,10 +79,26 @@ export class UserService {
   }
 
   updateQuantity(id: string, quantity: number) {
+    this.updateQuantitySubject.next({ id, quantity });
+
+    return this.updateQuantitySubject.pipe(
+      debounceTime(500),
+      switchMap(() => {
+        return this.http.put(
+          `${environment.mainUrl}${environment.updateQuantity}/${id}`,
+          {
+            quantity,
+          }
+        );
+      }),
+      first(),
+      catchError((e) => throwError(() => e))
+    );
+  }
+
+  placeAnOrder(token: any) {
     return this.http
-      .put(`${environment.mainUrl}${environment.updateQuantity}/${id}`, {
-        quantity,
-      })
+      .post(`${environment.mainUrl}${environment.createOrder}`, { token })
       .pipe(
         first(),
         catchError((e) => throwError(() => e))

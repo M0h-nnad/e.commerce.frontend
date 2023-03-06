@@ -20,10 +20,10 @@ export class ChangePasswordComponent implements OnInit {
   errors: any = {};
   hasRequest: boolean = false;
   constructor(
-    private fb: FormBuilder,
-    private errorHandler: ErrorHandler,
-    private userService: UserService,
-    private toastr: ToastrService
+    private readonly fb: FormBuilder,
+    private readonly errorHandler: ErrorHandler,
+    private readonly userService: UserService,
+    private readonly toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
