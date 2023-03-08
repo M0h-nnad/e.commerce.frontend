@@ -5,7 +5,7 @@ import {
   Inject,
   OnInit,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {
   faArrowLeft,
   faArrowRight,
@@ -37,6 +37,7 @@ export class CartComponent implements OnInit, AfterViewInit {
     this.updateLayout();
   }
   constructor(
+    private readonly router: Router,
     @Inject('Window') window: Window,
     private readonly route: ActivatedRoute,
     private readonly toastr: ToastrService,
@@ -73,8 +74,6 @@ export class CartComponent implements OnInit, AfterViewInit {
       this.isMobile = false;
     }
   }
-
-  onUpdateQuantityInput(operation: string, index: number, quantity: number) {}
 
   updateQuantity(operation: string, index: number, quantity: number) {
     const maxQuantity = this.cart[index].size.number;

@@ -10,7 +10,7 @@
           ></fa-icon>
           <h2 class="mt-1">thank you</h2>
           <p>Payment Is Successfully Processsed And Your Order Is On The Way</p>
-          <p>Transaction ID:267676GHERT105467</p>
+          <p>Transaction ID: {{ transaction.paymentInfo.transactionId }}</p>
         </div>
       </div>
     </div>
@@ -23,30 +23,37 @@
       <div class="col-lg-6">
         <div class="product-order">
           <h3>your order detail</h3>
-          <div class="row product-details">
+          <div
+            class="row product-details"
+            *ngFor="let product of transaction.productInfo"
+          >
             <div class="col-3">
               <img
-                src="assets/images/39.jpg"
-                alt="order-img"
+                [src]="product.variant.src"
+                [alt]="product.item.name"
                 class="img-fluid"
               />
             </div>
             <div class="col-3 order-detail">
               <div>
                 <h4>product name</h4>
-                <h5>cotton shirt</h5>
+                <h5>{{ product.item.name }}</h5>
               </div>
             </div>
             <div class="col-3 order-detail">
               <div>
                 <h4>quantity</h4>
-                <h5>5</h5>
+                <h5>{{ product.quantity }}</h5>
               </div>
             </div>
             <div class="col-3 order-detail">
               <div>
                 <h4>price</h4>
-                <h5>$55.00</h5>
+                <h5>
+                  ${{
+                    (product.item.price - product.item.offer) * product.quantity
+                  }}
+                </h5>
               </div>
             </div>
           </div>
@@ -56,22 +63,30 @@
             <li>
               subtotal
 
-              <span>$55.00</span>
+              <span>${{ transaction.paymentInfo.amount }}</span>
             </li>
             <li>
               shipping
 
-              <span>$12.00</span>
+              <span>${{ transaction.shippingInfo.cost }}</span>
             </li>
             <li>
               Tax
-
               <span>$10.00</span>
             </li>
           </ul>
         </div>
         <div class="final-total">
-          <h3>total <span>$77.00</span></h3>
+          <h3>
+            total
+            <span
+              >${{
+                transaction.paymentInfo.amount +
+                  transaction.shippingInfo.cost +
+                  10
+              }}</span
+            >
+          </h3>
         </div>
       </div>
       <div class="col-lg-6">
@@ -80,9 +95,15 @@
             <h4>summary</h4>
             <div class="order-detail">
               <ul>
-                <li>order ID: 5563853658932</li>
-                <li>order date: October 22, 2020</li>
-                <li>order total: $907.28</li>
+                <li>order ID: {{ transaction.orderId }}</li>
+                <li>order date: {{ transaction.createdAt | date }}</li>
+                <li>
+                  order total: ${{
+                    transaction.paymentInfo.amount +
+                      transaction.shippingInfo.cost +
+                      10
+                  }}
+                </li>
               </ul>
             </div>
           </div>
@@ -90,24 +111,25 @@
             <h4>shipping address</h4>
             <div class="order-detail">
               <ul>
-                <li>gerg harvell</li>
-                <li>568, suite ave.</li>
-                <li>Austrlia, 235153</li>
-                <li>Contact No. 123456789</li>
+                <li>
+                  {{ transaction.customerInfo.addresses[1].addressLine1 }}
+                </li>
+                <li>
+                  {{ transaction.customerInfo.addresses[1].country }}
+                  ,
+                  {{ transaction.customerInfo.addresses[1].postalCode }}
+                </li>
               </ul>
             </div>
           </div>
           <div class="col-sm-12 payment-mode">
             <h4>payment method</h4>
-            <p>
-              Pay on Delivery (Cash/Card). Cash on delivery (COD) available.
-              Card/Net banking acceptance subject to device availability.
-            </p>
+            <p>{{ transaction.paymentInfo.method }}</p>
           </div>
           <div class="col-md-12">
             <div class="delivery-sec">
               <h3>expected date of delivery</h3>
-              <h2>october 22, 2023</h2>
+              <h2>{{ transaction.updatedAt | date }}</h2>
             </div>
           </div>
         </div>

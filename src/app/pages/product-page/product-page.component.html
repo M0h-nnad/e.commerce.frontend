@@ -146,7 +146,7 @@
                     </ng-container>
                   </div>
 
-                  <h5 *ngIf="sizeAmount < 0">out of stock</h5>
+                  <h5 *ngIf="sizeAmount === 0">out of stock</h5>
                   <h5 *ngIf="sizeAmount > 0">In stock</h5>
                   <h6>quantity</h6>
 

@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {
   StripeCardElementOptions,
@@ -22,8 +21,6 @@ export class CheckoutComponent implements OnInit {
   cart: OrderItem[] = [];
   totalPrice: number = 0;
   subtotal: number = 0;
-
-  checkoutFormGroup!: FormGroup;
 
   @ViewChild(StripeCardComponent, { static: true })
   card!: StripeCardComponent;
@@ -63,7 +60,6 @@ export class CheckoutComponent implements OnInit {
 
   constructor(
     private readonly router: Router,
-    private readonly fb: FormBuilder,
     private readonly dataService: DataService,
     private readonly toastrService: ToastrService,
     private readonly userService: UserService,
@@ -74,15 +70,17 @@ export class CheckoutComponent implements OnInit {
     this.dataService.getArray().subscribe({
       next: (arr) => {
         this.cart = arr;
-        this.cart.forEach((obj: OrderItem) => {
-          this.subtotal += (obj.item.price - obj.item.offer) * obj.quantity;
-          this.totalPrice = this.subtotal;
-        });
-        if (this.cart && this.cart.length < 1) {
+        if (this.cart.length === 0) {
           this.toastrService.info('Your Cart is Empty');
           this.router.navigate(['/cart']);
         }
+        this.subtotal = this.cart.reduce((total, obj) => {
+          const itemPrice = obj.item.price - obj.item.offer;
+          return total + itemPrice * obj.quantity;
+        }, 0);
+        this.totalPrice = this.subtotal;
       },
+      error: () => {},
     });
   }
 
@@ -106,9 +104,9 @@ export class CheckoutComponent implements OnInit {
       )
       .subscribe({
         next: (res: any) => {
-          this.router.navigate(['/order-success'], {
-            queryParams: { orderId: res.sentObject.orderId },
-          });
+          this.dataService.setTransactionArray(res.transaction);
+          this.dataService.setArray([]);
+          this.router.navigate(['/order-success']);
         },
         error: (err) => this.toastrService.error(err.error.messages),
       });
