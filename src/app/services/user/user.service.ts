@@ -104,4 +104,11 @@ export class UserService {
         catchError((e) => throwError(() => e))
       );
   }
+
+  getOrders() {
+    return this.http.get(`${environment.mainUrl}${environment.getOrders}`).pipe(
+      first(),
+      catchError((e) => throwError(() => e))
+    );
+  }
 }

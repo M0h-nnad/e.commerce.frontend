@@ -6,6 +6,7 @@ import {
   faX,
   faCartShopping,
 } from '@fortawesome/free-solid-svg-icons';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-my-orders',
@@ -17,7 +18,17 @@ export class MyOrdersComponent implements OnInit {
   faArrowLeft = faArrowLeft;
   faArrowRight = faArrowRight;
   faCartShopping = faCartShopping;
-  constructor() {}
 
-  ngOnInit(): void {}
+  orders: any[] = [];
+
+  constructor(private userService: UserService) {}
+
+  ngOnInit(): void {
+    this.userService.getOrders().subscribe({
+      next: (res: any) => {
+        this.orders = res.Orders;
+      },
+      error: () => {},
+    });
+  }
 }

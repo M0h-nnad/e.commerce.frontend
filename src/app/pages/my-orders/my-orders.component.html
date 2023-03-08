@@ -6,20 +6,16 @@
           <table class="table cart-table">
             <thead>
               <th>order ID</th>
-              <th>total</th>
               <th>status</th>
             </thead>
             <tbody>
-              <tr>
+              <tr *ngFor="let order of orders">
                 <td>
-                  <a href=""> 45781861818 </a>
-                </td>
-                <td>
-                  <h2>$220</h2>
+                  <p>{{ order.id }}</p>
                 </td>
 
                 <td>
-                  <p>deliverd</p>
+                  <p>{{ order.status }}</p>
                 </td>
               </tr>
             </tbody>
@@ -27,6 +23,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
